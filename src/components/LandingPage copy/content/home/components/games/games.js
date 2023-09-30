@@ -3,6 +3,14 @@ import "./games.css"
 
 export default function Games(props) {
 
+    const [paginaAtual, setPaginaAtual] = useState(1);
+
+    // Renderiza os jogos na página atual
+    const jogosAtual = props.jogos.slice(
+        (paginaAtual - 1) * 9,
+        paginaAtual * 9
+    );
+
     useEffect(() => {
         if (props.jogos.length > 1) {
             document.querySelector(`#slide-${props.jogos[0].id}`).style.width = "100%";
@@ -63,20 +71,33 @@ export default function Games(props) {
                         </div>
                     ))}
             </div>
+            <h2 className="h2Nossa">NOSSA COLEÇÃO DE JOGOS</h2>
             <div className='divGamesMainContainer'>
-                {props.jogos &&
-                    props.jogos.map((jogo) => (
+                {jogosAtual &&
+                    jogosAtual.map((jogo) => (
                         <div key={jogo.id} className='divGamesSubContainer' id={jogo.id}>
                             <div className='divGamesContainer'>
                                 <video poster={jogo.imgFundo} src={jogo.imgFundo} autoPlay loop />
                                 <div className='divGameDescricao'>
                                     <h5>{jogo.nome}</h5>
                                     <p>{jogo.descricaoLonga}</p>
+                                    <button>TORNEIOS</button>
                                 </div>
                             </div>
                         </div>
                     ))}
             </div>
+                {paginaAtual > 1 && (
+                    <button onClick={() => setPaginaAtual(paginaAtual - 1)}>
+                        Página Anterior
+                    </button>
+                )}
+
+                {paginaAtual < Math.ceil(props.jogos.length / 9) && (
+                    <button onClick={() => setPaginaAtual(paginaAtual + 1)}>
+                        Página Seguinte
+                    </button>
+                )}
 
         </div>
     )
