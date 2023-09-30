@@ -19,13 +19,21 @@
     border-radius: 40px;
 }
 
+.divGamesMainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%
+ 
+}
+
 .divGamesSubContainer {
     width: 400px;
     height: 150px;
 }
 
-.divGamesSubContainer img {
-    width: 20%;
+.divGamesSubContainer video {
+    height: 20%;
+    width: 6vw;
 }
 
 .divSlideGamesBodyContainer {

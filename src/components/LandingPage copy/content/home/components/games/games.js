@@ -63,12 +63,12 @@ export default function Games(props) {
                         </div>
                     ))}
             </div>
-            <div>
+            <div className='divGamesMainContainer'>
                 {props.jogos &&
                     props.jogos.map((jogo) => (
                         <div key={jogo.id} className='divGamesSubContainer' id={jogo.id}>
                             <div className='divGamesContainer'>
-                                <img className='divGameImg' src={jogo.imgFundo} />
+                                <video poster={jogo.imgFundo} src={jogo.imgFundo} autoPlay loop />
                                 <div className='divGameDescricao'>
                                     <h5>{jogo.nome}</h5>
                                     <p>{jogo.descricaoLonga}</p>
