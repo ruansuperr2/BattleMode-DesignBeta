@@ -39,13 +39,26 @@
 .divGamesSubContainer {
     width: 400px;
     height: 150px;
-    background-color: red;
+    background-color: #030303;
+    color: white;
     display: flex;
     flex-direction: row;
     border-radius: 20px;
+    border: 1px solid #857762;
+    box-shadow: 0px 0px 5px 5px black;
+    transition: 0.3s
 }
 
-.divGamesContainer{
+.divGamesSubContainer:hover {
+    cursor: pointer;
+    background-color: #5f2800;
+    border: 1px solid #fc6b03;
+    transition: 0.3s
+}
+
+.divGamesContainer {
+    width: 400px;
+    height: 150px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -53,27 +66,27 @@
 
 .divGamesSubContainer video {
     height: 100%;
+    border-right: 1px solid #857762;
     border-radius: 20px 0px 0px 20px;
 }
 
-.divGamesSubContainer button {
+.divGamesSubContainer h5 {
+    font-size: 20px;
+    color: #fc6b03;
     position: absolute;
-    bottom: 5%;
-    width: 100px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 4%;
-    font-size: 14px;
-    padding: 2%;
-    background-color: black;
-    outline: none;
-    border: 1px solid #fc6b03;
-    color: white;
-    z-index: 17;
-    border-radius: 10px;
+    left: 29%;
+    top: -19%;
 }
+
+.divGamesSubContainer p {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    width: 60%;
+    left: 29%;
+    top: 15%;
+}
+
 
 .divSlideGamesBodyContainer {
     display: flex;
@@ -162,7 +175,7 @@
     position: absolute;
     bottom: 5%;
     width: 100px;
-    height: 20px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,7 +184,7 @@
     padding: 2%;
     background-color: black;
     outline: none;
-    border: 1px solid #fc6b03;
+    border: 1px solid #857762;
     color: white;
     z-index: 17;
     border-radius: 10px;

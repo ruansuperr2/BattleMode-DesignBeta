@@ -71,7 +71,7 @@ export default function Games(props) {
                         </div>
                     ))}
             </div>
-            <h2 className="h2Nossa">NOSSA COLEÇÃO DE JOGOS</h2>
+            <h2 className="h2Nossa">BIBLIOTECA DE JOGOS</h2>
             <div className='divGamesMainContainer'>
                 {jogosAtual &&
                     jogosAtual.map((jogo) => (
@@ -81,7 +81,6 @@ export default function Games(props) {
                                 <div className='divGameDescricao'>
                                     <h5>{jogo.nome}</h5>
                                     <p>{jogo.descricaoLonga}</p>
-                                    <button>TORNEIOS</button>
                                 </div>
                             </div>
                         </div>
