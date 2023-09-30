@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8e4fbdf8.css",
+    "main.js": "/static/js/main.b34a58f9.js",
+    "static/js/787.40950f35.chunk.js": "/static/js/787.40950f35.chunk.js",
+    "static/media/video.mp4": "/static/media/video.8a0e273b7edaebbb7720.mp4",
+    "static/media/viideo.webm": "/static/media/viideo.29c5a12dbbe0fed70f74.webm",
+    "static/media/F1_2022.png": "/static/media/F1_2022.412379752813bf0ab800.png",
+    "static/media/CastelolAnimado.jpg": "/static/media/CastelolAnimado.6890a7a4daf1cdaeca94.jpg",
+    "static/media/SegoeUI-VF.ttf": "/static/media/SegoeUI-VF.142593ecca549715e938.ttf",
+    "static/media/R6S.png": "/static/media/R6S.293cb22dfa3612a0e542.png",
+    "static/media/CSGO.png": "/static/media/CSGO.25b21225ff7ac7c1731e.png",
+    "static/media/img_background.png": "/static/media/img_background.809d6cb6f28c8e5ba7e7.png",
+    "static/media/kkk.png": "/static/media/kkk.6f6a3db33c59bae72601.png",
+    "static/media/logo.png": "/static/media/logo.ddf08a1b98408dc88307.png",
+    "static/media/discord.png": "/static/media/discord.bde29c09d9de0bef3006.png",
+    "static/media/worldImage.png": "/static/media/worldImage.e5f5984eb2a0eb57aa91.png",
+    "static/media/passing.png": "/static/media/passing.caf395364f91ccce8f1c.png",
+    "static/media/unknown3.png": "/static/media/unknown3.3804bed3511753a7a9ac.png",
+    "static/media/unknown2.png": "/static/media/unknown2.2b147b750e1ce45344ef.png",
+    "index.html": "/index.html",
+    "main.8e4fbdf8.css.map": "/static/css/main.8e4fbdf8.css.map",
+    "main.b34a58f9.js.map": "/static/js/main.b34a58f9.js.map",
+    "787.40950f35.chunk.js.map": "/static/js/787.40950f35.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e4fbdf8.css",
+    "static/js/main.b34a58f9.js"
+  ]
+}

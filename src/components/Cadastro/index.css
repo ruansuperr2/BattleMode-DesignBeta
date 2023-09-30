@@ -1,0 +1,183 @@
+.divMainCadastroLindo{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+}
+.divCadastroMainContainer{
+    width: 95vw;
+    height: 90vh;
+    z-index: 3;
+    background-color: #121212;
+    position: absolute;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-radius: 20px;
+    border: #fc6b03 solid 1px;
+    -webkit-box-shadow: 0px 0px 13px 10px #000000; 
+    box-shadow: 0px 0px 13px 10px #000000;
+}
+
+.divCadastroLeftContainer {
+    width: 40%;
+    height: 95%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+
+.divCadastroLeftContainer img{
+    width: 56.16px;
+    height: 56.16px;
+    z-index: 99;
+    /* padding-left: 3.4%; */
+}
+
+
+.divCadastroLeftContainer .IMG{
+    width: 146.16px;
+    height: 146.16px;
+    margin-left: 2%;
+    z-index: 99;
+}
+
+.divCadastroLeftContainer h1{
+    color:#fc6b03;
+    font-size: 7vh;
+    padding-inline: 6%;
+
+    margin: 0;
+    
+}
+.divCadastroLeftContainer p{
+    color: #fff;
+    font-size: 3.5vh;
+    padding-inline: 6%;
+    margin-top: 0;
+
+}
+
+.divCadastroRightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    background: url('./assets/img_background.png');
+    background-size: cover;
+}
+
+.divCadastrarRightSubContaner{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: #121212;
+    justify-content: center;
+    height: 90%;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.divCadastrarRightSubContaner h1{
+    color:#fc6b03;
+    font-size: 7vh;
+    position: relative;
+}
+.p{
+    color:#fff;
+    font-size: 3vh;
+    padding-inline: 1rem;
+    margin-top: -10px;
+    text-align: center;
+}
+
+.divCadastrarRightSubContaner input{
+    width: 70%;
+    height: 2.5rem;
+    margin: 10px;
+    padding-left: 20px;
+    border-radius: 30px;
+    border: 2px solid #fc6b03;
+    font-size: 16px;
+}
+
+.divCadastrarRightSubContaner label, .divLoginRightSubContaner label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.divCadastrarRightSubContaner label input, .divLoginRightSubContaner label input{
+    width: 70%;
+    height: 2.5rem;
+    margin: 10px;
+    padding-left: 20px;
+    border-radius: 30px;
+    border: 2px solid #fc6b03;
+    font-size: 16px;
+}
+
+.divCadastrarRightSubContaner .aVIMG, .divLoginRightSubContaner .aVIMG{
+    right: 16%;
+    position: absolute;
+}
+
+
+.divCadastrarRightSubContaner button{
+    width: 75%;
+    height: 2.5rem;
+    margin: 10px;
+    background-color: #272727;
+    border-radius: 30px;
+    border: 2px solid #fc6b03;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+
+.divCadastrarRightSubContaner button:hover{
+    border: 2px solid rgb(224, 219, 219);
+    transition: 0.5s;
+    color: rgb(224, 219, 219);
+    cursor: pointer;
+}
+
+.divCadastrarRightSubContaner a {
+    margin: -10px;
+    color:#fff;
+    font-size: 3vh;
+}
+
+.links{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .divCadastroLeftContainer{
+        display: none;
+    }
+    
+    .divCadastroRightContainer{
+        width: 100%;
+    }
+    
+    .divCadastrarRightSubContaner{
+        width: 90%
+    }
+}

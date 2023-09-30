@@ -1,0 +1,536 @@
+.divLeftNavbar, .divRightNavbar {
+	width: 0;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	z-index: 600 !important;
+	color: white !important;
+}
+
+.divRightNavbar {
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.divLeftNavbar {
+	justify-content: center;
+	align-items: center;
+}
+
+.divSideLoginRegister img {
+	z-index: 500;
+	width: 4rem;
+	height: 4rem;
+	transition: 0.5s;
+}
+
+.divSideLoginRegister img:hover {
+	background-color: #3d3d3d;
+	padding: -10px;
+	width: 4rem;
+
+}
+
+.divRightNavbar .LanguageIcon {
+
+	background-color: #191919;
+	border-radius: 30px;
+	border: 1px transparent solid;
+}
+
+.divRightNavbar .LanguageIcon:hover {
+	transition: 0.5s;
+	cursor: pointer;
+	background-color: #191919;
+	border-radius: 30px;
+	border: 1px #fc6b03 solid;
+}
+
+.divRightNavbar p{
+	color: white;
+}
+
+.divRightNavbar label{
+	white-space: nowrap;
+}
+
+.divDividerNavbar {
+	z-index: 240;
+	height: 100vh;
+	width: 5%;
+	position: fixed;
+	top: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #121212;
+	border-bottom: 1px #151515 solid;
+	box-shadow: 0px 2px 8px 2px #000000;
+	border-right: #fc6b03 1px solid;
+}
+
+.fontNavbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	font-weight: bold;
+	transition: 0.5s;
+	text-decoration-line: none;
+}
+
+.fontNavbar:hover {
+	transition: 0.5s;
+	background-color: #3d3d3d;
+	cursor: pointer;
+	box-shadow: 0px 2px 8px 2px #000000;
+}
+
+.fontNavbar{
+	width: 4vw !important;
+	border-radius: 10px !important;
+}
+
+.buttonPrimaryNavbar, .buttonSecundaryNavbar {
+	font-size: 14px;
+	transition: 0.5s;
+	color: white;
+
+}
+
+.buttonPrimaryNavbar {
+	transition: 0.5s;
+	font-size: 16px;
+}
+
+.buttonSecundaryNavbar {
+	transition: 0.5s;
+	font-size: 16px;
+}
+
+.buttonPrimaryNavbar:hover, .buttonSecundaryNavbar:hover {
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.divSideLoginRegister{
+	overflow: hidden;
+	background-color: #191919;
+	z-index: 400;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 75px;
+	border-bottom: 1px solid #fc6b03;
+	border-left: 1px solid #fc6b03;
+	border-top: 1px #151515 solid;
+	box-shadow: 0px 2px 8px 2px #000000;
+	transition-timing-function: ease-in;
+	transition: 0.5s;
+	
+}
+
+.loggedUserFunctions{
+	background-color: transparent;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 75px;
+	color: white;
+	transition-timing-function: ease-in;
+	transition: 0.5s;
+	gap: 50px;
+}
+
+.loggedUserFunctions label{
+	padding: 6px;
+	display: flex;
+	align-items: center;
+	transition: 0.5s;
+	border-radius: 10px;
+}
+
+.loggedUserFunctions label:hover{
+	background-color: #3d3d3d;
+	cursor: pointer;
+	box-shadow: 0px 2px 8px 2px #000000;
+}
+
+.EntrarRegistroNavBar{
+	width: 23rem;
+	display: flex;
+	justify-content: center;
+}
+
+.EntrarRegistroNavBar button{
+	width: 40%;
+    height: 40px;
+    margin: 20px;
+    background-color: #272727;
+    border-radius: 20px;
+    border: 2px solid #fc6b03;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 99;
+	
+}
+
+.EntrarRegistroNavBar button:hover{
+	cursor: pointer;
+	transition: 0.5s;
+	background-color: #272727;
+}
+
+.navbarActive{
+	top: -300px;
+}
+
+.loggedUserNameNavBar{
+	display: flex;
+	margin-right: 6%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+.loggedUserNameNavBar img{
+	border-radius: 60px;
+	border: 1px solid #fc6b03;
+	width: 60px;
+	height: 60px;
+	
+}
+
+.buttonShowMoreNavbar{
+	background-image: url('./assets/border-arrow-up.png');
+	background-size: cover;
+	border: none;
+	width: 30px;
+	height: 30px;
+
+}
+
+.buttonShowMoreNavbar:hover{
+	background-image: url('./assets/border-arrow-up-hover.png');
+	background-size: cover;
+	cursor: pointer;
+	border: none;
+	width: 30px;
+	height: 30px;
+}
+
+.buttonShowMoreNavbarActivated{
+	background-image: url('./assets/border-arrow-up-hover-down.png') !important;
+	background-size: cover;
+	transform: rotate('90deg') !important;
+	cursor: pointer;
+	border: none;
+	width: 30px;
+	height: 30px;
+}
+
+
+.loggedUserNameNavBar p{
+	color: #fff;
+	font-size: 30px;
+	width: 100%;
+	margin-right: 5%;
+	margin-left: 2%
+}
+
+.NavbarDropDown{
+	display: none;
+	width: 100%;
+	top: 100%;
+	position: absolute;
+	background-color: #121212;
+	border: #fc6b03 1px solid;
+	border-radius: 10px;
+	box-shadow: 0px 2px 8px 2px #000000;
+}
+
+.showBlockAnimation{
+	animation: showBlock 0.5s linear;
+	overflow: hidden;
+}
+
+.showBlockAnimationReverse{
+	overflow: hidden;
+	animation: showBlock 0.5s linear reverse;
+}
+
+.contentNavbarDropDown{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-left: 3%;
+	width: 90%;
+	border-radius: 100px;
+}
+.contentNavbarDropDown label{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 100px;
+	border: 1px solid transparent;
+	transition: 0.5s;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.contentNavbarDropDown label:hover{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #191919;
+	border: 1px solid #fc6b03;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.imgNavbarUserGo{
+	background-image: url('./assets/withdraw-wait.png');
+	background-size: cover;
+	width: 35px;
+	height: 35px;
+	border: none;
+	
+}
+
+.imgNavbarTourneamentGo{
+	background-image: url('./assets/trophy.png');
+	background-size: cover;
+	width: 35px;
+	height: 35px;
+	border: none;
+	
+}
+
+.imgNavbarTeamGo{
+	background-image: url('./assets/team1.png');
+	background-size: cover;
+	width: 35px;
+	height: 35px;
+	border: none;
+	
+}
+
+.activePage{
+	color: #fc6b03 !important;
+	
+}
+
+#hamburguer {
+	display: none;
+}
+
+.navbarGrid {
+	display: flex;
+	flex-direction: row;
+	gap: 1.5rem;
+}
+
+
+@keyframes showBlock{
+	0%{
+		height: 0%;
+	}
+
+	100%{
+		height: 150%;
+	}
+}
+
+
+
+@media only screen and (max-width: 1230px) {
+	.HR{
+		display: none;
+	}
+
+	.paddingLeft{
+		padding-left: 0;
+		padding-top: 8vh;
+		padding-bottom: 10vh;
+	}
+
+	.divDividerNavbar {
+		z-index: 2;
+		height: 10vh;
+		width: 100%;
+		top: unset;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #121212;
+		border-bottom: 1px #151515 solid;
+		box-shadow: 0px 2px 8px 2px #000000;
+		border-right: #fc6b03 0px solid;
+		border-top: #fc6b03 1px solid;
+	}
+
+	.divLeftNavbar, .divRightNavbar {
+		width: 0;
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		gap: 13vw;
+	}
+	
+	.divRightNavbar {
+		display: none;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.divLeftNavbar {
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.divLeftNavbar img {
+		display: none;
+		width: 5.5vw;
+		height: 5.5vw;
+		transition: 0.5s;
+		image-rendering: crisp-edges;
+	}
+	
+	.divRightNavbar .LanguageIcon {
+	
+		background-color: #191919;
+		border-radius: 30px;
+		border: 1px transparent solid;
+	}
+	
+	.divRightNavbar .LanguageIcon:hover {
+		transition: 0.5s;
+		cursor: pointer;
+		background-color: #191919;
+		border-radius: 30px;
+		border: 1px #fc6b03 solid;
+	}
+
+	.divSideLoginRegister{
+		position: fixed;
+		top: -1%;
+		right: -1%;
+		background-color: #191919;
+		padding: 3%;
+		padding-right: 2%;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 98.5%;
+		height: 4%;
+		border-bottom: 1px solid #fc6b03;
+		border-left: 1px solid #fc6b03;
+		border-top: 1px #151515 solid;
+		box-shadow: 0px 2px 8px 2px #000000;
+		transition-timing-function: ease-in;
+		transition: 0.5s;
+		
+	}
+	.logoNavbar {
+		display: none;
+	}
+	.loggedUserFunctions label {
+		flex-direction: column;
+		text-align: center;
+	}
+	.loggedUserNameNavBar {
+		height: 3rem;
+		margin: 0;
+	}
+	
+	.divSideLoginRegister button{
+		width: 10rem;
+		height: 100%;
+		margin: 5px;
+		background-color: #272727;
+		border-radius: 20px;
+		border: 2px solid #fc6b03;
+		color: #fc6b03;
+		font-size: 16px;
+		transition: 0.5s;
+		z-index: 99;
+		
+	}
+	
+	.divSideLoginRegister button:hover{
+		cursor: pointer;
+		transition: 0.5s;
+		background-color: #272727;
+	}
+	
+	.navbarActive{
+		top: -300px;
+	}
+
+	.fontNavbar {
+		width: 2rem !important;
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	#hamburguer {
+		display: flex;
+	}
+	.divSideLoginRegister{
+		justify-content: center;
+		height: var(--responsiveHeight, 4%);
+	}
+	.loggedUserFunctions {
+		flex-direction: column;
+		height: 100%;
+		gap: 1.5rem;
+	}
+	.imgIconP {
+		display: none;
+	}
+	.userNameP {
+		display: none;
+	}
+	.loggedUserNameNavBar {
+		display: none;
+	}
+
+	.navbarGrid {
+		display: grid;
+		flex-direction: row;
+		grid-template-columns: 5;
+		grid-template-rows: 1;
+		gap: 1.5rem;
+	}
+}
+
+@media screen and (max-height: 595px) {
+	.navbarGrid {
+		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(3, auto) ;
+	}
+
+	.navbarGrid label:nth-child(5) {
+		display: flex;
+		grid-row: 3;
+		grid-column: 1 / span 2;
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.EntrarRegistroNavBar {
+		align-items: center;
+		flex-direction: column;
+		width: 12rem;
+	}
+}

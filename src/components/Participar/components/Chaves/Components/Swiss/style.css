@@ -1,0 +1,122 @@
+.container {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    background-color: #212121;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.seed{
+    width: 10%;
+    height: 22px;
+    background-color: #fc6b03;
+    display: flex;
+   justify-content: center;
+   align-content: center;
+   border-radius: 0px 0px 0px 0px ;
+ 
+}
+.point{
+    width: 10%;
+    height: 22px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   border-radius: 0px 0px 0px 0px ;
+}
+
+.etapa1 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.etapa2 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.etapa3 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.etapa4 {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.player1 {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #121212;
+    color: #fff;
+    height: 22px;
+    margin: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    fill: rgb(255, 255, 255);
+    align-items: center;
+
+}
+
+.player2 {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #121212;
+    color: #fff;
+    margin: 4px;
+    height: 22px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.player3 {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #121212;
+    color: #fff;
+    margin: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 22px;
+    align-items: center;
+}
+
+.player4 {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #121212;
+    color: #fff;
+    height: 22px;
+    margin: 4px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+
+
+.dividir {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+

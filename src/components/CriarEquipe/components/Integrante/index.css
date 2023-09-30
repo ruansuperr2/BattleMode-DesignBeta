@@ -1,0 +1,41 @@
+.cardBody {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    height: 3.5rem;
+    width: 15rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border-radius: 10px;
+    background-color: #414141;
+}
+
+.userIcon {
+    flex: none;
+    margin-inline: .5rem;
+    background-color: #313131;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.userName {
+    overflow: hidden;
+}
+
+.buttonRemoveJogador {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttonRemoveJogador:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 545px) {
+    .cardBody {
+        width: 10rem;
+    }
+}

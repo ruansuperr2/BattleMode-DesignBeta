@@ -1,0 +1,79 @@
+.divMainContainerD {
+    color: #fff;
+}
+
+.divDropdown{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divDropdown div{
+    width: 60%;
+}
+
+.divMainContainerSobre .divFundoDropdown{
+    width: 100%;
+
+}
+
+.FAQ {
+    text-align: center;
+}
+.questionDivider {
+    height: 1px;
+    width: 80%;
+    background-color: #fc6b03;
+    margin-block: 3rem;
+}
+
+.tituloPerguntaFAQ {
+    margin-block: 1.33em;
+}
+.respostaFaq {
+    margin-block: 1.33em;
+}
+
+.divConteudo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7%;
+}
+.divImagens {
+    width: 17rem;
+    height: 17rem;
+    background-image: url('./assets/time.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.divTextoSobre {
+    width: 40%;
+    padding-left: 2%;
+    padding-right: 5%;
+    align-items: center;
+    text-align: center;
+}
+.sobreTitle {
+    margin-top: 0;
+}
+
+@media only screen and (max-width: 1230px) {
+    .questionDivider {
+        margin-block: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .divTextoSobre {
+        width: 80%;
+    }
+    .divConteudo {
+        flex-direction: column;
+    }
+}

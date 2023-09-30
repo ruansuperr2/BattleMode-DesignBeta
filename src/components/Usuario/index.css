@@ -1,0 +1,742 @@
+.divUsuarioDMainContainer{
+    background-color: #121212;
+    color: white;
+}
+
+.divUsuarioSubMainContainer{
+    border-left: 1px solid #fc6b03;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.divConquistasSubContainer:hover{
+    padding: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.UserNameOnProfile, .TeamsOnProfile{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-left: 2%;
+}
+
+.imgUsuarioGearEditing{
+    background-image: url('./components/assets/gear.png');
+    background-size: cover;
+	height: 30px;
+	width: 30px;
+	transition: 0.5s ease-in-out;
+    margin-right: 10px;
+	border: 1px transparent solid;
+    color: white;
+
+}
+
+.imgUsuarioGearEditing:hover{
+    background-image: url('./components/assets/gear.png');
+    background-size: cover;
+	height: 30px;
+	width: 30px;
+    cursor: pointer;
+	transition: 0.5s ease-in-out;
+	border: 1px transparent solid;
+    color: white;
+
+}
+
+.visaoImg{
+    background-image: url('./components/assets/withdraw-wait.png');
+}
+
+.visaoImg:hover{
+    background-image: url('./components/assets/withdraw-wait.png');
+}
+
+.equipesImg{
+    background-image: url('./components/assets/team1.png');
+}
+
+.equipesImg:hover{
+    background-image: url('./components/assets/team1.png');
+}
+
+.torneiosImg{
+    background-image: url('./components/assets/trophy.png');
+}
+
+.torneiosImg:hover{
+    background-image: url('./components/assets/trophy.png');
+}
+
+.perfilNavigation{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: #f2f2f2 1px solid;
+    transition: 0.5s;
+    padding-top: 0.5%;
+    width: 99.9%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);    
+    border-left: 1px solid #fc6b03;
+
+}
+
+.perfilConfig{
+
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content: center;
+
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.perfilConfig:hover{
+
+    display: flex;
+    flex-direction: row;
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    background: linear-gradient(0deg, rgb(105, 105, 105) 0%, rgba(0,212,255,0) 100%);
+}
+
+.perfilActive{
+    background: linear-gradient(0deg, rgb(80, 45, 0) 0%, rgba(80, 36, 0,0) 100%);
+}
+
+.divUsuarioComplexContainer{
+    display: flex;
+    flex-direction: row;
+}
+.divRightUserInfoCompo{
+    position: relative;
+    /* background-color: red; */
+    border-bottom: 1px solid #fc6b03;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.divRightUserInfoCompo h4, .divRightUserInfoCompo h2, .divRightUserInfoCompo h1{
+    background-color: #121212;
+    box-shadow: #121212 0px 0px 5px 5px;
+}
+
+.dataFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dataFlex h4 {
+    margin: .5rem;
+}
+
+.divRightSubMainContainerCompo{
+    position: relative;
+    /* background-color: red; */
+    border-bottom: 1px solid #fc6b03;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.divRightSubMainContainerCompo div{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.divRightSubMainContainerCompo div label{
+    background-color: #202020;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+}
+
+.divRightSubMainContainerCompo div label img{
+    position: absolute;
+    right: 0;
+}
+
+.divRightSubMainContainerCompo div label img:hover{
+    cursor: pointer;
+}
+
+.divUserLinks a {
+    text-align: center;
+}
+
+.divEquipesSubMainContainerCompo {
+    margin-left: 5%;
+    border: none;
+}
+
+.UserPlan{
+    position: absolute;
+    transform: rotate(90deg);
+    left: -12%;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    letter-spacing: .2rem;
+    width: 200px;
+}
+
+.divRightMainComplexoContainerCompo{
+    width: 40vw;
+    border-right: 1px solid;
+}
+
+.divUsuarioSubMainContainerGeneral{
+    width: 100%;
+}
+
+.imgUserprofileIcon{
+    border: 1px solid #fc6b03;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border-radius: 100px;
+    background-position: center;
+}
+
+.textareaUsuarioSubMainContainerCompo{
+    width: 100%;
+    overflow: hidden;
+}
+
+.w-md-editor{
+    border-bottom: 1px solid;
+}
+
+.w-md-editor-toolbar{
+    border-bottom: 1px solid !important ;
+    border-radius: 0px !important;
+}
+
+.wrapper{
+    border-bottom-color: #fc6b03;
+    box-shadow: 0px 1px 0px 0px #fc6b03;
+    border-bottom: 1px solid #fc6b03;
+
+    padding: 2%;
+    background-color: #121212 !important;
+    border: 1px solid transparent;
+    color: white !important;
+
+}
+
+.wrapper img{
+    width: 25%;
+    height: 25%;
+    object-fit: contain;
+}
+
+.markdownShower img{
+    width: 25%;
+    height: 25%;
+}
+
+.wmde-markdown{
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.wmde-markdown pre > code{
+    color: black
+}
+
+.divmdEditor{
+    width: 100%;
+    min-width: 100%;
+}
+
+.divmdViwer{
+
+    overflow-y: scroll;
+    border-bottom: 1px solid #fc6b03;
+    position: relative;
+
+}
+
+.wmde-markdown{
+    height: 50.4vh;
+    max-height: 50.4vh !important;
+    overflow-y: scroll !important;
+    border-bottom: #fc6b03 1px solid;
+    padding: 20px !important;
+}
+
+.wmde-markdown h6, .wmde-markdown h5, .wmde-markdown h4, .wmde-markdown h3, .wmde-markdown h2, .wmde-markdown h1{
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    
+}
+
+
+.divContainerUsuarioContent{
+    width: 99.9%;
+}
+
+.editMarkdownButton{
+    position: relative;
+    /* top: 95%; */
+    /* right: 2%; */
+    width: 6.5rem;
+    height: 2rem;
+    margin-block: 20px;
+    margin-left: 1rem;
+    background-color: #272727;
+    border-radius: 20px;
+    border: 2px solid #fc6b03;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editMarkdownButton:hover{
+    border: 2px solid rgb(224, 219, 219);
+    transition: 0.5s;
+    color: rgb(224, 219, 219);
+    cursor: pointer;
+}
+
+.divUsuarioSubMainContainerCompo{
+    display: flex;
+    flex-direction: column;
+}
+
+.divConquistaEfavoritos{
+    width: 120%;
+    margin-left: -30%;
+    
+}
+
+.containerFavoriteListOfUser{
+    background-color: #262626;
+    padding: 1%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.favoriteListOfUser{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.divContainerTeamsOnUserTab{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* border-left: 1px solid #fc6b03; */
+}
+
+.divContainerTeamsOnUserTab div h2{
+    margin-top: 5%;
+    margin-bottom: 25%;
+}
+
+.divTeamsOnUserSubContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    margin-left: 5%;
+
+}
+
+.divTeamsOnUserContainer{
+    background-color: #363636;
+    box-shadow: 6px 6px 10px 0px #030303;
+    width: 180px;
+    height: 4.3rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.divTeamsOnUserContainer img{
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+}
+
+.divTeamsOnUserContainer h5{
+    margin-top: 3.5rem;
+}
+
+.divTeamsOnUserImg{
+    box-shadow: 0px 0px 11px 0px #ff8800;
+    border: #fc6b03 1px solid;
+    background-color: #121212;
+    position: absolute;
+    border-radius: 60px;
+    width: 60px;
+    height: 60px;
+    margin-top: -3rem;
+}
+
+.divConfigSubMainContainer{
+    overflow: hidden;
+    width: 100%;
+}
+
+.divConfigConfigsContainer{
+    border-right: none;
+    border-top: none;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.divConfigConfigsContainer div button{
+    width: 14rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 0.5rem;
+    background-color: #272727;
+    border-radius: 40px;
+    border: 2px solid #fc6b03;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 99;
+    text-align: center;
+}
+
+.divConfigConfigsContainer div button:hover{
+    border: 2px solid rgb(224, 219, 219);
+    transition: 0.5s;
+    color: rgb(224, 219, 219);
+    cursor: pointer;
+}
+
+.senhaEmailDivider {
+    width: 90%;
+    height: 1px;
+    padding-left: 5%;
+    margin-block: 2rem;
+    display: flex;
+    align-self: flex-start;
+    background-color: #515151;
+}
+
+
+.divConfigConfigsSubContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.divOmgConfigs{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.divContainerConfigSub2, .divContainerConfigSub4{
+    display: flex;
+    align-items: center;
+    margin-block: 0.5rem;
+    /* flex-direction: column; */
+}
+
+
+
+.divContainerConfigSub{
+    /* padding-left: 1%; */
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+}
+
+.divOmgConfigs input{
+    width: 13.4rem;
+    height: 50%;
+    margin: 11px;
+    padding: .5rem;
+    background-color: #272727;
+    border-radius: 10px;
+    border: 2px solid #fc6b03;
+    color: #fff;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 1;
+}
+.divOmgConfigs label{
+    width: 5.5rem;
+    height: 50%;
+    margin-block: 20px;
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.inputTypeFile{
+    height: 25px !important;
+}
+
+.imgUploaded{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: transparent 1px solid;
+    object-fit: cover;
+}
+
+.imgUploaded2{
+    width: 250px;
+    height: 150px;
+    border-radius: 20px;
+    border: transparent 1px solid;
+    object-fit: cover;
+}
+
+.imgUploaded3{
+    width: 640px;
+    height: 100px;
+    border-radius: 20px;
+    border: transparent 1px solid;
+    object-fit: cover;
+}
+
+.divContainerNewImage{
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+
+.divContainerNewImage:hover{
+    cursor: pointer;
+}
+
+.divContainerConfigSub4 label{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.divContainerConfigSub4 label img{
+    margin-left: 25px;
+    z-index: 20;
+}
+
+.divContainerConfigSub4 label input{
+    margin-left: 25px;
+    height: 15px;
+}
+
+
+.chrome-picker input, .chrome-picker svg, .chrome-picker label{
+    display: none !important;
+    background: none !important;
+    height: auto !important;
+    width: auto !important;
+    color: black;
+}
+
+.divContainerNewImageBackground{
+    display: flex;
+    align-items: flex-end;
+}
+
+.gearSelectImage{
+    opacity: 0%;
+    height: 100px;
+    width: 100px;
+    z-index: 30 !important;
+    transition: 0.2s;
+    position: absolute;
+    border-radius: 100px;
+    border: transparent 1px solid;
+}
+
+.gearSelectImage:hover{
+    transition: 0.2s;
+    opacity: 100%;
+    height: 100px;
+    width: 100px;
+
+}
+
+.gearSelectImage2{
+    opacity: 0%;
+    width: 250px;
+    height: 150px;
+
+    z-index: 30 !important;
+    transition: 0.2s;
+    position: absolute;
+    border-radius: 20px;
+    border: transparent 1px solid;
+}
+
+.gearSelectImage2:hover{
+    transition: 0.2s;
+    opacity: 100%;
+
+}
+
+.gearSelectImage3{
+    opacity: 0%;
+    width: 640px;
+    height: 100px;
+    z-index: 30 !important;
+    transition: 0.2s;
+    position: absolute;
+    border-radius: 20px;
+    border: transparent 1px solid;
+}
+
+.gearSelectImage3:hover{
+    transition: 0.2s;
+    opacity: 100%;
+
+}
+
+@media only screen and (max-width: 1230px) {
+	.divUsuarioSubMainContainerD{
+		padding-top: 0vh;
+	}
+    .UserPlan {
+        transform: rotate(0deg); 
+        left: 20%;
+        top: -25%;
+    }
+    .dataFlex {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .divConfigConfigsContainer {
+        padding-left: 0;
+    }
+
+    .divOmgConfigs label {
+        margin-right: 0;
+    }
+
+    .divUsuarioComplexContainer {
+        flex-direction: column;
+    }
+
+    .UserPlan {
+        transform: rotate(90deg);
+        left: -60px;
+        top: 37%;
+    }
+
+    .divConfigConfigsSubContainer h1, h2 {
+        text-align: center;
+    }
+
+    .divEquipesSubMainContainerCompo {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .divRightMainComplexoContainerCompo {
+        width: 100%;
+    }
+
+    .perfilNavigation {
+        flex-direction: column;
+    }
+
+    .divOmgConfigs {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .divConfigConfigsContainer div button {
+        display: flex;
+        justify-content: center;
+        margin-inline: auto;
+    }
+
+    .senhaEmailDivider {
+        align-self: center;
+    }
+
+    .perfilActive {
+        width: 100%;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .divContainerConfigSub4 {
+        flex-direction: column;
+    }
+    .divContainerConfigSub4 label {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .divContainerConfigSub {
+        flex-direction: column;
+    }
+    .imgUploaded3 {
+        width: 280px;
+    }
+    .gearSelectImage3 {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .divOmgConfigs {
+        /* flex-direction: column; */
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .divContainerConfigSub2 {
+        flex-direction: column;
+    }
+    .divOmgConfigs label {
+        margin-right: 0;
+        width: 10rem;
+    }
+}

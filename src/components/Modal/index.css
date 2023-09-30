@@ -1,0 +1,143 @@
+.divModalContainer div{
+    background-color: black;
+
+    color: white;
+    font-size: 30px;
+    /* padding-top: 5%; */
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divModalContainer{
+    z-index: 3250;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.divModalContent{
+    display: flex;
+    border: #fc6b03 1px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.modalCorpo {
+    display: flex;
+    text-align: center;
+}
+.modalButton {
+    width: 100%;
+    height: 2.5rem;
+    margin: 10px;
+    background-color: #272727;
+    border-radius: 20px;
+    border: 2px solid #fc6b03;
+    color: #fc6b03;
+    font-size: 16px;
+}
+.modalButton:hover {
+    cursor: pointer;
+}
+
+.divModalContainer div div{
+    /* border-top: 1px solid #fc6b03; */
+    /* width: 100%; */
+}
+
+.divModalContainer{
+    transition: 0.5s;
+    z-index: 256;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.514);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+.divCloseButton {
+    /* padding-right: 5%; */
+    height: 50px;
+    width: 40px;
+    display: flex;
+    align-self: flex-end;
+    font-size: 50px;
+    border-radius: 10px;
+    padding-top: 0;
+}
+.closeButton {
+    display: flex;
+    align-self: flex-end;
+    background-color: rgba(0, 0, 0, 0.514);
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+}
+.closeButton:hover {
+    cursor: pointer;
+}
+
+.barProgressionClosing div{
+    display: flex;    
+    align-items: center;
+    justify-content: center;
+    height: 2px;
+    background-color: #fc6b03;
+    width: 0%;
+}
+
+.Anwidth{
+    animation: anwidth 1.3s linear;
+}
+
+.opacity{
+    animation: opacity 0.5s linear;
+}
+
+.opacityReverse{
+    animation: opacity 0.5s reverse;
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+@keyframes anwidth {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 200%;
+    }
+}
+
+.spin-gif{
+    background-image: url('./assets/spin.gif');
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+}
+
+.erro-png{
+    background-image: url('./assets/erro.png');
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+}
+
+.check-png{
+    background-image: url('./assets/check.png');
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+}

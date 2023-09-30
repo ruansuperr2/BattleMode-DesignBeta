@@ -1,0 +1,262 @@
+.divContainerLoginScreen{
+    width: 100%;
+    overflow: hidden;
+}
+
+.divMainBodyLoginScreen{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.divContainerLoginScreen label{
+    display: flex;
+    align-items: center;
+}
+
+.divUserBodyLoginScreen label{
+    display: flex;
+    align-items: center;
+}
+
+.divVideoBodyLoginScreen{
+    width: 80%;
+    height: 100vh;
+    z-index: 0;
+    
+}
+
+.divVideoBodyLoginScreen video{
+    width: 126%;
+    margin-left: -14%;
+}
+
+.divVideoBodyLoginScreen .RiotLogo{
+    width: 120px;
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+}
+
+.divVideoBodyLoginScreen .StaticImage{
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 80%;
+    overflow: hidden;
+}
+
+.divVideoBodyLoginScreen .animationButton{
+    z-index: 7;
+    width: 120px;
+    position: absolute;
+    bottom: 2.5%;
+    left: 9%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    border-left: 3px solid #857762;
+    padding-left: 20px
+}
+
+.divUserBodyLoginScreen{
+    z-index: 10;
+    width: 20%;
+    background-color: #1a1a1a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px #616161 solid; 
+}
+
+.divUserBodyLoginScreen img{
+    margin-top: 5%;
+}
+
+.divUserBodyLoginScreen .staySignedIn{
+    margin-left: -10vw;
+    margin-top: 5%;
+}
+
+.divUserBodyLoginScreen .labelSignIn{
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer
+}
+
+.divUserBodyLoginScreen .labelSignUp{
+    width: 100%;
+    padding: 1%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer
+}
+
+#buttonSignIn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#buttonSignUp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divButtonSignUp{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.divButtonSignIn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.divUserBodyLoginScreen input[type=checkbox]{
+    background-color: #0a0a0a;
+    color: #0a0a0a;
+}
+
+.divUserBodyLoginScreen input[type=text], .divUserBodyLoginScreen input[type=password], .divUserBodyLoginScreen input[type=email]{
+    width: 85%;
+    font-size: 12px;
+    padding: 3.5%;
+    margin-top: 5%;
+    background-color: #0a0a0a;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.divUserBodyLoginScreen input[type=text]:disabled, .divUserBodyLoginScreen input[type=password]:disabled, .divUserBodyLoginScreen input[type=email]:disabled{
+    color: rgb(99, 99, 99);
+}
+
+.divUserBodyLoginScreen input[type=text]:focus , .divUserBodyLoginScreen input[type=password]:focus, .divUserBodyLoginScreen input[type=email]:focus{
+    outline: 1px solid #fc6b03;
+}
+
+.divButtonSignIn{
+    text-align: center;
+    height: 20px;
+}
+
+.divButtonSignIn button:disabled, .divButtonSignIn button[disabled]{
+    padding: 1%;
+    width: 17%;
+    position: absolute;
+    bottom: 12%;
+    background-color: #02020262;
+    color: white;
+    border: 1px solid #000000;
+    opacity: 70%;
+    transition: 0.5s;
+    height: 20px;
+}
+
+.divButtonSignIn button:disabled:hover, .divButtonSignIn button[disabled]:hover{
+    padding: 1%;
+    width: 17%;
+    position: absolute;
+    bottom: 12%;
+    background-color: #02020293;
+    color: white;
+    border: 1px solid #111111;
+    opacity: 70%;
+    transition: 0.5s;
+    cursor: default;
+    height: 20px;
+}
+
+.divButtonSignUp{
+    padding: 1%;
+    width: 6.5%;
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    opacity: 100%;
+    transition: 0.5s;
+    margin-right: 11%;
+    
+}
+
+.divButtonSignUp:hover{
+    padding: 1%;
+    width: 8%;
+    position: absolute;
+    bottom: 5%;
+    color: #ff9c56;
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+.divButtonSignIn button{
+    padding: 1%;
+    width: 17%;
+    position: absolute;
+    bottom: 12%;
+    height: 20px;
+    background-color: #0f0f0f;
+    color: white;
+    border: 1px solid #616161;
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+.divButtonSignIn button:hover{
+    height: 20px;
+    transition: 0.5s;
+    padding: 1%;
+    width: 17%;
+    position: absolute;
+    bottom: 12%;
+    background-color: #181818;
+    color: #ffffff;
+    border: 1px solid #ffa15e;
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.videoLoginShadow{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+}
+
+.loadingSpinner{
+    width: 60px;
+    height: 60px;
+    animation-name: spin;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+.dataVersion{
+    background-color: #2b2b2b;
+    width: 20%;
+    height: 18px;
+    text-align: center;
+    border-top: #616161 1px solid;
+    position: absolute;
+    top: 95.75%;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

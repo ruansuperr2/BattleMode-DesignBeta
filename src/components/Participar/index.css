@@ -1,0 +1,241 @@
+.divUsuarioSubMainContainer{
+    height: 100vh;
+    width: 100%;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+
+}
+.divFundoMainContainer{
+    width: 100%;
+    height: 35vh;
+    border-bottom: 2px solid #fc6b03;
+
+    background-image: url(assets/arteOnda2.png);
+    -webkit-box-shadow: inset -11px -7px 36px 0px #000000; 
+    box-shadow: inset -11px -7px 36px 0px #000000; 
+}
+.divContainerFundoMainContainer {
+    position: absolute;
+    left: 8%;
+    top: 20%;
+}
+.perfilNavegacao {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: #f2f2f2 1px solid;
+    transition: 0.5s;
+    /* padding-top: 0.5%; */
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
+    border-left: 1px solid #fc6b03;
+}
+.campos {
+    padding-left: 5%;
+    overflow: hidden;
+} 
+.divCampoGeral {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 5%;
+}
+
+.imgVisaoGearEditing {
+    background-image: url('./assets/gear.png');
+}
+.imgEquipeGearEditing {
+    background-image: url('./assets/team1.png');
+}
+.imgParticiparGearEditing {
+    background-image: url('./assets/trophy.png');
+}
+.gearEditing {
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    height: 40px;
+	width: 40px;
+	transition: 0.5s ease-in-out;
+    margin-right: 10px;
+	border: 1px transparent solid;
+    color: white;
+}
+.imgVisaoGearEditing:hover {
+    background-image: url('./assets/gear_hover.png');
+    background-size: cover;
+	height: 40px;
+	width: 40px;
+    cursor: pointer;
+	transition: 0.5s ease-in-out;
+	border: 1px transparent solid;
+    color: white;
+}
+.imgEquipeGearEditing:hover {
+
+}
+.imgParticiparGearEditing:hover {
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from {  }
+    to {  }
+}
+
+.perfilAtivo {
+    animation: fadeIn .5s;
+    background-image: radial-gradient(circle at 90% 80%, transparent, #6b6b6b82);
+    /* backface-visibility: hidden; */
+    animation-timing-function: ease-in-out;
+}
+
+.perfilConfiguracao{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content: center;
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: 200;
+}
+.gearEditing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.divParticiparMainContainer {
+    height: 100%;
+    background-color: #121212;
+}
+.divHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divMainTorneio {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 35vh;
+    /* margin-bottom: 5.5%; */
+
+    background-image: url(assets/arteOnda2.png);
+    border-bottom: 2px solid #fc6b03;
+    -webkit-box-shadow: inset -11px -7px 36px 0px #000000; 
+    box-shadow: inset -11px -7px 36px 0px #000000; 
+}
+/* .divMainFundo {
+    height: 35vh;
+} */
+.divContentMainFundo {
+}
+.divTorneioImg {
+    background-image: url(assets/arteOnda2.png);
+    border-radius: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 17rem;
+    height: 8rem;
+    margin-top: 2rem;
+    /* right: 3%; */
+    border: 2px solid #fc6b03;
+}
+.divTorneioDesc {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: #fff;
+    /* width: 100%; */
+    margin-left: 8%;
+    margin-top: 2rem;
+    float: left;
+    word-break: break-all;
+}
+.divButtonParticipar {
+    /* float: right; */
+    /* margin-top: 3rem; */
+    /* min-width: 30%; */
+}
+.buttonParticipar {
+    /* position: absolute;
+    left: 14.5%;
+    top: 50%; */
+    width: 15rem;
+    padding: .5rem;
+	margin: 5px;
+    background-color: #272727;
+    border-radius: 20px;
+    border: 2px solid #fc6b03;
+    color: #fc6b03;
+    font-size: 16px;
+    transition: 0.5s;
+    /* z-index: 99; */
+}
+.divDesc {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 40%;
+    word-wrap: break-word;
+    background-color: #212121;
+    border-radius: 20px;
+    padding: .5rem;
+    /* margin-inline: 10%; */
+}
+.descricao {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    width: 100%;
+}
+.divTorneioEntrar {
+    margin: 0;
+    height: 30vh;
+    width: 30vw;
+    float: right;
+}
+
+@media only screen and (max-width: 768px) {
+    .divCampoGeral {
+        flex-direction: column;
+    }
+    .divDesc {
+        width: 80%;
+        margin-top: 2rem;
+    }
+    .paddingLeft {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .perfilNavegacao {
+        flex-direction: column;
+    }
+    .perfilConfiguracao {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        transition: .5s;
+    }
+    
+}
+
+.dontLoad{
+    display: none;
+}

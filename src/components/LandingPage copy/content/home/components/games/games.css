@@ -1,0 +1,130 @@
+.divGamesBodyContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #141414
+}
+
+.divGamesBodyContainer::-webkit-scrollbar-button, .divGamesBodyContainer::-webkit-scrollbar {
+    background-color: #202020;
+    width: 5px
+}
+
+.divGamesBodyContainer::-webkit-scrollbar-button {
+    height: 0px;
+}
+
+.divGamesBodyContainer::-webkit-scrollbar-thumb {
+    background-color: #fc6b03;
+    border-radius: 40px;
+}
+
+.divGamesSubContainer {
+    width: 400px;
+    height: 150px;
+}
+
+.divGamesSubContainer img {
+    width: 20%;
+}
+
+.divSlideGamesBodyContainer {
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 20px 20px 10px #030303;
+    border-bottom: 1px solid #857762;
+}
+
+.divSliderGames {
+    width: 100%;
+    height: 40%;
+    background-color: #020202;
+    transition: 0.25s;
+}
+
+.divSliderContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+.divSliderGames video {
+    height: 60vh;
+    width: 25%;
+    object-fit: cover;
+    border-right: 1px solid #857762;
+}
+
+.divSliderGameDescricao {
+    position: relative;
+    width: 78%;
+    overflow: hidden;
+
+}
+
+.boxShadowSlider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 15;
+    -moz-box-shadow: 0px 30px 120px 110px inset #030303;
+    -webkit-box-shadow: 0px 30px 120px 110px inset #030303;
+    box-shadow: 0px -20px 120px 110px inset #030303;
+}
+
+.divSliderGameDescricao h5 {
+    position: absolute;
+    bottom: 4%;
+    left: 2%;
+    font-size: 38px;
+    color: #fc6b03;
+    z-index: 17;
+}
+
+.divSliderGameDescricao p {
+    position: absolute;
+    width: 70%;
+    bottom: 3%;
+    left: 2%;
+    font-size: 18px;
+    color: white;
+    z-index: 17;
+}
+
+.divSliderGameDescricao label {
+    position: absolute;
+    top: 9%;
+    width: 8%;
+    right: 4%;
+    font-size: 14px;
+    color: white;
+    z-index: 17;
+}
+
+.divSliderGameDescricao video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0%;
+    object-fit: cover;
+}
+
+.divSliderGameDescricao button {
+    position: absolute;
+    bottom: 5%;
+    width: 100px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 4%;
+    font-size: 14px;
+    padding: 2%;
+    background-color: black;
+    outline: none;
+    border: 1px solid #fc6b03;
+    color: white;
+    z-index: 17;
+}

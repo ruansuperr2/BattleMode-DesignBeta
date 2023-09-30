@@ -1,0 +1,27 @@
+@font-face {
+  font-family: SegoeUI-VF;
+  src: url('./fonts/SegoeUI-VF.ttf');
+}
+
+@font-face {
+  font-family: SegoeUI;
+  src: url('./fonts/Segoe-UI-Variable-Static-Display.ttf');
+}
+
+@font-face {
+  font-family: SegoeUI-Bold;
+  src: url('./fonts/Segoe-UI-Variable-Static-Display-Bold.ttf');
+}
+
+
+body {
+  margin: 0;
+  font-family: SegoeUI;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

@@ -1,0 +1,53 @@
+.LoadingPageMainContainer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(34, 34, 34);
+    position: absolute;
+    z-index: 80;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 8%;
+    transition: 0.5s;
+    color: white;
+}
+
+.LoadingPageMainContainer img{
+    width: 240px;
+    transition: 0.5s;
+}
+
+.barLoadingFull{
+    transition: 0.5s;
+    margin-top: 3%;
+    height: 10px;
+    width: 30%;
+    background-color: #fff;
+    position: relative;
+    border-radius: 100px;
+
+}
+
+.barInsideGenerating{
+    transition: 0.5s;
+    height: 10px;
+    border-radius: 100px;
+    position: absolute;
+    background-color: #fc6b03;
+}
+
+.desaparecer {
+    animation: desaparecer 0.2s;
+}
+
+@keyframes desaparecer {
+    0%{
+        opacity: 100%
+    }
+
+    100%{
+        opacity: 0%;
+    }
+}
+

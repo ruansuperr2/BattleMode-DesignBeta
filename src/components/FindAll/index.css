@@ -1,0 +1,132 @@
+.divContainerFindAll{
+    background-color: #121212;
+}
+
+.containerSpecificUser{
+    padding-bottom: 5%;
+    width: 95%;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 19rem);
+    gap: 1.2rem;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
+
+.userHighlightedFeed{
+    border: 1px solid #fc6b03;
+    border-radius: 5px;
+    width: 18.7rem;
+    height: 9rem;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;  
+    background-size: cover;
+    background-position: 0% 90%;
+    box-shadow: 0px 0px 10px 0px #030303;
+    transition: 0.2s;
+}
+
+.userHighlightedFeed:hover{
+    width: 19rem;
+    cursor: pointer;
+}
+
+.userHighlightedFeed img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #fc6b03;
+    margin: 5px;
+    margin-right: 20px;
+}
+
+.userHighlightedFeed label{
+    display: flex;
+    align-items: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #303030;
+    color: white;
+    cursor: pointer;
+}
+
+.userHighlightedFeed img:hover{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px solid #fc6b03;
+    margin: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.userHighlightedFeed label:hover{
+    display: flex;
+    align-items: center;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #303030;
+    color: white;
+    cursor: pointer;
+}
+
+.organizeList2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.stylizeLabel{
+    height: 5rem;
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 2%;
+}
+
+.stylizeLabel a label{
+    cursor: pointer;
+    
+    
+}
+
+@media screen and (max-width: 1230px) {
+    .stylizeLabel {
+        margin-top: 7rem;
+        margin-bottom: 0;
+    }
+    .containerSpecificUser {
+        padding-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 975px) {
+    .containerSpecificUser {
+        grid-template-columns: repeat(2, 19rem);
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .containerSpecificUser {
+        grid-template-columns: repeat(1, 18.7rem);
+    }
+}
+
+@media screen and (max-width: 310px) {
+    .userHighlightedFeed {
+        width: 15rem;
+    }
+    .containerSpecificUser {
+        grid-template-columns: repeat(1, 15rem);
+    }
+}
