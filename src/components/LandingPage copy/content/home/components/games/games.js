@@ -4,6 +4,9 @@ import "./games.css"
 export default function Games(props) {
 
     const [paginaAtual, setPaginaAtual] = useState(1);
+    const [numeroPaginas, setNumeroPaginas] = useState(
+        0
+    );
 
     // Renderiza os jogos na página atual
     const jogosAtual = props.jogos.slice(
@@ -12,6 +15,9 @@ export default function Games(props) {
     );
 
     useEffect(() => {
+        setNumeroPaginas(
+            Math.ceil(props.jogos.length / 9)
+        )
         if (props.jogos.length > 1) {
             document.querySelector(`#slide-${props.jogos[0].id}`).style.width = "100%";
             document.querySelector(`#slide-${props.jogos[1].id}`).style.width = "0%";
@@ -86,18 +92,33 @@ export default function Games(props) {
                         </div>
                     ))}
             </div>
-                {paginaAtual > 1 && (
-                    <button onClick={() => setPaginaAtual(paginaAtual - 1)}>
-                        Página Anterior
-                    </button>
-                )}
+            <div className='divBtnPgCh'>
+                <button disabled={paginaAtual === 1} className='btnPgDn btnPgCh' onClick={() => setPaginaAtual(paginaAtual - 1)}>
+                    {'<'}
+                </button>
 
-                {paginaAtual < Math.ceil(props.jogos.length / 9) && (
-                    <button onClick={() => setPaginaAtual(paginaAtual + 1)}>
-                        Página Seguinte
-                    </button>
-                )}
+                <div className="paginacao">
+                    {Array(numeroPaginas).fill(null).map((pagina, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setPaginaAtual(index + 1)}
+                            disabled={index === paginaAtual - 1}
+                            style={
+                                pagina === paginaAtual
+                                    ? { backgroundColor: "red", color: "white" }
+                                    : {}
+                            }
+                        >
+                            {index + 1}
+                        </button>
+                    ))}
+                </div>
+                {console.log(jogosAtual, numeroPaginas, Array(numeroPaginas).fill(null))}
+                <button disabled={paginaAtual === Array(numeroPaginas).fill(null).length} className='btnPgUp btnPgCh' onClick={() => setPaginaAtual(paginaAtual + 1)}>
+                    {'>'}
+                </button>
 
+            </div>
         </div>
     )
 }
