@@ -230,7 +230,8 @@ export default function Home() {
                     </div>
                 </div>
                 <div className='navbarRightDiv'>
-                    <img src="https://th.bing.com/th/id/OIP.qVJDpxkd6vvld2mTdwJXYAAAAA?pid=ImgDet&rs=1" id="userIcon" className='userBodyIcon' width={64} height={64}></img>
+                    <img className='userNavBorder' src={require('../../assets/images/borders/rose_border.png')} alt=""></img>
+                    <img src="https://th.bing.com/th/id/OIP.qVJDpxkd6vvld2mTdwJXYAAAAA?pid=ImgDet&rs=1" id="userIcon" className='userBodyIcon' width={50} height={50}></img>
                     <label id="userName" className='userBodyName'></label>
                 </div>
             </nav>

@@ -101,12 +101,19 @@
     border-bottom: #857762 2px solid;
     display: flex;
     align-items: center;
-
+    position: relative;
 }
 
 .userBodyIcon {
     margin-left: 2%;
     border-radius: 64px;
+}
+
+.userNavBorder{
+    position: absolute;
+    width: 86px;
+    left: -3.8%;
+    top: -14%;
 }
 
 .userBodyName {

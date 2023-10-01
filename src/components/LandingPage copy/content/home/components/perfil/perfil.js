@@ -3,6 +3,7 @@ import './perfil.css'
 export default function Perfil(props) {
     return (
         <div className='perfilDivSection'>
+            {console.log()}
             <div className='perfilNavbar'>
                 <label>{props.loggedUser.username}</label>
                 <label>Equipes</label>
@@ -10,17 +11,24 @@ export default function Perfil(props) {
                 <label>Amigos</label>
                 <label>Conquistas</label>
             </div>
-            <div className='divMainBodyPerfil'>
-                <div className='userProfileBanner'>
+            <div className='divMainBodyPerfil' style={{ backgroundImage: `url(${props.loggedUser.imgFundo})` }}>
+                <div className='userProfileBanner' style={{
+                    borderRight: `${props.loggedUser.corP} solid 1px`
+                }} >
                     <div>
-                        <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
+                        <div className='userProfileIcon'>
+                            <img src={require('../../../../assets/images/borders/rose_border.png')} alt=""></img>
+                            <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
+                        </div>
                         <label>
                             {props.loggedUser.username}
                         </label>
                     </div>
-                    <div className='trimProfileBanner'></div>
+                    <div className='trimProfileBanner'>
+                        <label>{props.loggedUser.status}</label>
+                    </div>
                 </div>
             </div>
         </div>
-     )
+    )
 }
