@@ -16,6 +16,7 @@ export default function Home() {
     const [currentPage, setCurrentPage] = useState('inicio')
     const [jogos, setJogos] = useState([])
     const [torneios, setTorneios] = useState([])
+    const [equipes, setEquipes] = useState([])
 
     useEffect(() => {
         const loadDataT = async () => {
@@ -31,6 +32,27 @@ export default function Home() {
         };
 
         loadDataT()
+
+
+        return () => {
+            // Limpar qualquer recurso criado na função de efeito
+        };
+    }, [])
+
+    useEffect(() => {
+        const loadDataJ = async () => {
+            try {
+                const response = await fetch(
+                    'http://localhost:6090/api/time',
+                );
+                const data = response.json();
+                data.then((val) => {
+                    setEquipes(val.data)
+                })
+            } catch (error) { }
+        };
+
+        loadDataJ()
 
 
         return () => {
@@ -230,7 +252,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className='navbarRightDiv'>
-                    <img className='userNavBorder' src={require('../../assets/images/borders/rose_border.png')} alt=""></img>
+                    <img className='userNavBorder' src={require('../../assets/images/borders/roses_border.png')} alt=""></img>
                     <img src="https://th.bing.com/th/id/OIP.qVJDpxkd6vvld2mTdwJXYAAAAA?pid=ImgDet&rs=1" id="userIcon" className='userBodyIcon' width={50} height={50}></img>
                     <label id="userName" className='userBodyName'></label>
                 </div>
@@ -247,7 +269,8 @@ export default function Home() {
                         <FindAll></FindAll>
                     }
                     {currentPage === 'perfil' &&
-                        <Perfil loggedUser={loggedUser}></Perfil>
+                        <Perfil torneio={torneios}  jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
+                        
                     }
                     {currentPage === 'equipes' &&
                         <Times></Times>

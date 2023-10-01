@@ -1,25 +1,29 @@
+
+.divMainBodyPerfil {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: contain;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    box-shadow: inset 400px 0px 200px 100px #151515;
+}
+
 .perfilNavbar {
     display: flex;
     gap: 20px;
     font-size: 16px;
     color: #b4905b;
-    position: fixed;
     margin-top: 1%;
-    margin-left: 23%
+    margin-left: 23%;
+    position: absolute;
+    z-index: 30;
 }
 
 .perfilDivSection {
     width: 100%;
     height: 100%;
     overflow-y: hidden;
-}
-
-.divMainBodyPerfil {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: inset 400px 0px 200px 100px #151515;
 }
 
 .userProfileBanner {
@@ -50,6 +54,13 @@
     margin-top: 10%;
 }
 
+.userProfileBanner p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #808080ff;
+    margin-top: -1%;
+}
+
 .userProfileIcon img{
     width: 79.45%;
     top: 17.8%;
@@ -64,4 +75,191 @@
 
 .trimProfileBanner label{
     color: #80808082;
+}
+
+.perfilNavbarSettings {
+    background-color: black;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    position: absolute;
+    right: -32vw;
+    transition: 0.2s
+}
+
+.perfilNavbarSettings:hover {
+    background-color: #808080ff;
+    cursor: pointer;
+    transition: 0.2s;
+    color: black;
+}
+
+.perfilModal {
+    background: #0000008c;
+    width: 80%;
+    height: 89.5%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 35;
+}
+
+.divModalSubBody{
+    position: relative;
+    width: 95%;
+    height: 95%;
+    margin-top: -1.6%;
+    background-color: red;
+}
+
+.divModalWindow{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.divModalWindow label{
+    color: black;
+    font-weight: bold;
+    padding: 0.3%;
+}
+
+.divModalWindow button {
+    color: white;
+    font-weight: bold;
+    padding: 0.3%;
+    background-color: red;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.divTopTeam {
+    width: 21%;
+    background-color: #151515;
+    position: relative;
+    border-radius: 30px 30px 0px 0px;
+    position: absolute;
+    bottom: 0%;
+    left: 30%;
+}
+
+.divTopConquista {
+    width: 21%;
+    background-color: #151515;
+    border-radius: 30px 30px 0px 0px;
+    position: absolute;
+    bottom: 0%;
+    left: 55%;
+}
+
+.divQuantiaAmigos {
+    width: 21%;
+    border-radius: 30px 30px 0px 0px;
+    background-color: #151515;
+    position: absolute;
+    bottom: 0%;
+    left: 75%;
+}
+
+.divTopSubContainerTeam{
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hiddenInfoTop {
+    height: 12.4vh;
+    width: 100%;
+    border: 1px solid #b4905b;
+    border-bottom: none;
+    border-radius: 30px 30px 0px 0px;
+}
+
+
+.openInfoVideo {
+    width: 100%;
+    height: 145px;
+    border: 1px solid #b4905b;
+    border-bottom: none;
+    z-index: 11;
+}
+
+.openInfoVideo video {
+    width: 100%;
+
+    z-index: 10
+}
+
+.hiddenInfoTop video{
+    width: 8rem;
+    border-radius: 30px 0px 0px 0px;
+    z-index: 10;
+}
+
+.hiddenInfoTop h3 {
+    font-size: 16px;
+    position: absolute;
+    left: 39%;
+    top: -2%;
+    color: white;
+    z-index: 10;
+}
+
+
+.hiddenInfoTop label {
+    font-size: 13px;
+    position: absolute;
+    left: 39%;
+    top: 14%;
+    color: white;
+    z-index: 10;
+}
+
+.divTopSubContainerConq {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hiddenInfoConq {
+    height: 12.4vh;
+    width: 100%;
+    border: 1px solid #b4905b;
+    border-bottom: none;
+    border-radius: 30px 30px 0px 0px;
+}
+
+.hiddenInfoConq video {
+    width: 8rem;
+    border-radius: 30px 0px 0px 0px;
+    z-index: 10;
+}
+
+.hiddenInfoConq h3 {
+    font-size: 16px;
+    position: absolute;
+    left: 39%;
+    top: -2%;
+    color: white;
+    z-index: 10;
+}
+
+
+.hiddenInfoConq label {
+    font-size: 13px;
+    position: absolute;
+    left: 39%;
+    top: 17%;
+    color: white;
+    z-index: 10;
 }
