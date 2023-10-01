@@ -117,7 +117,34 @@ export default function Games(props) {
                 <button disabled={paginaAtual === Array(numeroPaginas).fill(null).length} className='btnPgUp btnPgCh' onClick={() => setPaginaAtual(paginaAtual + 1)}>
                     {'>'}
                 </button>
+            </div>
+            <div className="divMainCTW">
+                <h2 className='h2Nossa'>AMPLAS POSSIBILIDADES</h2>
+                <div>
+                    <div>
+                        <h3>Crie o perfil do seu jeito</h3>
+                        <label>Personalize o seu perfil de acordo com as suas preferências</label>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3>Busque ou forme a sua equipe ideal</h3>
+                        <label>Junte amigos e crie a equipe perfeita!</label>
+                    </div>
+                </div>
+                <div>
 
+                    <div>
+                        <h3>“Participe de uma competição memorável</h3>
+                        <label>Quem não gosta de se divertir e ser recompensado?</label>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3>Estabeleça novas amizades</h3>
+                        <label>A amizade é um valor essencial, conheça novos indivíduos!</label>
+                    </div>
+                </div>
             </div>
         </div>
     )
