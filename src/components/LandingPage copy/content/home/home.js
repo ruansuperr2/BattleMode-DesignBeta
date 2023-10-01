@@ -8,7 +8,7 @@ import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 
 import FindAll from '../../../FindAll';
 import Times from '../../../Times';
-import Usuario from '../../../Usuario';
+import Perfil from './components/perfil/perfil';
 import Participar from '../../../Participar'
 
 export default function Home() {
@@ -246,7 +246,7 @@ export default function Home() {
                         <FindAll></FindAll>
                     }
                     {currentPage === 'perfil' &&
-                        <Usuario></Usuario>
+                        <Perfil loggedUser={loggedUser}></Perfil>
                     }
                     {currentPage === 'equipes' &&
                         <Times></Times>

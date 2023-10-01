@@ -1,0 +1,63 @@
+.perfilNavbar {
+    display: flex;
+    gap: 20px;
+    font-size: 16px;
+    color: #b4905b;
+    position: fixed;
+    margin-top: 1%;
+    margin-left: 23%
+}
+
+.perfilDivSection {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.divMainBodyPerfil {
+    height: 100%;
+    --s: 50px;
+    --c: #111111;
+    --_s: calc(2*var(--s)) calc(2*var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%,#00000045 68% 70%,#0000 72%;
+    background: radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+    background-attachment: fixed;
+}
+
+.userProfileBanner {
+    background-image: url(https://raw.communitydragon.org/13.18/plugins/rcp-be-lol-game-data/global/default/assets/regalia/banners/backgrounds/solidbanner_still.png);
+    background-position: 40% 100%;
+    background-size: 100%;
+    width: 25%;
+    height: 90%;
+    margin-left: 2%;
+    position: relative;
+}
+
+.userProfileBanner div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30%;
+}
+
+.userProfileBanner video{
+    width: 50%;
+    border-radius: 100px;
+}
+
+.userProfileBanner label {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.trimProfileBanner {
+    background-image: url(https://raw.communitydragon.org/13.18/plugins/rcp-be-lol-game-data/global/default/assets/regalia/banners/trims/defaulttrim.png);
+    background-size: 100%;
+    position: absolute;
+    height: 10%;
+    top: 75%
+}
