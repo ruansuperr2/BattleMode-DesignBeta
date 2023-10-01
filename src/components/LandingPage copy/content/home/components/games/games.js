@@ -135,7 +135,7 @@ export default function Games(props) {
                 <div>
 
                     <div>
-                        <h3>“Participe de uma competição memorável</h3>
+                        <h3>Participe de uma competição memorável</h3>
                         <label>Quem não gosta de se divertir e ser recompensado?</label>
                     </div>
                 </div>
