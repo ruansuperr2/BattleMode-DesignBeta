@@ -1,7 +1,18 @@
 
 import './perfil.css'
 import SettingsIcon from '@mui/icons-material/Settings';
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import React, { useState, useEffect, useRef } from 'react';
+
+const molduras = [
+    'helmet',
+    'helmet2',
+    'magic',
+    'rose',
+    'roses',
+    'simple',
+    'sword'
+]
 
 export default function Perfil(props) {
     const [modal, setModal] = useState(false);
@@ -10,12 +21,13 @@ export default function Perfil(props) {
     const [torneiosDoUsuario, setTorneiosDoUsuario] = useState([]);
     const [showTor, setShowTor] = useState('none')
     const [page, setPage] = useState('perfil')
-
+    const [currentMoldura ,setCurrentMoldura] = useState('')
 
     const closeModal = () => {
         setModal(false);
     };
 
+    const [modalMolduras, setModalMolduras] = useState(false);
 
 
 
@@ -36,7 +48,7 @@ export default function Perfil(props) {
         // Atualizar o estado com os torneios do usuário
         setTorneiosDoUsuario(torneiosDoUsuario);
         setTimesDoUsuario(meusTimes);
-
+        setCurrentMoldura(props.loggedUser.moldura)
     }, [props.times, props.loggedUser, props.torneio]);
 
 
@@ -54,8 +66,12 @@ export default function Perfil(props) {
                                 borderRight: `${props.loggedUser.corP} solid 1px`
                             }} >
                                 <div>
-                                    <div className='userProfileIcon'>
-                                        <img src={require('../../../../assets/images/borders/roses_border.png')} alt=""></img>
+                                    <div className='userProfileIcon userProfileBModal' onClick={() => setModalMolduras(true)}>
+                                        <div className="userProfileIModal">
+
+                                            <InsertPhotoIcon className="userProfileIPI"></InsertPhotoIcon>
+                                        </div>
+                                        <img src={require(`../../../../assets/images/borders/${props.loggedUser.moldura}_border.png`)} alt=""></img>
                                         <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
                                     </div>
                                     <label>
@@ -73,6 +89,48 @@ export default function Perfil(props) {
                     </div>
                 </div>
             )}
+
+            {modalMolduras && (
+                <div className='perfilModalMolduras'>
+                    <div className="divModalSubBody">
+                        <div className="divModalWindow">
+                            <label>Editar Moldura</label>
+                        </div>
+                        <div className='divMainBodyModify' style={{ backgroundColor: '#111111'}}>
+                            <div className='userProfileBanner' style={{
+                                borderRight: `${props.loggedUser.corP} solid 1px`
+                            }} >
+                                <div>
+                                    <div className='userProfileIcon'>
+                                        <img src={require(`../../../../assets/images/borders/${props.loggedUser.moldura}_border.png`)} alt=""></img>
+                                        <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
+                                    </div>
+                                    <label>
+                                        {props.loggedUser.username}
+                                    </label>
+                                    <p>
+                                        Velocidade Máxima
+                                    </p>
+                                </div>
+                                <div className='trimProfileBanner'>
+                                    <button onClick={() => setModalMolduras(false)}>Salvar Alterações</button>
+                                </div>
+                            </div>
+                            <div className="divMainMolduras">
+                                {molduras.map((moldura) => {
+                                    return (
+                                        <div className="divMoldurasSelect" id={moldura}>
+                                            <img src={require(`../../../../assets/images/borders/${moldura}_border.png`)} alt={moldura}></img>
+
+                                        </div>
+                                    )
+                                }) }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className='perfilNavbar'>
                 <label>Perfil</label>
                 <label>Equipes</label>
@@ -93,7 +151,7 @@ export default function Perfil(props) {
                 }} >
                     <div>
                         <div className='userProfileIcon'>
-                            <img src={require('../../../../assets/images/borders/magic_border.png')} alt=""></img>
+                            <img src={require(`../../../../assets/images/borders/${props.loggedUser.moldura}_border.png`)} alt=""></img>
                             <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
                         </div>
                         <label>
