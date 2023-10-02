@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+Ôªøimport { useEffect, useState } from 'react';
 import "./games.css"
 
 export default function Games(props) {
@@ -8,7 +8,7 @@ export default function Games(props) {
         0
     );
 
-    // Renderiza os jogos na p·gina atual
+    // Renderiza os jogos na p√°gina atual
     const jogosAtual = props.jogos.slice(
         (paginaAtual - 1) * 9,
         paginaAtual * 9
@@ -123,7 +123,7 @@ export default function Games(props) {
                 <div>
                     <div>
                         <h3>Crie o perfil do seu jeito</h3>
-                        <label>Personalize o seu perfil de acordo com as suas preferÍncias</label>
+                        <label>Personalize o seu perfil de acordo com as suas prefer√™ncias</label>
                     </div>
                 </div>
                 <div>
@@ -135,14 +135,14 @@ export default function Games(props) {
                 <div>
 
                     <div>
-                        <h3>Participe de uma competiÁ„o memor·vel</h3>
-                        <label>Quem n„o gosta de se divertir e ser recompensado?</label>
+                        <h3>Participe de uma competi√ß√£o memor√°vel</h3>
+                        <label>Quem n√£o gosta de se divertir e ser recompensado?</label>
                     </div>
                 </div>
                 <div>
                     <div>
-                        <h3>EstabeleÁa novas amizades</h3>
-                        <label>A amizade È um valor essencial, conheÁa novos indivÌduos!</label>
+                        <h3>Estabele√ßa novas amizades</h3>
+                        <label>A amizade √© um valor essencial, conhe√ßa novos indiv√≠duos!</label>
                     </div>
                 </div>
             </div>

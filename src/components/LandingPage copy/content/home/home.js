@@ -117,8 +117,6 @@ export default function Home() {
         const equipes = document.querySelector("#equipes");
         const torneios = document.querySelector("#torneios");
         setTimeout(() => {
-            iconElement.setAttribute('src', loggedUser.icon)
-            userNameElement.innerHTML = loggedUser.username;
 
             if ('inicio' === currentPage) {
                 inicio.style.backgroundColor = '#303030'
@@ -188,6 +186,46 @@ export default function Home() {
         }, 200);
     }, [loggedUser, currentPage])
     
+    const salvarPerfilMoldura = async(currentMoldura, tituloNew, loggedUsername, imageIcon) =>{
+        try {
+            const requestOptions = {
+                method: 'PUT',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({
+                    username: loggedUsername,
+                    icon: imageIcon,
+                    email: loggedUser.email,
+                    password: loggedUser.password,
+                    twitter: loggedUser.twitter,
+                    instagram: loggedUser.instagram,
+                    discord: loggedUser.discord,
+                    twitch: loggedUser.twitch,
+                    titulo: tituloNew,
+                    status: loggedUser.status,
+                    corP: loggedUser.corP,
+                    corS: loggedUser.corS,
+                    favoritados: loggedUser.favoritados,
+                    conquistas: loggedUser.conquistas,
+                    imgFundo: loggedUser.imgFundo,
+                    imgFundoDois: loggedUser.imgFundoDois,
+                    moldura: currentMoldura,
+                    dataCriacao: loggedUser.dataCriacao,
+
+                })
+            }
+            await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
+            const [response] = await Promise.all([
+                fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+            ]);
+            const [user] = await Promise.all([
+                response.json(),
+            ])
+            setLoggedUser(user.data)
+        }catch(e){
+            console.log(e)
+        }
+        
+    }
 
     return (
         <div className='mainContainerHome'>
@@ -255,8 +293,12 @@ export default function Home() {
                     {loggedUser.moldura !== undefined &&
                         <img className='userNavBorder' src={require(`../../assets/images/borders/${loggedUser.moldura}_border.png`)} alt=""></img>
                     }
-                    <img src="https://th.bing.com/th/id/OIP.qVJDpxkd6vvld2mTdwJXYAAAAA?pid=ImgDet&rs=1" id="userIcon" className='userBodyIcon' width={50} height={50}></img>
-                    <label id="userName" className='userBodyName'></label>
+                    <img src={loggedUser && loggedUser.icon} id="userIcon" className='userBodyIcon' width={50} height={50}></img>
+                    <div className='userNameOnNavbar'>
+
+                        <label id="userName" className='userBodyName'>{loggedUser && loggedUser.username}</label>
+                        <label id="userName" className='userBodyTitle'>{loggedUser && loggedUser.titulo}</label>
+                    </div>
                 </div>
             </nav>
             <div className='mainContentBody'>
@@ -271,7 +313,7 @@ export default function Home() {
                         <FindAll></FindAll>
                     }
                     {currentPage === 'perfil' &&
-                        <Perfil torneio={torneios}  jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
+                        <Perfil salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios}  jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
                         
                     }
                     {currentPage === 'equipes' &&

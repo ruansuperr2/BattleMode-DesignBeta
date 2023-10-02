@@ -1,19 +1,146 @@
-
+﻿
 import './perfil.css'
 import SettingsIcon from '@mui/icons-material/Settings';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import React, { useState, useEffect, useRef } from 'react';
 
 const molduras = [
+    'theShadowOfLight',
+    'shadows',
+    'excalibur',
+    'deathscalibur',
+    'deathBringer',
+    'style',
+    'royal',
+    'windy',
     'helmet',
     'helmet2',
     'magic',
     'rose',
     'roses',
     'simple',
-    'sword'
+    'sword',
+    'night'
 ]
 
+const titulos = [
+    "Novato",
+    "Campeão",
+    "Herói",
+    "Defensor",
+    "Mestre",
+    "Vencedor",
+    "Imortal",
+    "Iluminado",
+    "Ascendente",
+    "Celestial",
+    "Deuses",
+    "Campeão mundial",
+    "Pole position",
+    "Volta mais rápida",
+    "Vencedor de corrida",
+    "Piloto do ano",
+    "Rei",
+    "Rainha",
+    "Príncipe",
+    "Princesa",
+    "Mago",
+    "Bruxa",
+    "Guerreiro",
+    "Arqueiro",
+    "Ladra",
+    "Jogador de RPG",
+    "Heroi",
+    "Vilão",
+    "Mistério",
+    "Lenda",
+    "Campeão do Major",
+    "Terrorista Perfeito",
+    "Contra-Terrorista Invencível",
+    "Mestre da Espingarda",
+    "Herói de Runeterra",
+    "Defensor do Nexus",
+    "Mestre das Runas",
+    "Vencedor do Destino",
+    "Campeão do Grande Prêmio",
+    "Herói do Covenant",
+    "Guardião da Terra",
+    "Mestre do Halo",
+    "Profeta do Manto",
+    "O Caçador de Dragões",
+    "A Princesa Guerreira",
+    "O Guardião da Floresta",
+    "O Mago do Tempo",
+    "A Bruxa dos Ventos",
+    "O Alienígena do Espaço",
+    "O Robô Rebelde",
+    "O Animal Mágico",
+    "O Objeto Precioso",
+    "O Herói Solitário",
+    "A Princesa Desaparecida",
+    "O Vilão Cruel",
+    "O Mago Maligno",
+    "A Bruxa Traiçoeira",
+    "O Alienígena Agressivo",
+    "O Robô Destrutivo",
+    "O Animal Feroz",
+    "O Objeto Amaldiçoado",
+    "O Herói Resistente",
+    "A Princesa Destemida",
+    "O Vilão Poderoso",
+    "O Mago Imortal",
+    "A Bruxa Sábia",
+    "O Alienígena Inteligente",
+    "O Robô Esperto",
+    "O Animal Criativo",
+    "O Objeto Útil",
+    "O Herói Invencível",
+    "A Princesa Imortal",
+    "O Vilão Irresistível",
+    "O Mago Supremo",
+    "A Bruxa Divina",
+    "O Alienígena Único",
+    "O Robô Perfeito",
+    "O Animal Maravilhoso",
+    "O Objeto Preciosíssimo",
+    "O Herói Inesquecível",
+    "A Princesa Eterna",
+    "O Vilão Inevitável",
+    "O Mago Onipotente",
+    "A Bruxa Onipresente",
+    "O Alienígena Inimaginável",
+    "O Robô Insubstituível",
+    "O Animal Incomparável",
+    "O Objeto Inestimável",
+    "O Herói Legendário",
+    "A Princesa Inofensiva",
+    "O Vilão Inofensivo",
+    "O Mago Inofensivo",
+    "A Bruxa Inoffensiva",
+    "O Alienígena Inofensivo",
+    "O Robô Inofensivo",
+    "O Animal Inofensivo",
+    "O Objeto Inofensivo",
+    "O Herói Invisível",
+    "A Princesa Invisível",
+    "O Vilão Invisível",
+    "O Mago Invisível",
+    "A Bruxa Invisível",
+    "O Alienígena Invisível",
+    "O Robô Invisível",
+    "O Animal Invisível",
+    "O Objeto Invisível",
+    "O Herói Imortal",
+    "A Princesa Imortal",
+    "O Vilão Imortal",
+    "O Mago Imortal",
+    "A Bruxa Imortal",
+    "O Alienígena Imortal",
+    "O Robô Imortal",
+    "O Animal Imortal",
+    "O Objeto Imortal",
+    "O Vilão Redimido"
+]
 export default function Perfil(props) {
     const [modal, setModal] = useState(false);
     const [showTeam, setShowTeam] = useState('none')
@@ -21,7 +148,15 @@ export default function Perfil(props) {
     const [torneiosDoUsuario, setTorneiosDoUsuario] = useState([]);
     const [showTor, setShowTor] = useState('none')
     const [page, setPage] = useState('perfil')
-    const [currentMoldura ,setCurrentMoldura] = useState('')
+
+    const [currentMoldura, setCurrentMoldura] = useState('')
+
+    const [titulosObj, setTitulosObj] = useState([])
+    const [tituloNew, setTituloNew] = useState('')
+
+    const [loggedUsername, setLoggedUsername] = useState(props.loggedUser.username)
+
+    const [imageIcon, setImageIcon] = useState(props.loggedUser.icon);
 
     const closeModal = () => {
         setModal(false);
@@ -32,12 +167,16 @@ export default function Perfil(props) {
 
 
     useEffect(() => {
-        // Encontrar os times que o usu�rio participa
+        setTitulosObj(titulos.map((titulo) => ({
+            value: titulo,
+            label: titulo,
+        })))
+        // Encontrar os times que o usuário participa
         const meusTimes = props.times.filter((time) => {
             return time && JSON.parse(time.equipeAtiva).includes(props.loggedUser.id);
         });
 
-        // Filtrar os torneios pelos times do usu�rio
+        // Filtrar os torneios pelos times do usuário
         const torneiosDoUsuario = props.torneio.filter((torneio) => {
             return torneio && meusTimes.some((time) => {
                 return JSON.parse(torneio.participantes).includes(time.id);
@@ -45,12 +184,18 @@ export default function Perfil(props) {
         });
 
 
-        // Atualizar o estado com os torneios do usu�rio
+        // Atualizar o estado com os torneios do usuário
         setTorneiosDoUsuario(torneiosDoUsuario);
         setTimesDoUsuario(meusTimes);
         setCurrentMoldura(props.loggedUser.moldura)
+        setTituloNew(props.loggedUser.titulo)
     }, [props.times, props.loggedUser, props.torneio]);
 
+    const handleImageChange = (e) => {
+        if (e.target.files && e.target.files[0]) {
+            setImageIcon(e.target.files[0]);
+        }
+    };
 
     return (
         <div className='perfilDivSection'>
@@ -78,7 +223,7 @@ export default function Perfil(props) {
                                         {props.loggedUser.username}
                                     </label>
                                     <p>
-                                        Velocidade M�xima
+                                        {props.loggedUser.titulo}
                                     </p>
                                 </div>
                                 <div className='trimProfileBanner'>
@@ -94,30 +239,61 @@ export default function Perfil(props) {
                 <div className='perfilModalMolduras'>
                     <div className="divModalSubBody">
                         <div className="divModalWindow">
-                            <label>Editar Moldura</label>
+                            <label>Editar Banner</label>
                         </div>
-                        <div className='divMainBodyModify' style={{ backgroundColor: '#111111'}}>
+                        <div className='divMainBodyModify' style={{ backgroundColor: '#111111' }}>
                             <div className='userProfileBanner' style={{
                                 borderRight: `${props.loggedUser.corP} solid 1px`
                             }} >
                                 <div>
                                     <div className='userProfileIcon'>
+
+
                                         <div className="userProfileIModal" onClick={() => { }}>
+                                            <input className='userProfileInputEnviar' type="file" onChange={handleImageChange} >
+                                            </input>
 
                                             <InsertPhotoIcon className="userProfileIPI"></InsertPhotoIcon>
                                         </div>
-                                        <img src={require(`../../../../assets/images/borders/${currentMoldura}_border.png`)} alt=""></img>
-                                        <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
+                                        <img className='molduraChangeIcon' src={require(`../../../../assets/images/borders/${currentMoldura}_border.png`)} alt=""></img>
+                                        {!imageIcon !== props.loggedUser.icon &&
+                                            <video className='divMoldurasSelectIcon' poster={imageIcon} src={imageIcon}></video>
+
+                                        }
+                                        
+                                        {imageIcon !== props.loggedUser.icon &&
+                                            <video className='divMoldurasSelectIcon' poster={URL.createObjectURL(imageIcon)} src={URL.createObjectURL(imageIcon)}></video>
+
+                                        }
                                     </div>
-                                    <label>
-                                        {props.loggedUser.username}
-                                    </label>
-                                    <p>
-                                        Velocidade M�xima
-                                    </p>
+                                    <input value={loggedUsername} onChange={(e) => setLoggedUsername(e.target.value)} placeholder={props.loggedUser.username}>
+
+                                    </input>
+                                    <h3 className='ChangeSelect'>
+                                        <select value={tituloNew} onChange={(e) => { setTituloNew(e.target.value); console.log(tituloNew); console.log(e) }} className="selectPerfil" placeholder={props.loggedUser.titulo} >
+                                            {titulos && titulos.map((titulo, index) => {
+                                                return (
+                                                    <option key={index} value={titulo}>{titulo}</option>
+                                                )
+                                            })
+
+                                            }
+                                        </select>
+                                    </h3>
                                 </div>
                                 <div className='trimProfileEditBanner'>
-                                    <button onClick={() => setModalMolduras(false)}>Salvar Altera��es</button>
+                                    {loggedUsername.match(/^[a-zA-Z0-9]{4,16}$/) &&
+                                        <div>
+                                            <button className='buttonConfirmChanges' onClick={() => { props.salvarPerfilMoldura(currentMoldura, tituloNew, loggedUsername, imageIcon); setModalMolduras(false) }}>Salvar Alterações</button>
+                                        </div>
+                                    }
+                                    {!loggedUsername.match(/^[a-zA-Z0-9]{4,16}$/) &&
+                                        <div>
+                                            <label className='trimProfileEditInvalid'>Nome indisponível/inválido</label>
+                                        </div>
+                                    }
+                                    <button className='buttonDenyChanges' onClick={() => { setModalMolduras(false) }}>Descartar Alterações</button>
+
                                 </div>
                             </div>
                             <div className="divMainMolduras">
@@ -125,15 +301,17 @@ export default function Perfil(props) {
                                     return (
                                         <div className="divMoldurasSelect" id={moldura} onClick={() => setCurrentMoldura(moldura)}>
                                             <img src={require(`../../../../assets/images/borders/${moldura}_border.png`)} alt={moldura}></img>
-                                            <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
+                                            {/* <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video> */}
+                                            <label>{moldura}</label>
                                         </div>
                                     )
-                                }) }
+                                })}
                             </div>
                         </div>
                     </div>
                 </div>
-            )}
+            )
+            }
 
             <div className='perfilNavbar'>
                 <label>Perfil</label>
@@ -162,7 +340,7 @@ export default function Perfil(props) {
                             {props.loggedUser.username}
                         </label>
                         <p>
-                            Velocidade M�xima
+                            {props.loggedUser.titulo}
                         </p>
                     </div>
                     <div className='trimProfileBanner'>
@@ -191,7 +369,7 @@ export default function Perfil(props) {
                             <div className='hiddenInfoConq' style={{ display: showTor }}>
                                 <video src={torneio.logo} poster={torneio.logo}></video>
                                 <h3>{torneio.nome}</h3>
-                                <label>1� Lugar</label>
+                                <label>1º Lugar</label>
                             </div>
                             <div className="openInfoVideo" id="openInfoVideo" onMouseEnter={() => { setShowTor('flex') }} onMouseLeave={() => { setShowTor('none') }}>
                                 <video src={torneio.imgFundo} poster={torneio.imgFundo}></video>
@@ -203,6 +381,6 @@ export default function Perfil(props) {
                 <div className="divQuantiaAmigos">
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

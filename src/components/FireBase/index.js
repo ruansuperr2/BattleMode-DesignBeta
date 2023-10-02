@@ -1,18 +1,21 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
+import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDIdEaKt-MeRqOwbyoKixpnOQiH3WjBIO8",
-    authDomain: "react-firebase-storage-ae047.firebaseapp.com",
-    projectId: "react-firebase-storage-ae047",
-    storageBucket: "gs://battlemode-6a870.appspot.com",
-    messagingSenderId: "1071019670975",
-    appId: "1:1071019670975:web:74cc537cd214fb923a750a"
-};
-// Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const storage = getStorage(app);
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyADUqhtKtmokChip1Tc-68JLas19t3_uM8",
+  authDomain: "battlemode-43c9a.firebaseapp.com",
+  projectId: "battlemode-43c9a",
+  storageBucket: "battlemode-43c9a.appspot.com",
+  messagingSenderId: "236012261649",
+  appId: "1:236012261649:web:c0549d6f92265f0628fcb0",
+  measurementId: "G-FDR5YK4M0S"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
