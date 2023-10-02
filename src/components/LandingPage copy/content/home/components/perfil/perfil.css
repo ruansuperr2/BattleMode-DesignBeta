@@ -318,11 +318,18 @@
     overflow: hidden;
 }
 
+.divMoldurasSelect {
+    cursor:pointer;
+}
+
 .divMoldurasSelect img {
     width: 120px;
+    position: relative;
+    z-index: 31;
 }
 
 .divMainMolduras {
+    margin-top: 2%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -331,4 +338,23 @@
     position: absolute;
     left: 25%;
     top: 0%;
+}
+
+.divMoldurasSelect video {
+    width: 8%;
+    position: absolute;
+    margin-top: 3.5%;
+    margin-left: -10.8%;
+    z-index: 30;
+    border-radius: 150px;
+}
+
+.trimProfileEditBanner button{
+    cursor: pointer;
+    padding: 3%;
+    font-size: 16px;
+    background-color: #155521;
+    border: solid transparent;
+    border-radius: 5px;
+    color: white;
 }

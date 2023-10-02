@@ -102,7 +102,11 @@ export default function Perfil(props) {
                             }} >
                                 <div>
                                     <div className='userProfileIcon'>
-                                        <img src={require(`../../../../assets/images/borders/${props.loggedUser.moldura}_border.png`)} alt=""></img>
+                                        <div className="userProfileIModal" onClick={() => { }}>
+
+                                            <InsertPhotoIcon className="userProfileIPI"></InsertPhotoIcon>
+                                        </div>
+                                        <img src={require(`../../../../assets/images/borders/${currentMoldura}_border.png`)} alt=""></img>
                                         <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
                                     </div>
                                     <label>
@@ -112,16 +116,16 @@ export default function Perfil(props) {
                                         Velocidade Máxima
                                     </p>
                                 </div>
-                                <div className='trimProfileBanner'>
+                                <div className='trimProfileEditBanner'>
                                     <button onClick={() => setModalMolduras(false)}>Salvar Alterações</button>
                                 </div>
                             </div>
                             <div className="divMainMolduras">
                                 {molduras.map((moldura) => {
                                     return (
-                                        <div className="divMoldurasSelect" id={moldura}>
+                                        <div className="divMoldurasSelect" id={moldura} onClick={() => setCurrentMoldura(moldura)}>
                                             <img src={require(`../../../../assets/images/borders/${moldura}_border.png`)} alt={moldura}></img>
-
+                                            <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
                                         </div>
                                     )
                                 }) }
