@@ -107,8 +107,8 @@ export default function Home() {
                     const [user] = await Promise.all([
                         response.json(),
                     ])
+                    setLoggedUser(user.data)
                 }
-                setLoggedUser(user.data)
             } catch (e) {
                 console.error(e)
             }
