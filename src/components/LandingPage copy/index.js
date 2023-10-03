@@ -3,6 +3,7 @@ import './landingpage.css';
 import data from '../../version.json'
 import { useNavigate } from "react-router-dom";
 
+import userTest from './assets/json/users.json'
 function hideNavbar(funcNav) {
   funcNav(false);
 }
@@ -19,7 +20,7 @@ function LandingPageDev(props) {
 
   const [checkStateMusic, setCheckStateMusic] = useState(true)
   const [checkStateAnim, setCheckStateAnim] = useState(false)
-  const [connection, setConnection] = useState(false)
+  const [connection, setConnection] = useState(null)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -41,7 +42,7 @@ function LandingPageDev(props) {
   const [logging, setLogging] = useState(false)
   const [connectionMessage, setConnectionMessage] = useState("")
   const [CADMessage, setCADMessage] = useState("")
-  const [dbConnection, setdbConnection] = useState(false)
+  const [dbConnection, setdbConnection] = useState(null)
 
 
 
@@ -99,30 +100,7 @@ function LandingPageDev(props) {
     }
   }
 
-  useEffect(() => {
-      async function fetchData() {
-          if (JSON.parse(localStorage.getItem('dasiBoard')) != null) {
-              navigate("/home")
-          } else {
 
-                await fetch("http://localhost:6090/api/user")
-                    .then((response) => response.json())
-                    .then((data) => setUsers(data.data))
-          }
-      }
-          
-
-        
-           
-    console.log(users)
-    if (users.length < 1) {
-
-      fetchData()
-      console.log(users)
-    }
-  }, [users], () => {
-    // Limpa qualquer estado ou dependências que o componente esteja usando
-  })
 
 
   useEffect(() => {
@@ -135,35 +113,62 @@ function LandingPageDev(props) {
       }
     }
 
-    const detectServerConnection = async () => {
-      if (dbConnection === false) {
+  })
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
         const response = await fetch('http://localhost:6090/api')
         const data = response.json()
         data.then(val => {
           console.log(val.success, val)
-          if (val.success == "true") {
-            setConnection(true)
-            setdbConnection(true)
-          } else {
-            setConnection(false)
-            setdbConnection(false)
+          setConnection(true)
+          setdbConnection(true)
+          if (JSON.parse(localStorage.getItem('dasiBoard')) != null && val.success === 'true') {
+            navigate("/home")
           }
         })
-      } else {
-        const response = await fetch('http://localhost:6090/api')
-        const data = response.json()
-        data.then(val => {
-          if (data.success == "true") {
-            setConnection(false)
-            dbConnection(false)
-          } else {
-            setConnection(true)
-            setdbConnection(true)
-          }
-        })
+
+      } catch (e) {
+        setConnection(false)
+        setdbConnection(false)
       }
     }
-    detectServerConnection()
+
+
+
+
+    const detectServerConnection = async () => {
+      try {
+        const response = await fetch('http://localhost:6090/api')
+        const data = response.json()
+        console.log(data)
+        if(data !== null){
+
+          data.then(val => {
+            console.log(val.success, val)
+            setConnection(true)
+            setdbConnection(true)
+          })
+        }else{
+          setConnection(false)
+          setdbConnection(false)
+        }
+
+      } catch (e) {
+        setConnection(false)
+        setdbConnection(false)
+      }
+      console.log(connection, dbConnection)
+    }
+    console.log(users)
+    if (dbConnection === null) {
+
+      detectServerConnection()
+      fetchData()
+      console.log(users)
+    }
   })
 
 
@@ -218,7 +223,7 @@ function LandingPageDev(props) {
         setLogging(false)
 
       }
-    }else{
+    } else {
       setCADMessage("Preencha todos os campos")
       setTimeout(() => {
         setLogging(false)
@@ -242,57 +247,69 @@ function LandingPageDev(props) {
     document.querySelector('.inputBlock3').setAttribute('disabled', true)
     document.querySelector('#buttonSignIn').setAttribute('disabled', true)
 
-    // fetch aqui
-    if (connection === true) {
-      setConnectionMessage("Procurando por usuário")
-      try {
-        setTimeout(() => {
-
-          const userExists = users.find(account => account.username === username)
-          if (userExists) {
-            // Verificar se a senha está correta
-            if (userExists.password === password) {
-              setLoggedUser(userExists)
-              localStorage.setItem('dasiBoard', JSON.stringify(userExists.id))
-              setConnectionMessage("Bem-vindo de volta " + userExists.username)
-              setTimeout(() => {
-                navigate("/home");
-              }, 600)
-            } else {
-
-              setConnectionMessage("Usuário ou senha incorreto")
-              setLogging(false)
-
-            }
-
-          } else {
-            setConnectionMessage("Usuário ou senha incorreto")
-            setTimeout(() => {
-              document.querySelector('.inputBlock1').removeAttribute('disabled')
-              document.querySelector('.inputBlock2').removeAttribute('disabled')
-              document.querySelector('.inputBlock3').removeAttribute('disabled')
-              document.querySelector('#buttonSignIn').removeAttribute('disabled')
-
-              setLogging(false)
-            }, 1600)
-          }
-        }, 600)
-
-      } catch (error) {
-        console.log(error)
-      }
+    if (window.location.href === "https://battlemode.netlify.app/" || window.location.href === "https://battlemode.netlify.app") {
+      setConnectionMessage("DEV MODE: FINDING OFFLINE USER")
+      setTimeout(() => {
+        
+        const userExists = userTest.find(account => account.username === username)
+        setLoggedUser(userExists)
+        localStorage.setItem('dasiBoard', JSON.stringify(userExists.id))
+        setConnectionMessage("Bem-vindo de volta " + userExists.username)
+      }, 2700);
     } else {
 
-      setConnectionMessage("Unable to reach servers")
-      setTimeout(() => {
-        document.querySelector('.inputBlock1').removeAttribute('disabled')
-        document.querySelector('.inputBlock2').removeAttribute('disabled')
-        document.querySelector('.inputBlock3').removeAttribute('disabled')
-        document.querySelector('#buttonSignIn').removeAttribute('disabled')
-        document.querySelector('#buttonSignUp').removeAttribute('disabled')
-
-        setLogging(false)
-      }, 1600)
+      // fetch aqui
+      if (connection === true) {
+        setConnectionMessage("Procurando por usuário")
+        try {
+          setTimeout(() => {
+  
+            const userExists = users.find(account => account.username === username)
+            if (userExists) {
+              // Verificar se a senha está correta
+              if (userExists.password === password) {
+                setLoggedUser(userExists)
+                localStorage.setItem('dasiBoard', JSON.stringify(userExists.id))
+                setConnectionMessage("Bem-vindo de volta " + userExists.username)
+                setTimeout(() => {
+                  navigate("/home");
+                }, 600)
+              } else {
+  
+                setConnectionMessage("Usuário ou senha incorreto")
+                setLogging(false)
+  
+              }
+  
+            } else {
+              setConnectionMessage("Usuário ou senha incorreto")
+              setTimeout(() => {
+                document.querySelector('.inputBlock1').removeAttribute('disabled')
+                document.querySelector('.inputBlock2').removeAttribute('disabled')
+                document.querySelector('.inputBlock3').removeAttribute('disabled')
+                document.querySelector('#buttonSignIn').removeAttribute('disabled')
+  
+                setLogging(false)
+              }, 1600)
+            }
+          }, 600)
+  
+        } catch (error) {
+          console.log(error)
+        }
+      } else {
+  
+        setConnectionMessage("Unable to reach servers")
+        setTimeout(() => {
+          document.querySelector('.inputBlock1').removeAttribute('disabled')
+          document.querySelector('.inputBlock2').removeAttribute('disabled')
+          document.querySelector('.inputBlock3').removeAttribute('disabled')
+          document.querySelector('#buttonSignIn').removeAttribute('disabled')
+          document.querySelector('#buttonSignUp').removeAttribute('disabled')
+  
+          setLogging(false)
+        }, 1600)
+      }
     }
   }
 

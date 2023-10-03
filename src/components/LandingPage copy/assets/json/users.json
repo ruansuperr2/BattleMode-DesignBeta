@@ -1,0 +1,21 @@
+[{
+    "id": 1,
+    "username": "Ravus",
+    "icon": "https://firebasestorage.googleapis.com/v0/b/battlemode-43c9a.appspot.com/o/icon%2FCreation2-PFP.png?alt=media&token=75cbffe8-ecf6-4b74-94dd-aeba5b941a5b",
+    "email": "ravus@battlemode.com",
+    "password": "BonecoTeste@123",
+    "twitter": "Não informado",
+    "instagram": "Não informado",
+    "discord": "Não informado",
+    "twitch": "Não informado",
+    "titulo": "Vencedor do Destino",
+    "status": "Plano: Base ",
+    "corP": "#fc6b03     ",
+    "corS": "#fc6b03     ",
+    "favoritados": "[]",
+    "conquistas": "[]",
+    "imgFundo": "https://raw.githubusercontent.com/vbsravus/BattleMode/main/Source/userDefaultBackground.png",
+    "imgFundoDois": "null",
+    "moldura": "excalibur",
+    "dataCriacao": "28/9/2023"
+}]

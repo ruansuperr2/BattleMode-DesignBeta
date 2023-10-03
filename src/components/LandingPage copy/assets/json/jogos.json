@@ -1,0 +1,92 @@
+[
+    {
+        "id": 4,
+        "nome": "Dota 2",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/db98dc0dbafde48e8f74c0de001d35e4/32/128x128.png",
+        "descricaoLonga": "Um jogo de estratégia em equipe online (MOBA) no qual duas equipes de cinco jogadores competem para destruir a base da outra equipe.\n\n",
+        "descricaoBreve": "MOBA 5v5",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/780641c3fe863255d94a0ac7a20976ed.webm",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/016593245beddeaca1d621d5abdcdabc.webm"
+    },
+    {
+        "id": 2,
+        "nome": "Counter Strike 2",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/e1bd06c3f8089e7552aa0552cb387c92/32/512x512.png",
+        "descricaoLonga": "Um jogo de tiro em primeira pessoa (FPS) tático no qual dois times de cinco jogadores competem para plantar ou desarmar uma bomba.\n\n",
+        "descricaoBreve": "FPS 5V5",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/0662aa1719017e0efa5fa8daf0880c6e.jpg",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/1ca9f84e0314259ddb072fba15e42061.jpg"
+    },
+    {
+        "id": 6,
+        "nome": "Super Smash Bros. Ultimate",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/a1280bb57e980da66d54eb0f20cbb95e.png",
+        "descricaoLonga": "Um jogo de luta no qual personagens de diferentes franquias da Nintendo competem entre si.\n\n",
+        "descricaoBreve": "PFG 1FA",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/ba878928aa59f900e656eb4b0d308f43.jpg",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/d9db2bba49b1f97833bd51b102e9a790.jpg"
+    },
+    {
+        "id": 5,
+        "nome": "Call of Duty: Warzone",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/2810641ad4fe0ef85b460df52d7a48e8.png",
+        "descricaoLonga": "Um jogo de tiro em terceira pessoa (TPS) battle royale no qual 150 jogadores competem para serem o último sobrevivente.\n\n",
+        "descricaoBreve": "BR - 150",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/ae831f0453eeb40811623d8d8f061615.jpg",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/92b93c1e13d71927cb34ecff7f4344eb.jpg"
+    },
+    {
+        "id": 9,
+        "nome": "Hearthstone",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/1e056d2b0ebd5c878c550da6ac5d3724/32/256x256.png",
+        "descricaoLonga": "Um jogo de cartas colecionáveis (CCG) no qual os jogadores usam cartas para construir um deck e derrotar seus oponentes.\n\n",
+        "descricaoBreve": "CCG 1V1",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/12dc78e6688e6756f8e934e778b817fe.jpg",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/c157297d1a1ff043255bfb18530caaa2.jpg"
+    },
+    {
+        "id": 1,
+        "nome": "League of Legends",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/882137f311c5728f8e257e56820af92c.png",
+        "descricaoLonga": "Um jogo de estratégia em equipe online (MOBA) no qual duas equipes de cinco jogadores competem para destruir a base da outra equipe.\n\n",
+        "descricaoBreve": "MOBA 5v5",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/02e62ea7b6bd28fa8c973a086030a9fa.webm",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/dbaebce9c842f6aa7482517597c75c8c.jpg"
+    },
+    {
+        "id": 8,
+        "nome": "Overwatch ",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/f812eab186eb17d72275bb38b918913d.png",
+        "descricaoLonga": "Um jogo de tiro em primeira pessoa (FPS) no qual duas equipes de seis jogadores competem para completar objetivos.\n\n",
+        "descricaoBreve": "FPS 5V5",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/c5e667909a4fb7ac4d42ddf0ee00dea3.webm",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/7c4797ad736d4598201ba34250d17c99.jpg"
+    },
+    {
+        "id": 7,
+        "nome": "Rocket League",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/f1e513f02d2dbe70b939178cb7d4fbac/32/1024x1024.png",
+        "descricaoLonga": "Um jogo de futebol de carro no qual dois times de quatro jogadores competem para marcar mais gols.\n\n",
+        "descricaoBreve": "FT 4v4",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/f0daecc5534d46a7fc68b3b7735c4192.webm",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/cbf66d053fa53ff5ad8a9e83e2f864be.webm"
+    },
+    {
+        "id": 3,
+        "nome": "Valorant",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/191c62d342811d1a0d3d0528ec35cd2d/32/256x256.png",
+        "descricaoLonga": "Um jogo de tiro em primeira pessoa (FPS) tático no qual dois times de cinco jogadores competem para plantar ou desarmar uma bomba.\n\n",
+        "descricaoBreve": "FPS 5v5",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/5d899028f3260a25f037f37db9aeeb5b.webm",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/47485c55b4f0e17bb2827599062af743.webm"
+    },
+    {
+        "id": 10,
+        "nome": "Fortnite",
+        "logo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon_thumb/1bda4c789c38754f639a376716c5859f.png",
+        "descricaoLonga": "Um jogo de tiro em terceira pessoa (TPS) battle royale no qual 100 jogadores competem para serem o último sobrevivente.\n\n",
+        "descricaoBreve": "BR - 100",
+        "imgFundo": "https://cdn2.steamgriddb.com/file/sgdb-cdn/thumb/6c4d541fc68d426aa028bc05f38164d1.jpg",
+        "imgBackground": "https://cdn2.steamgriddb.com/file/sgdb-cdn/hero_thumb/7fcc48d22804dbbe9b66b607d51389d4.jpg"
+    }
+]

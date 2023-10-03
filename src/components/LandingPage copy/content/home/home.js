@@ -6,6 +6,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 
+import jogosJson from '../../assets/json/jogos.json'
+
 import { storage } from '../../../FireBase';
 
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
@@ -62,15 +64,23 @@ export default function Home() {
     }, [])
 
     useEffect(() => {
+        // const loadDataJ = async () => {
+        //     try {
+        //         const response = await fetch(
+        //             'http://localhost:6090/api/jogo',
+        //         );
+        //         const data = response.json();
+        //         data.then((val) => {
+        //             setJogos(val.data.sort(() => (Math.random() > .5) ? 1 : -1))
+        //         })
+        //     } catch (error) { }
+        // };
+
         const loadDataJ = async () => {
             try {
-                const response = await fetch(
-                    'http://localhost:6090/api/jogo',
-                );
-                const data = response.json();
-                data.then((val) => {
-                    setJogos(val.data.sort(() => (Math.random() > .5) ? 1 : -1))
-                })
+
+                    setJogos(jogosJson.sort(() => (Math.random() > .5) ? 1 : -1))
+
             } catch (error) { }
         };
 
@@ -190,9 +200,9 @@ export default function Home() {
         }, 200);
     }, [loggedUser, currentPage])
 
-    const fetchData = async(currentMoldura, tituloNew, loggedUsername, imageIcon) => {
+    const fetchData = async (currentMoldura, tituloNew, loggedUsername, imageIcon) => {
         setstatusFetch("Waiting 1s")
-        setTimeout(async() => {
+        setTimeout(async () => {
             setstatusFetch("Fetching")
             try {
                 const requestOptions = {
@@ -217,7 +227,7 @@ export default function Home() {
                         imgFundoDois: loggedUser.imgFundoDois,
                         moldura: currentMoldura,
                         dataCriacao: loggedUser.dataCriacao,
-    
+
                     })
                 }
                 await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
@@ -233,12 +243,12 @@ export default function Home() {
                 console.log(e)
                 setstatusFetch("ERROR")
             }
-        } ,1000)
+        }, 1000)
     }
 
     const salvarPerfilMoldura = async (currentMoldura, tituloNew, loggedUsername, imageIcon) => {
         setstatusFetch('Trying to Upload')
-        if(imageIcon !== loggedUser.icon){
+        if (imageIcon !== loggedUser.icon) {
 
             try {
                 const file = imageIcon
@@ -246,12 +256,12 @@ export default function Home() {
                 if (!file) return;
                 const storageRef = ref(storage, `icon/${file.name}`);
                 const uploadTask = uploadBytesResumable(storageRef, file);
-    
+
                 uploadTask.on("state_changed",
                     (snapshot) => {
                         const progress =
                             Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                            setstatusFetch('Trying to Upload: ' + progress);
+                        setstatusFetch('Trying to Upload: ' + progress);
                     },
                     (error) => {
                         alert(error);
@@ -267,9 +277,9 @@ export default function Home() {
                 )
             }
             catch (e) {
-    
+
             }
-        }else{
+        } else {
             fetchData(currentMoldura, tituloNew, loggedUsername, imageIcon)
             setstatusFetch("GetDownloadURL: " + 'Success!')
         }
