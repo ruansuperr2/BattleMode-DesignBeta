@@ -1,45 +1,45 @@
-.divContainerLoginScreen{
+.divContainerLoginScreen {
     width: 100%;
     overflow: hidden;
 }
 
-.divMainBodyLoginScreen{
+.divMainBodyLoginScreen {
     overflow: hidden;
     display: flex;
     flex-direction: row;
 
 }
 
-.divContainerLoginScreen label{
+.divContainerLoginScreen label {
     display: flex;
     align-items: center;
 }
 
-.divUserBodyLoginScreen label{
+.divUserBodyLoginScreen label {
     display: flex;
     align-items: center;
 }
 
-.divVideoBodyLoginScreen{
+.divVideoBodyLoginScreen {
     width: 80%;
     height: 100vh;
     z-index: 0;
-    
+
 }
 
-.divVideoBodyLoginScreen video{
+.divVideoBodyLoginScreen video {
     width: 126%;
     margin-left: -14%;
 }
 
-.divVideoBodyLoginScreen .RiotLogo{
+.divVideoBodyLoginScreen .RiotLogo {
     width: 120px;
     position: absolute;
     bottom: 2%;
     left: 1%;
 }
 
-.divVideoBodyLoginScreen .StaticImage{
+.divVideoBodyLoginScreen .StaticImage {
     position: absolute;
     display: none;
     height: 100%;
@@ -47,7 +47,7 @@
     overflow: hidden;
 }
 
-.divVideoBodyLoginScreen .animationButton{
+.divVideoBodyLoginScreen .animationButton {
     z-index: 7;
     width: 120px;
     position: absolute;
@@ -61,7 +61,7 @@
     padding-left: 20px
 }
 
-.divUserBodyLoginScreen{
+.divUserBodyLoginScreen {
     z-index: 10;
     width: 20%;
     background-color: #1a1a1a;
@@ -69,19 +69,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-left: 1px #616161 solid; 
+    border-left: 1px #616161 solid;
 }
 
-.divUserBodyLoginScreen img{
+.divUserBodyLoginScreen img {
     margin-top: 5%;
 }
 
-.divUserBodyLoginScreen .staySignedIn{
+.divUserBodyLoginScreen .staySignedIn {
     margin-left: -10vw;
     margin-top: 5%;
 }
 
-.divUserBodyLoginScreen .labelSignIn{
+.divUserBodyLoginScreen .labelSignIn {
     width: 100%;
     height: 100%;
     align-items: center;
@@ -89,7 +89,7 @@
     cursor: pointer
 }
 
-.divUserBodyLoginScreen .labelSignUp{
+.divUserBodyLoginScreen .labelSignUp {
     width: 100%;
     padding: 1%;
     align-items: center;
@@ -97,36 +97,38 @@
     cursor: pointer
 }
 
-#buttonSignIn{
+#buttonSignIn {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#buttonSignUp{
+#buttonSignUp {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.divButtonSignUp{
+.divButtonSignUp {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.divButtonSignIn{
+.divButtonSignIn {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.divUserBodyLoginScreen input[type=checkbox]{
+.divUserBodyLoginScreen input[type=checkbox] {
     background-color: #0a0a0a;
     color: #0a0a0a;
 }
 
-.divUserBodyLoginScreen input[type=text], .divUserBodyLoginScreen input[type=password], .divUserBodyLoginScreen input[type=email]{
+.divUserBodyLoginScreen input[type=text],
+.divUserBodyLoginScreen input[type=password],
+.divUserBodyLoginScreen input[type=email] {
     width: 85%;
     font-size: 12px;
     padding: 3.5%;
@@ -136,20 +138,26 @@
     border: 1px solid transparent;
     border-radius: 5px;
 }
-.divUserBodyLoginScreen input[type=text]:disabled, .divUserBodyLoginScreen input[type=password]:disabled, .divUserBodyLoginScreen input[type=email]:disabled{
+
+.divUserBodyLoginScreen input[type=text]:disabled,
+.divUserBodyLoginScreen input[type=password]:disabled,
+.divUserBodyLoginScreen input[type=email]:disabled {
     color: rgb(99, 99, 99);
 }
 
-.divUserBodyLoginScreen input[type=text]:focus , .divUserBodyLoginScreen input[type=password]:focus, .divUserBodyLoginScreen input[type=email]:focus{
+.divUserBodyLoginScreen input[type=text]:focus,
+.divUserBodyLoginScreen input[type=password]:focus,
+.divUserBodyLoginScreen input[type=email]:focus {
     outline: 1px solid #fc6b03;
 }
 
-.divButtonSignIn{
+.divButtonSignIn {
     text-align: center;
     height: 20px;
 }
 
-.divButtonSignIn button:disabled, .divButtonSignIn button[disabled]{
+.divButtonSignIn button:disabled,
+.divButtonSignIn button[disabled] {
     padding: 1%;
     width: 17%;
     position: absolute;
@@ -162,7 +170,8 @@
     height: 20px;
 }
 
-.divButtonSignIn button:disabled:hover, .divButtonSignIn button[disabled]:hover{
+.divButtonSignIn button:disabled:hover,
+.divButtonSignIn button[disabled]:hover {
     padding: 1%;
     width: 17%;
     position: absolute;
@@ -176,7 +185,7 @@
     height: 20px;
 }
 
-.divButtonSignUp{
+.divButtonSignUp {
     padding: 1%;
     width: 6.5%;
     position: absolute;
@@ -185,10 +194,10 @@
     opacity: 100%;
     transition: 0.5s;
     margin-right: 11%;
-    
+
 }
 
-.divButtonSignUp:hover{
+.divButtonSignUp:hover {
     padding: 1%;
     width: 8%;
     position: absolute;
@@ -198,7 +207,7 @@
     transition: 0.5s;
 }
 
-.divButtonSignIn button{
+.divButtonSignIn button {
     padding: 1%;
     width: 17%;
     position: absolute;
@@ -211,7 +220,7 @@
     transition: 0.5s;
 }
 
-.divButtonSignIn button:hover{
+.divButtonSignIn button:hover {
     height: 20px;
     transition: 0.5s;
     padding: 1%;
@@ -225,7 +234,7 @@
     cursor: pointer;
 }
 
-.videoLoginShadow{
+.videoLoginShadow {
     background-color: transparent;
     width: 100%;
     height: 100%;
@@ -233,16 +242,16 @@
     z-index: 5;
 }
 
-.loadingSpinner{
+.loadingSpinner {
     width: 60px;
     height: 60px;
     animation-name: spin;
     animation-duration: 700ms;
     animation-iteration-count: infinite;
-    animation-timing-function: linear; 
+    animation-timing-function: linear;
 }
 
-.dataVersion{
+.dataVersion {
     background-color: #2b2b2b;
     width: 20%;
     height: 18px;
@@ -252,21 +261,22 @@
     top: 95.75%;
 }
 
-.responsiveBmLogo{
+.responsiveBmLogo {
     display: block;
 }
 
 @keyframes spin {
     from {
-        transform:rotate(0deg);
+        transform: rotate(0deg);
     }
+
     to {
-        transform:rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
-@media screen and (orientation:landscape) and (max-width: 900px){
-    .divUserBodyLoginScreen{
+@media screen and (orientation:landscape) and (max-width: 900px) {
+    .divUserBodyLoginScreen {
         z-index: 10;
         width: 35%;
         background-color: #1a1a1a;
@@ -274,10 +284,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-left: 1px #616161 solid; 
+        border-left: 1px #616161 solid;
     }
 
-    .dataVersion{
+    .dataVersion {
         background-color: #2b2b2b;
         width: 30.5%;
         height: 18px;
@@ -286,12 +296,13 @@
         margin-top: 0%;
     }
 
-    .divButtonSignIn{
+    .divButtonSignIn {
         text-align: center;
         height: 30px;
     }
-    
-    .divButtonSignIn button:disabled, .divButtonSignIn button[disabled]{
+
+    .divButtonSignIn button:disabled,
+    .divButtonSignIn button[disabled] {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -303,8 +314,9 @@
         transition: 0.5s;
         height: 30px;
     }
-    
-    .divButtonSignIn button:disabled:hover, .divButtonSignIn button[disabled]:hover{
+
+    .divButtonSignIn button:disabled:hover,
+    .divButtonSignIn button[disabled]:hover {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -317,8 +329,8 @@
         cursor: default;
         height: 30px;
     }
-    
-    .divButtonSignUp{
+
+    .divButtonSignUp {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -327,10 +339,10 @@
         opacity: 100%;
         transition: 0.5s;
         margin-right: 11%;
-        
+
     }
-    
-    .divButtonSignUp:hover{
+
+    .divButtonSignUp:hover {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -340,21 +352,8 @@
         transition: 0.5s;
         margin-right: 11%;
     }
-    
-    .divButtonSignIn button{
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 12%;
-        height: 30px;
-        background-color: #0f0f0f;
-        color: white;
-        border: 1px solid #616161;
-        opacity: 100%;
-        transition: 0.5s;
-    }
-    
-    .divButtonSignIn button:hover{
+
+    .divButtonSignIn button {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -367,17 +366,36 @@
         transition: 0.5s;
     }
 
-    .divUserBodyLoginScreen img{
+    .divButtonSignIn button:hover {
+        padding: 1%;
+        width: 27%;
+        position: absolute;
+        bottom: 12%;
+        height: 30px;
+        background-color: #0f0f0f;
+        color: white;
+        border: 1px solid #616161;
+        opacity: 100%;
+        transition: 0.5s;
+    }
+
+    .divUserBodyLoginScreen img {
         display: none;
     }
-    .divVideoBodyLoginScreen video{
+
+    .divVideoBodyLoginScreen video {
         width: 145%;
         margin-left: -20%;
     }
+
+    .divVideoBodyLoginScreen .StaticImage {
+        height: 120%;
+        width: 80%;
+    }
 }
 
-@media screen and (orientation:landscape) and (max-width: 640px){
-    .divUserBodyLoginScreen{
+@media screen and (orientation:landscape) and (max-width: 640px) {
+    .divUserBodyLoginScreen {
         z-index: 10;
         width: 35%;
         background-color: #1a1a1a;
@@ -385,28 +403,29 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-left: 1px #616161 solid; 
+        border-left: 1px #616161 solid;
     }
 
-    .dataVersion{
+    .dataVersion {
         background-color: #2b2b2b;
         width: 30.5%;
         height: 18px;
         text-align: center;
         border-top: #616161 1px solid;
-        margin-top: 0%;
+        margin-top: -0.5%;
     }
 
-    .divButtonSignIn{
+    .divButtonSignIn {
         text-align: center;
         height: 30px;
     }
-    
-    .divButtonSignIn button:disabled, .divButtonSignIn button[disabled]{
+
+    .divButtonSignIn button:disabled,
+    .divButtonSignIn button[disabled] {
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         background-color: #02020262;
         color: white;
         border: 1px solid #000000;
@@ -414,12 +433,13 @@
         transition: 0.5s;
         height: 30px;
     }
-    
-    .divButtonSignIn button:disabled:hover, .divButtonSignIn button[disabled]:hover{
+
+    .divButtonSignIn button:disabled:hover,
+    .divButtonSignIn button[disabled]:hover {
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         background-color: #02020293;
         color: white;
         border: 1px solid #111111;
@@ -428,8 +448,8 @@
         cursor: default;
         height: 30px;
     }
-    
-    .divButtonSignUp{
+
+    .divButtonSignUp {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -438,10 +458,10 @@
         opacity: 100%;
         transition: 0.5s;
         margin-right: 11%;
-        
+
     }
-    
-    .divButtonSignUp:hover{
+
+    .divButtonSignUp:hover {
         padding: 1%;
         width: 27%;
         position: absolute;
@@ -451,25 +471,12 @@
         transition: 0.5s;
         margin-right: 11%;
     }
-    
-    .divButtonSignIn button{
+
+    .divButtonSignIn button {
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
-        height: 30px;
-        background-color: #0f0f0f;
-        color: white;
-        border: 1px solid #616161;
-        opacity: 100%;
-        transition: 0.5s;
-    }
-    
-    .divButtonSignIn button:hover{
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         height: 30px;
         background-color: #0f0f0f;
         color: white;
@@ -478,12 +485,58 @@
         transition: 0.5s;
     }
 
-    .divUserBodyLoginScreen img{
+    .divButtonSignIn button:hover {
+        padding: 1%;
+        width: 27%;
+        position: absolute;
+        bottom: 17%;
+        height: 30px;
+        background-color: #0f0f0f;
+        color: white;
+        border: 1px solid #616161;
+        opacity: 100%;
+        transition: 0.5s;
+    }
+
+    .divUserBodyLoginScreen img {
         display: none;
     }
 
-    .divVideoBodyLoginScreen video{
+    .divVideoBodyLoginScreen video {
         width: 145%;
         margin-left: -20%;
+    }
+
+    .divVideoBodyLoginScreen .StaticImage {
+        height: 140%;
+        width: 80%;
+    }
+
+    .divUserBodyLoginScreen .labelSignUp {
+        width: 100%;
+        margin-bottom: 3%;
+        margin-left: 20%;
+        margin-right: -20%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: #2b2b2b;
+        padding: 2%;
+        border-radius: 10px;
+        border: 1px solid #857762;
+    }
+
+    .loadingSpinner {
+        width: 40px;
+        height: 40px;
+        animation-name: spin;
+        animation-duration: 700ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    .divContainerLoginScreen h3 {
+        font-size: 13px;
+        margin-bottom: 15%;
     }
 }
