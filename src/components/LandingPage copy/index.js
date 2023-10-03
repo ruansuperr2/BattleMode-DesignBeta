@@ -253,7 +253,7 @@ function LandingPageDev(props) {
         
         const userExists = userTest.find(account => account.username === username)
         setLoggedUser(userExists)
-        localStorage.setItem('dasiBoard', JSON.stringify(userExists.id))
+        localStorage.setItem('offline', JSON.stringify(userExists.id))
         setConnectionMessage("Bem-vindo de volta " + userExists.username)
         setTimeout(() => {
           navigate("/home");
