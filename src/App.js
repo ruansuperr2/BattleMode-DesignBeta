@@ -10,13 +10,7 @@ import Home from './components/LandingPage copy/content/home/home';
 
 const App = () => {
     const [showNav, setShowNav] = useState(true)
-    useEffect(() => {
-      // Attempt to lock the screen orientation to landscape
-      screen.orientation.lock("landscape").catch((error) => {
-        // Handle the error
-        console.error(error);
-      });
-    }, []);
+
   return (
       <div className="divAppContainer">
           <MemoryRouter>
