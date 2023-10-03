@@ -255,6 +255,9 @@ function LandingPageDev(props) {
         setLoggedUser(userExists)
         localStorage.setItem('dasiBoard', JSON.stringify(userExists.id))
         setConnectionMessage("Bem-vindo de volta " + userExists.username)
+        setTimeout(() => {
+          navigate("/home");
+        }, 600)
       }, 2700);
     } else {
 
