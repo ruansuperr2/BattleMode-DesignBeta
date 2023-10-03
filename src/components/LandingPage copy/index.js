@@ -346,7 +346,7 @@ function LandingPageDev(props) {
           /* Parte do Login */
           <div className="divUserBodyLoginScreen">
 
-            <img style={{ width: "14vw" }} src={require("./assets/images/BMlogo.png")} />
+            <img className="responsiveBmLogo"style={{ width: "14vw" }} src={require("./assets/images/BMlogo.png")} />
             <h2>Entrar</h2>
             <input className="inputBlock1" value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="USERNAME"></input>
             <input className="inputBlock2" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="PASSWORD"></input>
