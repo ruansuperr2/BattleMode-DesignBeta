@@ -275,7 +275,11 @@
     }
 }
 
-@media screen and (orientation:landscape) and (max-width: 900px) {
+@media screen and (orientation:landscape) and (max-width: 1100px) {
+    .divUserBodyLoginScreen .staySignedIn {
+        margin-left: 0vw;
+        margin-top: 5%;
+    }
     .divUserBodyLoginScreen {
         z-index: 10;
         width: 35%;
@@ -293,7 +297,7 @@
         height: 18px;
         text-align: center;
         border-top: #616161 1px solid;
-        margin-top: 0%;
+        margin-top: -0.5%;
     }
 
     .divButtonSignIn {
@@ -306,7 +310,7 @@
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         background-color: #02020262;
         color: white;
         border: 1px solid #000000;
@@ -320,7 +324,7 @@
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         background-color: #02020293;
         color: white;
         border: 1px solid #111111;
@@ -357,7 +361,7 @@
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         height: 30px;
         background-color: #0f0f0f;
         color: white;
@@ -370,7 +374,7 @@
         padding: 1%;
         width: 27%;
         position: absolute;
-        bottom: 12%;
+        bottom: 17%;
         height: 30px;
         background-color: #0f0f0f;
         color: white;
@@ -389,92 +393,36 @@
     }
 
     .divVideoBodyLoginScreen .StaticImage {
-        height: 120%;
+        height: 140%;
         width: 80%;
     }
 
-    
-    .divButtonSignIn {
-        text-align: center;
-        height: 30px;
+    .divUserBodyLoginScreen .labelSignUp {
+        width: 100%;
+        margin-bottom: 3%;
+        margin-left: 20%;
+        margin-right: -20%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: #2b2b2b;
+        padding: 2%;
+        border-radius: 10px;
+        border: 1px solid #857762;
     }
 
-    .divButtonSignIn button:disabled,
-    .divButtonSignIn button[disabled] {
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 17%;
-        background-color: #02020262;
-        color: white;
-        border: 1px solid #000000;
-        opacity: 70%;
-        transition: 0.5s;
-        height: 30px;
+    .loadingSpinner {
+        width: 40px;
+        height: 40px;
+        animation-name: spin;
+        animation-duration: 700ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
     }
 
-    .divButtonSignIn button:disabled:hover,
-    .divButtonSignIn button[disabled]:hover {
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 17%;
-        background-color: #02020293;
-        color: white;
-        border: 1px solid #111111;
-        opacity: 70%;
-        transition: 0.5s;
-        cursor: default;
-        height: 30px;
-    }
-
-    .divButtonSignUp {
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 5%;
-        color: white;
-        opacity: 100%;
-        transition: 0.5s;
-        margin-right: 11%;
-
-    }
-
-    .divButtonSignUp:hover {
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 5%;
-        color: white;
-        opacity: 100%;
-        transition: 0.5s;
-        margin-right: 11%;
-    }
-
-    .divButtonSignIn button {
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 17%;
-        height: 30px;
-        background-color: #0f0f0f;
-        color: white;
-        border: 1px solid #616161;
-        opacity: 100%;
-        transition: 0.5s;
-    }
-
-    .divButtonSignIn button:hover {
-        padding: 1%;
-        width: 27%;
-        position: absolute;
-        bottom: 17%;
-        height: 30px;
-        background-color: #0f0f0f;
-        color: white;
-        border: 1px solid #616161;
-        opacity: 100%;
-        transition: 0.5s;
+    .divContainerLoginScreen h3 {
+        font-size: 13px;
+        margin-bottom: 15%;
     }
 
 }
@@ -507,9 +455,18 @@
         font-size: 13px;
         margin-bottom: 15%;
     }
+
+    .divUserBodyLoginScreen .staySignedIn {
+        margin-left: 0vw;
+        margin-top: 4%;
+    }
 }
 
-@media screen and (orientation:landscape) and (max-width: 640px) {
+@media screen and (orientation:landscape) and (max-width: 660px) {
+    .divUserBodyLoginScreen .staySignedIn {
+        margin-left: 0vw;
+        margin-top: 4%;
+    }
     .divUserBodyLoginScreen {
         z-index: 10;
         width: 35%;
