@@ -1,6 +1,6 @@
 {
   "name": "battlemode",
-  "version": "v1.1",
+  "version": "v1.2",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
