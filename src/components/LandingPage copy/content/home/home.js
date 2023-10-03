@@ -97,7 +97,7 @@ export default function Home() {
         const loadDataU = async () => {
             try {
                 if (window.location.href === "https://battlemode.netlify.app/" || window.location.href === "https://battlemode.netlify.app") {
-                    loggedUser(userTest.find(account => account.username === username))
+                    loggedUser(userTest.find(account => account.id === JSON.parse(localStorage.getItem('dasiBoard'))))
 
                 }else{
 
