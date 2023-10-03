@@ -7,6 +7,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 
 import jogosJson from '../../assets/json/jogos.json'
+import userTest from './assets/json/users.json'
 
 import { storage } from '../../../FireBase';
 
@@ -95,12 +96,18 @@ export default function Home() {
     useEffect(() => {
         const loadDataU = async () => {
             try {
-                const [response] = await Promise.all([
-                    fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
-                ]);
-                const [user] = await Promise.all([
-                    response.json(),
-                ])
+                if (window.location.href === "https://battlemode.netlify.app/" || window.location.href === "https://battlemode.netlify.app") {
+                    loggedUser(userTest.find(account => account.username === username))
+
+                }else{
+
+                    const [response] = await Promise.all([
+                        fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+                    ]);
+                    const [user] = await Promise.all([
+                        response.json(),
+                    ])
+                }
                 setLoggedUser(user.data)
             } catch (e) {
                 console.error(e)
