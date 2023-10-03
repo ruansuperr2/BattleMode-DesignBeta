@@ -6,10 +6,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 
-import FindAll from '../../../FindAll';
-import Times from '../../../Times';
+import { storage } from '../../../FireBase';
+
+import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+
 import Perfil from './components/perfil/perfil';
-import Participar from '../../../Participar'
 
 export default function Home() {
     const [loggedUser, setLoggedUser] = useState([]);
@@ -105,10 +106,13 @@ export default function Home() {
     }, [])
 
     // Use o setTimeout() para garantir que o DOM esteja totalmente carregado antes de tentar atualizar o elemento
-
+    const [progresspercent, setProgresspercent] = useState(0);
+    const [imgUrl, setImgUrl] = useState(null)
+    const [statusFetch, setstatusFetch] = useState('NO')
     useEffect(() => {
         const iconElement = document.querySelector("#userIcon");
         const userNameElement = document.querySelector("#userName");
+
 
         const inicio = document.querySelector("#inicio");
         const noticias = document.querySelector("#noticias");
@@ -185,46 +189,92 @@ export default function Home() {
             }
         }, 200);
     }, [loggedUser, currentPage])
-    
-    const salvarPerfilMoldura = async(currentMoldura, tituloNew, loggedUsername, imageIcon) =>{
-        try {
-            const requestOptions = {
-                method: 'PUT',
-                headers: { 'Content-type': 'application/json' },
-                body: JSON.stringify({
-                    username: loggedUsername,
-                    icon: imageIcon,
-                    email: loggedUser.email,
-                    password: loggedUser.password,
-                    twitter: loggedUser.twitter,
-                    instagram: loggedUser.instagram,
-                    discord: loggedUser.discord,
-                    twitch: loggedUser.twitch,
-                    titulo: tituloNew,
-                    status: loggedUser.status,
-                    corP: loggedUser.corP,
-                    corS: loggedUser.corS,
-                    favoritados: loggedUser.favoritados,
-                    conquistas: loggedUser.conquistas,
-                    imgFundo: loggedUser.imgFundo,
-                    imgFundoDois: loggedUser.imgFundoDois,
-                    moldura: currentMoldura,
-                    dataCriacao: loggedUser.dataCriacao,
 
-                })
+    const fetchData = async(currentMoldura, tituloNew, loggedUsername, imageIcon) => {
+        setstatusFetch("Waiting 1s")
+        setTimeout(async() => {
+            setstatusFetch("Fetching")
+            try {
+                const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify({
+                        username: loggedUsername,
+                        icon: imageIcon,
+                        email: loggedUser.email,
+                        password: loggedUser.password,
+                        twitter: loggedUser.twitter,
+                        instagram: loggedUser.instagram,
+                        discord: loggedUser.discord,
+                        twitch: loggedUser.twitch,
+                        titulo: tituloNew,
+                        status: loggedUser.status,
+                        corP: loggedUser.corP,
+                        corS: loggedUser.corS,
+                        favoritados: loggedUser.favoritados,
+                        conquistas: loggedUser.conquistas,
+                        imgFundo: loggedUser.imgFundo,
+                        imgFundoDois: loggedUser.imgFundoDois,
+                        moldura: currentMoldura,
+                        dataCriacao: loggedUser.dataCriacao,
+    
+                    })
+                }
+                await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
+                const [response] = await Promise.all([
+                    fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+                ]);
+                const [user] = await Promise.all([
+                    response.json(),
+                ])
+                setLoggedUser(user.data)
+                setstatusFetch("YES")
+            } catch (e) {
+                console.log(e)
+                setstatusFetch("ERROR")
             }
-            await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
-            const [response] = await Promise.all([
-                fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
-            ]);
-            const [user] = await Promise.all([
-                response.json(),
-            ])
-            setLoggedUser(user.data)
-        }catch(e){
-            console.log(e)
+        } ,1000)
+    }
+
+    const salvarPerfilMoldura = async (currentMoldura, tituloNew, loggedUsername, imageIcon) => {
+        setstatusFetch('Trying to Upload')
+        if(imageIcon !== loggedUser.icon){
+
+            try {
+                const file = imageIcon
+                console.log(imageIcon, file)
+                if (!file) return;
+                const storageRef = ref(storage, `icon/${file.name}`);
+                const uploadTask = uploadBytesResumable(storageRef, file);
+    
+                uploadTask.on("state_changed",
+                    (snapshot) => {
+                        const progress =
+                            Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                            setstatusFetch('Trying to Upload: ' + progress);
+                    },
+                    (error) => {
+                        alert(error);
+                        setstatusFetch("ERROR")
+                    },
+                    () => {
+                        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+                            setImgUrl(downloadURL)
+                            fetchData(currentMoldura, tituloNew, loggedUsername, downloadURL)
+                            setstatusFetch("GetDownloadURL: " + 'Success!')
+                        })
+                    }
+                )
+            }
+            catch (e) {
+    
+            }
+        }else{
+            fetchData(currentMoldura, tituloNew, loggedUsername, imageIcon)
+            setstatusFetch("GetDownloadURL: " + 'Success!')
         }
-        
+
+
     }
 
     return (
@@ -233,9 +283,9 @@ export default function Home() {
                 <div className='navbarLeftDiv'>
                     <img style={{ width: "8vw" }} src={require("../../assets/images/BMlogo.png")} />
                     <div className='navbarTextLeft'>
-                        <label id="inicio" onClick={() => { 
+                        <label id="inicio" onClick={() => {
                             setCurrentPage('inicio')
-                        } }>
+                        }}>
                             INÍCIO
                         </label>
                         <label id="noticias" onClick={() => {
@@ -286,7 +336,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="moneyDiv">
-                        <label><img src={require('../../assets/images/Coin.png')} width={28} height={28}/>5000</label>
+                        <label><img src={require('../../assets/images/Coin.png')} width={28} height={28} />5000</label>
                     </div>
                 </div>
                 <div className='navbarRightDiv'>
@@ -309,19 +359,19 @@ export default function Home() {
                     {currentPage === 'noticias' &&
                         <div></div>
                     }
-                    {currentPage === 'procurar' &&
+                    {/* {currentPage === 'procurar' &&
                         <FindAll></FindAll>
-                    }
+                    } */}
                     {currentPage === 'perfil' &&
-                        <Perfil salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios}  jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
-                        
+                        <Perfil setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
+
                     }
-                    {currentPage === 'equipes' &&
+                    {/* {currentPage === 'equipes' &&
                         <Times></Times>
                     }
                     {currentPage === 'torneios' &&
                         <Participar></Participar>
-                    }
+                    } */}
                 </div>
                 <div className='listBody'>
 

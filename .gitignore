@@ -2,3 +2,6 @@ node_modules
 .VSCodeCounter
 .env
 .vs
+.editorconfig.txt
+.firebaserc
+.png, .mp4, .jpeg

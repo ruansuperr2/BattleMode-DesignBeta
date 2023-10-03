@@ -2,7 +2,6 @@ import React from 'react'
 import './index.css'
 import { Link } from 'react-router-dom'
 import text from '../../version.json'
-import Footer from '../Footer'
 
 function PaginaNaoEncontrada() {
     return (
@@ -15,7 +14,6 @@ function PaginaNaoEncontrada() {
                 <p className='errorVersion'>{text.version}</p>
 
             </div>
-            <Footer></Footer>
         </div>
         )
 }

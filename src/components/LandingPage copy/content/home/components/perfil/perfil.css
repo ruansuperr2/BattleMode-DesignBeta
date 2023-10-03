@@ -62,7 +62,9 @@
     color: white;
     margin-top: 60%;
     border: none;
-}::placeholder {
+}
+
+.userProfileBanner input::placeholder {
     color: rgb(255, 111, 111);
     opacity: 1;
     /* Firefox */
@@ -455,4 +457,11 @@
 .molduraChangeIcon{
     position: absolute;
     z-index: 10;
+}
+
+.propsStatus{
+    color:white;
+    font-size: 16px;
+    height: 0px;
+    margin-top: -84px;
 }

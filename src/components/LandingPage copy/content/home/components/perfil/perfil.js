@@ -149,6 +149,7 @@ export default function Perfil(props) {
     const [showTor, setShowTor] = useState('none')
     const [page, setPage] = useState('perfil')
 
+
     const [currentMoldura, setCurrentMoldura] = useState('')
 
     const [titulosObj, setTitulosObj] = useState([])
@@ -191,11 +192,35 @@ export default function Perfil(props) {
         setTituloNew(props.loggedUser.titulo)
     }, [props.times, props.loggedUser, props.torneio]);
 
-    const handleImageChange = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            setImageIcon(e.target.files[0]);
+    useEffect(() => {
+        if(props.statusFetch === "YES"){
+            props.setstatusFetch('NO')
+            setModalMolduras(false)
+        }else if (props.statusFetch === "ERROR"){
+            props.setstatusFetch("NO")
         }
-    };
+    })
+
+    const handleImageChange = (e) => {
+        props.setstatusFetch('Handling Image Change')
+        if(e.target !== ""){
+
+            if (e.target.files[0].size > 2597152) {
+                alert("Essa imagem é maior que 2.5MB");
+                props.setstatusFetch('ERROR')
+    
+                e.target = "";
+            } else {
+    
+                setImageIcon(e.target.files[0]);
+                props.setstatusFetch('Confirm Changes')
+    
+            };
+        }else{
+            setImageIcon(props.loggedUser.icon)
+        }
+
+    }
 
     return (
         <div className='perfilDivSection'>
@@ -250,7 +275,7 @@ export default function Perfil(props) {
 
 
                                         <div className="userProfileIModal" onClick={() => { }}>
-                                            <input className='userProfileInputEnviar' type="file" onChange={handleImageChange} >
+                                            <input className='userProfileInputEnviar' accept="image/png, image/jpeg, video/mp4" type="file" onChange={handleImageChange} >
                                             </input>
 
                                             <InsertPhotoIcon className="userProfileIPI"></InsertPhotoIcon>
@@ -260,7 +285,7 @@ export default function Perfil(props) {
                                             <video className='divMoldurasSelectIcon' poster={imageIcon} src={imageIcon}></video>
 
                                         }
-                                        
+
                                         {imageIcon !== props.loggedUser.icon &&
                                             <video className='divMoldurasSelectIcon' poster={URL.createObjectURL(imageIcon)} src={URL.createObjectURL(imageIcon)}></video>
 
@@ -282,9 +307,14 @@ export default function Perfil(props) {
                                     </h3>
                                 </div>
                                 <div className='trimProfileEditBanner'>
+                                    {props.statusFetch !== 'NO' &&
+                                        <div className='propsStatus'>
+                                            {props.statusFetch}
+                                        </div>
+                                    }
                                     {loggedUsername.match(/^[a-zA-Z0-9]{4,16}$/) &&
                                         <div>
-                                            <button className='buttonConfirmChanges' onClick={() => { props.salvarPerfilMoldura(currentMoldura, tituloNew, loggedUsername, imageIcon); setModalMolduras(false) }}>Salvar Alterações</button>
+                                            <button className='buttonConfirmChanges' onClick={() => { props.salvarPerfilMoldura(currentMoldura, tituloNew, loggedUsername, imageIcon);  }}>Salvar Alterações</button>
                                         </div>
                                     }
                                     {!loggedUsername.match(/^[a-zA-Z0-9]{4,16}$/) &&
