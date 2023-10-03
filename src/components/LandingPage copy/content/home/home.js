@@ -7,7 +7,7 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 
 import jogosJson from '../../assets/json/jogos.json'
-import userTest from './assets/json/users.json'
+import userTest from '../../assets/json/users.json'
 
 import { storage } from '../../../FireBase';
 
