@@ -1,9 +1,12 @@
 {
   "storage": {
-    "rules": ".png, .mp4, .jpeg"
+    "rules": {
+      ".read": false,
+      ".write": false
+    }
   },
   "hosting": {
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
