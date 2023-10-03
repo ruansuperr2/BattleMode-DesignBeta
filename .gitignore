@@ -3,5 +3,3 @@ node_modules
 .env
 .vs
 .editorconfig.txt
-.firebaserc
-.png, .mp4, .jpeg
