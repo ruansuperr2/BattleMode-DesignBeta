@@ -1,6 +1,5 @@
 node_modules
 .VSCodeCounter
-.env
 .vs
 .editorconfig.txt
 build
