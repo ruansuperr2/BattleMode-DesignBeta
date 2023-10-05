@@ -1,5 +1,5 @@
 import './home.css'
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import Games from './components/games/games';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -123,14 +123,10 @@ export default function Home() {
     }, [])
 
     // Use o setTimeout() para garantir que o DOM esteja totalmente carregado antes de tentar atualizar o elemento
-    const [progresspercent, setProgresspercent] = useState(0);
-    const [imgUrl, setImgUrl] = useState(null)
     const [statusFetch, setstatusFetch] = useState('NO')
+
+
     useEffect(() => {
-        const iconElement = document.querySelector("#userIcon");
-        const userNameElement = document.querySelector("#userName");
-
-
         const inicio = document.querySelector("#inicio");
         const noticias = document.querySelector("#noticias");
         const procurar = document.querySelector("#procurar");
@@ -253,6 +249,99 @@ export default function Home() {
         }, 1000)
     }
 
+    const fetchDataFundo = async (iFundo) => {
+        setstatusFetch("Waiting 1s")
+        setTimeout(async () => {
+            setstatusFetch("Fetching")
+            try {
+                const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify({
+                        username: loggedUser.username,
+                        icon: loggedUser.icon,
+                        email: loggedUser.email,
+                        password: loggedUser.password,
+                        twitter: loggedUser.twitter,
+                        instagram: loggedUser.instagram,
+                        discord: loggedUser.discord,
+                        twitch: loggedUser.twitch,
+                        titulo: loggedUser.titulo,
+                        status: loggedUser.status,
+                        corP: loggedUser.corP,
+                        corS: loggedUser.corS,
+                        favoritados: loggedUser.favoritados,
+                        conquistas: loggedUser.conquistas,
+                        imgFundo: iFundo,
+                        imgFundoDois: loggedUser.imgFundoDois,
+                        moldura: loggedUser.moldura,
+                        dataCriacao: loggedUser.dataCriacao,
+
+                    })
+                }
+                await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
+                const [response] = await Promise.all([
+                    fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+                ]);
+                const [user] = await Promise.all([
+                    response.json(),
+                ])
+                setLoggedUser(user.data)
+                console.log(loggedUser)
+                setstatusFetch("YES")
+            } catch (e) {
+                console.log(e)
+                setstatusFetch("ERROR")
+            }
+        }, 1000)
+    }
+
+    const salvarPerfilFundo = async (imageFundo) => {
+        setstatusFetch('Trying to Upload')
+        console.log(imageFundo)
+        if (imageFundo !== loggedUser.imgFundo) {
+
+            try {
+                const file = imageFundo
+                console.log('file: ',file)
+
+                console.log(imageFundo, file)
+                if (!file) return;
+                const storageRef = ref(storage, `fundo/${file.name}`);
+                const uploadTask = uploadBytesResumable(storageRef, file);
+
+                uploadTask.on("state_changed",
+                    (snapshot) => {
+                        const progress =
+                            Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                        setstatusFetch('Trying to Upload: ' + progress);
+                    },
+                    (error) => {
+                        alert(error);
+                        setstatusFetch("ERROR")
+                    },
+                    () => {
+                        getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+                            console.log('URL: ',downloadURL)
+
+                            fetchDataFundo(downloadURL)
+                            setstatusFetch("GetDownloadURL: Success!")
+                        })
+                    }
+                )
+            }
+            catch (e) {
+
+            }
+        } else {
+            fetchDataFundo(imageFundo)
+            setstatusFetch("GetDownloadURL: Success!")
+        }
+
+
+    }
+
+
     const salvarPerfilMoldura = async (currentMoldura, tituloNew, loggedUsername, imageIcon) => {
         setstatusFetch('Trying to Upload')
         if (imageIcon !== loggedUser.icon) {
@@ -276,9 +365,8 @@ export default function Home() {
                     },
                     () => {
                         getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-                            setImgUrl(downloadURL)
                             fetchData(currentMoldura, tituloNew, loggedUsername, downloadURL)
-                            setstatusFetch("GetDownloadURL: " + 'Success!')
+                            setstatusFetch("GetDownloadURL: Success!")
                         })
                     }
                 )
@@ -288,7 +376,7 @@ export default function Home() {
             }
         } else {
             fetchData(currentMoldura, tituloNew, loggedUsername, imageIcon)
-            setstatusFetch("GetDownloadURL: " + 'Success!')
+            setstatusFetch("GetDownloadURL: Success!")
         }
 
 
@@ -298,7 +386,7 @@ export default function Home() {
         <div className='mainContainerHome'>
             <nav className='navbarHome'>
                 <div className='navbarLeftDiv'>
-                    <img style={{ width: "8vw" }} src={require("../../assets/images/BMlogo.png")} />
+                    <img style={{ width: "8vw" }} alt='BattleMode' src={require("../../assets/images/BMlogo.png")} />
                     <div className='navbarTextLeft'>
                         <label id="inicio" onClick={() => {
                             setCurrentPage('inicio')
@@ -353,14 +441,14 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="moneyDiv">
-                        <label><img src={require('../../assets/images/Coin.png')} width={28} height={28} />5000</label>
+                        <label><img alt='Currency' src={require('../../assets/images/Coin.png')} width={28} height={28} />5000</label>
                     </div>
                 </div>
                 <div className='navbarRightDiv'>
                     {loggedUser.moldura !== undefined &&
                         <img className='userNavBorder' src={require(`../../assets/images/borders/${loggedUser.moldura}_border.png`)} alt=""></img>
                     }
-                    <img src={loggedUser && loggedUser.icon} id="userIcon" className='userBodyIcon' width={50} height={50}></img>
+                    <img alt='ImgUser' src={loggedUser && loggedUser.icon} id="userIcon" className='userBodyIcon' width={50} height={50}></img>
                     <div className='userNameOnNavbar'>
 
                         <label id="userName" className='userBodyName'>{loggedUser && loggedUser.username}</label>
@@ -380,7 +468,7 @@ export default function Home() {
                         <FindAll></FindAll>
                     } */}
                     {currentPage === 'perfil' &&
-                        <Perfil setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
+                        <Perfil salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
 
                     }
                     {/* {currentPage === 'equipes' &&

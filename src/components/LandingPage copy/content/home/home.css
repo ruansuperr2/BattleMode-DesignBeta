@@ -24,12 +24,13 @@
     justify-content: space-between;
 }
 
+
 .navbarTextRight {
     width: 40%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     padding-left: 5%;
 }
 
@@ -137,7 +138,7 @@
 }
 
 .mainContentBody {
-    background-color: aqua;
+    background-color: #151515;
     width: 100%;
     height: 90%;
     display: flex;
