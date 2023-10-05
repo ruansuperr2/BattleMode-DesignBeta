@@ -1,13 +1,24 @@
-.divMainBodyPerfil {
+.divProfileBody {
     height: 100%;
     width: 100%;
+    display: flex;
     position: relative;
     background-size: contain;
     background-position: 100%;
     background-repeat: no-repeat;
+    z-index: 2;
 }
 
-.divMainBodyPerfil .videoPosterPerfil{
+.videoPosterPerfil{
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+    object-fit: cover;
+}
+
+.imgPosterPerfil{
     width: 75%;
     height: 100%;
     position: absolute;
@@ -58,7 +69,7 @@
     width: 25%;
     height: 100%;
     position: relative;
-
+    z-index: 10;
 }
 
 .userProfileBanner div {
@@ -663,4 +674,71 @@ input[type='file'] {
     align-items: center;
     overflow: hidden;
     z-index: 35;
+}
+
+.imgPosterPerfilEquipes{
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+    background-color: #000000a4;
+    box-shadow: inset 200px 0px 150px 100px #0000008f;
+}
+
+.divMainBodyPerfil{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: contain;
+    background-position: 100%;
+    background-repeat: no-repeat;
+}
+/* EQUIPES */
+
+.divMapEquipes{
+    width: 74.9%;
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    z-index: 9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.divMapEquipesMainBody{
+    position: relative;
+    z-index: 10;
+    background-color: rgb(34, 34, 34);
+    width: 90%;
+    height: 80px;
+    border-radius: 0px 40px 40px 0px;
+
+}
+
+.divMapEquipesMainContent{
+    width: 100%;
+}
+
+.divMapEquipesImgLogo{
+    width: 80px;
+    height: 80px;
+}
+
+.divMapEquipesH3Name{
+    position: absolute;
+    color: white;
+    font-size: 21px;
+    top: -15.5%;
+    left: 11%;
+}
+
+.divMapEquipesLabel3Tag{
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    top: 45%;
+    left: 11%;
 }

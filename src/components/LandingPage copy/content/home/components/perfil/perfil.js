@@ -220,8 +220,8 @@ export default function Perfil(props) {
                 e.target = "";
             } else {
                 let fileExtension = e.target.files[0].name.split('.').pop();
-                let newFile = new File([e.target.files[0]], props.loggedUser.username + '_fundo.' + fileExtension, {type: e.target.files[0].type});
-               
+                let newFile = new File([e.target.files[0]], props.loggedUser.username + '_fundo.' + fileExtension, { type: e.target.files[0].type });
+
                 Resizer.imageFileResizer(
                     newFile,
                     1381,
@@ -233,7 +233,7 @@ export default function Perfil(props) {
                         setImageFundo(uri);
                     },
                     "file"
-                
+
                 );
                 props.setstatusFetch('Após o upload dessa imagem.')
 
@@ -244,7 +244,7 @@ export default function Perfil(props) {
 
     }
 
-    const handleImageChange = async(e) => {
+    const handleImageChange = async (e) => {
         props.setstatusFetch('Handling Image Change')
         if (e.target !== "") {
 
@@ -255,8 +255,8 @@ export default function Perfil(props) {
                 e.target = "";
             } else {
                 let fileExtension = e.target.files[0].name.split('.').pop();
-                let newFile = new File([e.target.files[0]], props.loggedUser.username + '_icon.' + fileExtension, {type: e.target.files[0].type});
-               
+                let newFile = new File([e.target.files[0]], props.loggedUser.username + '_icon.' + fileExtension, { type: e.target.files[0].type });
+
                 Resizer.imageFileResizer(
                     newFile,
                     256,
@@ -268,7 +268,7 @@ export default function Perfil(props) {
                         setImageIcon(uri);
                     },
                     "file"
-                
+
                 );
                 props.setstatusFetch('Confirm Changes')
 
@@ -363,7 +363,7 @@ export default function Perfil(props) {
                             <div className='userProfileFundo'>
 
 
-                                <input id="userPFE" className='userProfileInputEnviar' accept="image/png, image/jpeg, video/mp4" type="file" onChange={handleImageChangeFundo} >
+                                <input id="userPFE" className='userProfileInputEnviar' accept="image/*" type="file" onChange={handleImageChangeFundo} >
                                 </input>
                                 <label htmlFor="userPFE" className="userProfileIModalBackground">
 
@@ -393,7 +393,7 @@ export default function Perfil(props) {
                                     <div className='userProfileIcon'>
 
 
-                                        <input id="userPIE" className='userProfileInputEnviar' accept="image/png, image/jpeg, video/mp4" type="file" onChange={handleImageChange} >
+                                        <input id="userPIE" className='userProfileInputEnviar' accept="image/*" type="file" onChange={handleImageChange} >
                                         </input>
                                         <label htmlFor="userPIE" className="userProfileIModal2" onClick={() => { }}>
 
@@ -473,86 +473,115 @@ export default function Perfil(props) {
                     <SettingsIcon></SettingsIcon>
                 </div>
             </div>
-            {page === 'perfil' &&
-
-                <div className='divMainBodyPerfil'>
-                    {props.loggedUser.imgFundo === currentImage &&
-                        <video className='videoPosterPerfil' poster={props.loggedUser.imgFundo} src={props.loggedUser.imgFundo}></video>
-                    }
-                    <div className='userProfileBanner' style={{
-                        borderRight: `${props.loggedUser.corP} solid 1px`
-                    }} >
-                        <div>
-                            <div className='userProfileIcon'>
-                                <img src={require(`../../../../assets/images/borders/${props.loggedUser.moldura}_border.png`)} alt=""></img>
-                                <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
-                            </div>
-                            <label>
-                                {props.loggedUser.username}
-                            </label>
-                            <p>
-                                {props.loggedUser.titulo}
-                            </p>
+            <div className='divProfileBody'>
+                <div className='userProfileBanner' style={{
+                    borderRight: `${props.loggedUser.corP} solid 1px`
+                }} >
+                    <div>
+                        <div className='userProfileIcon'>
+                            <img src={require(`../../../../assets/images/borders/${props.loggedUser.moldura}_border.png`)} alt=""></img>
+                            <video poster={props.loggedUser.icon} src={props.loggedUser.icon}></video>
                         </div>
-                        <div className='trimProfileBanner'>
-                            <label>{props.loggedUser.status}</label>
+                        <label>
+                            {props.loggedUser.username}
+                        </label>
+                        <p>
+                            {props.loggedUser.titulo}
+                        </p>
+                    </div>
+                    <div className='trimProfileBanner'>
+                        <label>{props.loggedUser.status}</label>
+                    </div>
+                </div>
+                {page === 'perfil' &&
+
+                    <div className='overviewDivPerfil'>
+                        {props.loggedUser.imgFundo === currentImage &&
+                            <img className='imgPosterPerfil' poster={props.loggedUser.imgFundo} src={props.loggedUser.imgFundo}></img>
+                        }
+                        <div className="divTopTeam">
+                            {timesDoUsuario && timesDoUsuario.map((time, index) => index === 0 && (
+                                <div className="divTopSubContainerTeam" key={time.id}>
+                                    <div className='hiddenInfoTop' style={{ display: showTeam }}>
+                                        <video src={time.logo} poster={time.logo}></video>
+                                        <h3>{time.nome}</h3>
+                                        <label>{time.tag}</label>
+                                    </div>
+                                    <div className="openInfoVideo" id="openInfoVideo" onMouseEnter={() => { setShowTeam('flex') }} onMouseLeave={() => { setShowTeam('none') }}>
+                                        <video src={time.imgFundo} poster={time.imgFundo}></video>
+                                    </div>
+
+                                </div>
+                            ))}
+                        </div>
+                        <div className="divTopConquista">
+                            {torneiosDoUsuario && torneiosDoUsuario.map((torneio, index) => index === 0 && (
+                                <div className="divTopSubContainerConq" key={torneio.id}>
+                                    <div className='hiddenInfoConq' style={{ display: showTor }}>
+                                        <video src={torneio.logo} poster={torneio.logo}></video>
+                                        <h3>{torneio.nome}</h3>
+                                        <label>1º Lugar</label>
+                                    </div>
+                                    <div className="openInfoVideo" id="openInfoVideo" onMouseEnter={() => { setShowTor('flex') }} onMouseLeave={() => { setShowTor('none') }}>
+                                        <video src={torneio.imgFundo} poster={torneio.imgFundo}></video>
+                                    </div>
+
+                                </div>
+                            ))}
+                        </div>
+                        <div className="divQuantiaAmigos">
                         </div>
                     </div>
+                }
+                {page === 'equipes' &&
+                    <div className="eDivPerfil">
+                        {props.loggedUser.imgFundo === currentImage &&
+                            <img className='imgPosterPerfilEquipes' src={props.loggedUser.imgFundo}></img>
+                        }
+                        <div className='imgPosterPerfilEquipes'></div>
+                        <div className='divMapEquipes'>
 
-                    <div className="divTopTeam">
-                        {timesDoUsuario.map((time) => (
-                            <div className="divTopSubContainerTeam" key={time.id}>
-                                <div className='hiddenInfoTop' style={{ display: showTeam }}>
-                                    <video src={time.logo} poster={time.logo}></video>
-                                    <h3>{time.nome}</h3>
-                                    <label>{time.tag}</label>
-                                </div>
-                                <div className="openInfoVideo" id="openInfoVideo" onMouseEnter={() => { setShowTeam('flex') }} onMouseLeave={() => { setShowTeam('none') }}>
-                                    <video src={time.imgFundo} poster={time.imgFundo}></video>
-                                </div>
+                            {
+                                timesDoUsuario.map((time) => (
+                                    <div className="divMapEquipesMainBody" key={time.id}>
+                                        <div className='divMapEquipesMainContent'>
+                                            <img className='divMapEquipesImgLogo' src={time.logo} alt='logo'></img>
+                                            <h3 className='divMapEquipesH3Name'>{time.nome}</h3>
+                                            <label className='divMapEquipesLabel3Tag'>{time.tag}</label>
+                                            <label className='divMapEquipesLabel3Membros'>MEMBROS</label>
+                                            <div className='divMapEquipesDivMembros'>
+                                                {JSON.parse(time.equipeAtiva).map((membro) => {
+                                                    <div>
+                                                        <img alt='logoUser' src={membro.icon}></img>
+                                                    </div>
+                                                })
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
 
-                            </div>
-                        ))}
+
+                        </div>
                     </div>
-                    <div className="divTopConquista">
-                        {torneiosDoUsuario.map((torneio) => (
-                            <div className="divTopSubContainerConq" key={torneio.id}>
-                                <div className='hiddenInfoConq' style={{ display: showTor }}>
-                                    <video src={torneio.logo} poster={torneio.logo}></video>
-                                    <h3>{torneio.nome}</h3>
-                                    <label>1º Lugar</label>
-                                </div>
-                                <div className="openInfoVideo" id="openInfoVideo" onMouseEnter={() => { setShowTor('flex') }} onMouseLeave={() => { setShowTor('none') }}>
-                                    <video src={torneio.imgFundo} poster={torneio.imgFundo}></video>
-                                </div>
+                }
+                {page === 'torneios' &&
+                    <div>
 
-                            </div>
-                        ))}
                     </div>
-                    <div className="divQuantiaAmigos">
+                }
+                {page === 'amigos' &&
+                    <div>
+
                     </div>
-                </div>
-            }
-            {page === 'equipes' &&
-                <div>
+                }
+                {page === 'conquistas' &&
+                    <div>
 
-                </div>
-            }
-            {page === 'torneios' &&
-                <div>
-
-                </div>
-            }
-            {page === 'amigos' &&
-                <div>
-
-                </div>
-            }
-            {page === 'conquistas' &&
-                <div>
-
-                </div>
-            }
+                    </div>
+                }
+            </div>
         </div >
     )
 }
