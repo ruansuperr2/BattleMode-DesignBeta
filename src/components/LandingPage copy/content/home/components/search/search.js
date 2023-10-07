@@ -67,7 +67,7 @@ export default function Search(props) {
                             <img src={item.icon} alt={item.username + "_icon"} />
                             <label className='divSearchFilteredNameUser'>{item.username}</label>
                             <label className='divSearchFilteredTitulo'>{item.titulo}</label>
-                            <div className='divSearchFilteredBackground' onClick={(e) => props.setToUser(item.id)} onMouseLeave={(e) => { e.target.parentNode.style.backgroundColor = '#313131'; console.log(e) }} onMouseEnter={(e) => e.target.parentNode.style.backgroundColor = '#101010'} />
+                            <div className='divSearchFilteredBackground' onClick={(e) => props.setToUser(item.id)} onMouseLeave={(e) => { e.target.parentNode.style.backgroundColor = '#313131' }} onMouseEnter={(e) => e.target.parentNode.style.backgroundColor = '#101010'} />
 
                         </div>
                     ))}
@@ -109,7 +109,7 @@ export default function Search(props) {
                             <label className='divSearchFilteredNameTime'>{item.nome}</label>
                             <label className='divSearchFilteredTag'>{item.tag}</label>
 
-                            <div className='divSearchFilteredBackground' onMouseLeave={(e) => { e.target.parentNode.style.backgroundColor = '#313131'; console.log(e) }} onMouseEnter={(e) => e.target.parentNode.style.backgroundColor = '#101010'} />
+                            <div className='divSearchFilteredBackground' onMouseLeave={(e) => { e.target.parentNode.style.backgroundColor = '#313131' }} onMouseEnter={(e) => e.target.parentNode.style.backgroundColor = '#101010'} />
                         </div>
                     ))}
                 </div>

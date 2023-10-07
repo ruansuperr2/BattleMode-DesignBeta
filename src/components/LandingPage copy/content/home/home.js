@@ -259,7 +259,6 @@ export default function Home() {
                 setLoggedUser(user.data)
                 setstatusFetch("YES")
             } catch (e) {
-                console.log(e)
                 setstatusFetch("ERROR")
             }
         }, 1000)
@@ -303,10 +302,8 @@ export default function Home() {
                     response.json(),
                 ])
                 setLoggedUser(user.data)
-                console.log(loggedUser)
                 setstatusFetch("YES")
             } catch (e) {
-                console.log(e)
                 setstatusFetch("ERROR")
             }
         }, 1000)
@@ -314,14 +311,11 @@ export default function Home() {
 
     const salvarPerfilFundo = async (imageFundo) => {
         setstatusFetch('Trying to Upload')
-        console.log(imageFundo)
         if (imageFundo !== loggedUser.imgFundo) {
 
             try {
                 const file = imageFundo
-                console.log('file: ', file)
 
-                console.log(imageFundo, file)
                 if (!file) return;
                 const storageRef = ref(storage, `fundo/${file.name}`);
                 const uploadTask = uploadBytesResumable(storageRef, file);
@@ -338,7 +332,6 @@ export default function Home() {
                     },
                     () => {
                         getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-                            console.log('URL: ', downloadURL)
 
                             fetchDataFundo(downloadURL)
                             setstatusFetch("GetDownloadURL: Success!")
@@ -364,7 +357,6 @@ export default function Home() {
 
             try {
                 const file = imageIcon
-                console.log(imageIcon, file)
                 if (!file) return;
                 const storageRef = ref(storage, `icon/${file.name}`);
                 const uploadTask = uploadBytesResumable(storageRef, file);

@@ -421,7 +421,7 @@ export default function Perfil(props) {
 
                                     </input>
                                     <h3 className='ChangeSelect'>
-                                        <select value={tituloNew} onChange={(e) => { setTituloNew(e.target.value); console.log(tituloNew); console.log(e) }} className="selectPerfil" placeholder={props.loggedUser.titulo} >
+                                        <select value={tituloNew} onChange={(e) => { setTituloNew(e.target.value) }} className="selectPerfil" placeholder={props.loggedUser.titulo} >
                                             {titulos && titulos.map((titulo, index) => {
                                                 return (
                                                     <option key={index} value={titulo}>{titulo}</option>

@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import userTest from './assets/json/users.json'
 
 function LandingPageDev(props) {
-  console.log(process.env.REACT_APP_SERVER + ":" + process.env.REACT_APP_PORT)
   const navigate = useNavigate();
 
   const [loggedUser, setLoggedUser] = useState({});
@@ -138,11 +137,9 @@ function LandingPageDev(props) {
       try {
         const response = await fetch('http://' +  process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api')
         const data = response.json()
-        console.log(data)
         if (data !== null) {
 
           data.then(val => {
-            console.log(val.success, val)
             setConnection(true)
             setdbConnection(true)
             const loadDataU = async () => {
@@ -168,16 +165,13 @@ function LandingPageDev(props) {
 
       } catch (e) {
       }
-      console.log(connection, dbConnection)
     }
     if (dbConnection === null || dbConnection === false) {
 
       detectServerConnection()
       fetchData()
-      console.log(connection, dbConnection)
 
     }
-    console.log(connection, dbConnection)
 
   },[users, dbConnection])
 

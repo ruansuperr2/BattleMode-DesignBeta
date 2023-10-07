@@ -113,7 +113,6 @@ export default function Games(props) {
                         </button>
                     ))}
                 </div>
-                {console.log(jogosAtual, numeroPaginas, Array(numeroPaginas).fill(null))}
                 <button disabled={paginaAtual === Array(numeroPaginas).fill(null).length} className='btnPgUp btnPgCh' onClick={() => setPaginaAtual(paginaAtual + 1)}>
                     {'>'}
                 </button>

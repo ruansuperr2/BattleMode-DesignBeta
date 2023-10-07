@@ -53,8 +53,8 @@
     width: 75%;
     z-index: 30;
     background: #151515;
-    background: -moz-linear-gradient(top, #151515 0%, #000000af 50%,#ffffff00 100%);
-    background: -webkit-linear-gradient(top, #151515 0%, #000000af 50%,#ffffff00 100%);
+    background: -moz-linear-gradient(top, #151515 0%, #000000af 50%, #ffffff00 100%);
+    background: -webkit-linear-gradient(top, #151515 0%, #000000af 50%, #ffffff00 100%);
     background: linear-gradient(to bottom, #151515 0%, #000000af 50%, #ffffff00 100%);
     border-radius: 0px 0px 5px 5px;
 }
@@ -729,6 +729,7 @@ input[type='file'] {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-start;
     gap: 15px;
     overflow-y: scroll;
 }
