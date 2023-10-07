@@ -172,3 +172,60 @@
     align-items: center;
     width: 100%;
 }
+
+
+@media screen and (orientation:landscape) and (max-width: 720px){
+
+.navbarHome {
+    background-color: blue;
+    height: 11rem;
+    width: 100%;
+    display: flex;
+    position: relative;
+    z-index: 18;
+    border-top: 3px solid #fc6b03;
+    }
+
+.navbarRightDiv {
+    width: 20%;
+    height: 100%;
+    background-color: #131313;
+    border-left: #857762 2px solid;
+    border-bottom: #857762 2px solid;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.userBodyIcon {
+    margin-left: 2%;
+    border-radius: 64px;
+}
+
+.userNavBorder{
+    position: absolute;
+    width: 86px;
+    left: -1.8rem;
+    top: -2rem
+}
+
+.userNameOnNavbar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.userBodyName {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #e9e9e9;
+    margin-left: 4%;
+}
+
+.userBodyTitle {
+    font-size: 0.8rem;
+    font-weight: bolder;
+    color: #818181;
+    margin-left: 4%;
+        }
+        }
