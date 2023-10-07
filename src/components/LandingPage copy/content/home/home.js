@@ -1,10 +1,10 @@
 import './home.css'
 import { useEffect, useState } from 'react';
-import Games from './components/games/games';
 import Groups2Icon from '@mui/icons-material/Groups2';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
+
 
 import jogosJson from '../../assets/json/jogos.json'
 import userTest from '../../assets/json/users.json'
@@ -13,7 +13,10 @@ import { storage } from '../../../FireBase';
 
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 
+import Games from './components/games/games';
 import Perfil from './components/perfil/perfil';
+import Search from './components/search/search';
+
 
 export default function Home() {
     const [loggedUser, setLoggedUser] = useState([]);
@@ -21,6 +24,7 @@ export default function Home() {
     const [jogos, setJogos] = useState([])
     const [torneios, setTorneios] = useState([])
     const [equipes, setEquipes] = useState([])
+    const [users, setUsers] = useState([])
 
     useEffect(() => {
         const loadDataT = async () => {
@@ -80,7 +84,7 @@ export default function Home() {
         const loadDataJ = async () => {
             try {
 
-                    setJogos(jogosJson.sort(() => (Math.random() > .5) ? 1 : -1))
+                setJogos(jogosJson.sort(() => (Math.random() > .5) ? 1 : -1))
 
             } catch (error) { }
         };
@@ -99,7 +103,7 @@ export default function Home() {
                 if (window.location.href === "https://battlemode.netlify.app/" || window.location.href === "https://battlemode.netlify.app") {
                     setLoggedUser(userTest.find(account => account.id === JSON.parse(localStorage.getItem('offline'))))
 
-                }else{
+                } else {
 
                     const [response] = await Promise.all([
                         fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
@@ -109,6 +113,30 @@ export default function Home() {
                     ])
                     setLoggedUser(user.data)
                 }
+            } catch (e) {
+                console.error(e)
+            }
+        };
+
+        loadDataU()
+
+
+        return () => {
+            // Limpar qualquer recurso criado na função de efeito
+        };
+    }, [])
+
+    useEffect(() => {
+        const loadDataU = async () => {
+            try {
+                const [response] = await Promise.all([
+                    fetch('http://localhost:6090/api/user'),
+                ]);
+                const [user] = await Promise.all([
+                    response.json(),
+                ])
+                setUsers(user.data)
+
             } catch (e) {
                 console.error(e)
             }
@@ -303,7 +331,7 @@ export default function Home() {
 
             try {
                 const file = imageFundo
-                console.log('file: ',file)
+                console.log('file: ', file)
 
                 console.log(imageFundo, file)
                 if (!file) return;
@@ -322,7 +350,7 @@ export default function Home() {
                     },
                     () => {
                         getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-                            console.log('URL: ',downloadURL)
+                            console.log('URL: ', downloadURL)
 
                             fetchDataFundo(downloadURL)
                             setstatusFetch("GetDownloadURL: Success!")
@@ -464,11 +492,11 @@ export default function Home() {
                     {currentPage === 'noticias' &&
                         <div></div>
                     }
-                    {/* {currentPage === 'procurar' &&
-                        <FindAll></FindAll>
-                    } */}
+                    {currentPage === 'procurar' &&
+                        <Search users={users} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Search>
+                    }
                     {currentPage === 'perfil' &&
-                        <Perfil salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
+                        <Perfil users={users} salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
 
                     }
                     {/* {currentPage === 'equipes' &&

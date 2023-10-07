@@ -3,8 +3,13 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 import React, { useState, useEffect } from 'react';
 import Resizer from "react-image-file-resizer";
+import NavigationIcon from '@mui/icons-material/Navigation';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 const molduras = [
+    'dragon_faeri',
+    'dragon_faeri_2',
+    'majestic_sword',
     'theShadowOfLight',
     'shadows',
     'excalibur',
@@ -180,6 +185,8 @@ export default function Perfil(props) {
         const meusTimes = props.times.filter((time) => {
             return time && JSON.parse(time.equipeAtiva).includes(props.loggedUser.id);
         });
+
+
 
         // Filtrar os torneios pelos times do usuário
         const torneiosDoUsuario = props.torneio.filter((torneio) => {
@@ -465,7 +472,6 @@ export default function Perfil(props) {
             <div className='perfilNavbar'>
                 <label onClick={() => setPage('perfil')}>Perfil</label>
                 <label onClick={() => setPage('equipes')}>Equipes</label>
-                <label onClick={() => setPage('torneios')}>Torneios</label>
                 <label onClick={() => setPage('amigos')}>Amigos</label>
                 <label onClick={() => setPage('conquistas')}>Conquistas</label>
 
@@ -541,34 +547,63 @@ export default function Perfil(props) {
                         <div className='imgPosterPerfilEquipes'></div>
                         <div className='divMapEquipes'>
 
-                            {
-                                timesDoUsuario.map((time) => (
-                                    <div className="divMapEquipesMainBody" key={time.id}>
-                                        <div className='divMapEquipesMainContent'>
-                                            <img className='divMapEquipesImgLogo' src={time.logo} alt='logo'></img>
-                                            <h3 className='divMapEquipesH3Name'>{time.nome}</h3>
-                                            <label className='divMapEquipesLabel3Tag'>{time.tag}</label>
-                                            <label className='divMapEquipesLabel3Membros'>MEMBROS</label>
-                                            <div className='divMapEquipesDivMembros'>
-                                                {JSON.parse(time.equipeAtiva).map((membro) => {
-                                                    <div>
-                                                        <img alt='logoUser' src={membro.icon}></img>
-                                                    </div>
-                                                })
+                            {timesDoUsuario.map((time) => (
+                                <div className="divMapEquipesMainBody" key={time.id}>
+                                    <div className='divMapEquipesHover' onMouseEnter={(e) => {
+                                            e.target.style.opacity = '100%'
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.target.style.opacity = '0'
+                                        }}
+                                        onClick={() => {
+
+                                        }}>
+                                        IR PARA A PÁGINA DESSA EQUIPE  -  <ArrowOutwardIcon className='divMapEquipesHoverArrow'/>
+                                    </div>
+                                    <div className='divMapEquipesMainContent'>
+                                        <img className='divMapEquipesImgLogo' src={time.logo} alt='logo'></img>
+                                        <h3 className='divMapEquipesH3Name'>{time.nome}</h3>
+                                        <label className='divMapEquipesLabel3Tag'>{time.tag}</label>
+                                        <label className='divMapEquipesLabel3Membros'>MEMBROS</label>
+                                        <div className='divMapEquipesDivMembros'>
+                                            {props.users.map((u) => {
+                                                if (JSON.parse(time.equipeAtiva).find((ac) => { return ac === u.id })) {
+                                                    if (u.id === props.loggedUser.id) {
+                                                        return (
+                                                            <div key={u.id} className='divMapEquipesDivUser'>
+                                                                <NavigationIcon className='divMapEquipesDivUserIndicator' />
+                                                                <img className='divMapEquipesMembrosIcon' alt={u.username} src={u.icon} />
+                                                                <img className='divMapEquipesMembrosMoldura' alt={u.moldura} src={require(`../../../../assets/images/borders/${u.moldura}_border.png`)} />
+                                                            </div>
+                                                        )
+                                                    } else {
+                                                        return (
+                                                            <div key={u.id}>
+                                                                <img className='divMapEquipesMembrosIcon' alt={u.username} src={u.icon} />
+                                                                <img className='divMapEquipesMembrosMoldura' alt={u.moldura} src={require(`../../../../assets/images/borders/${u.moldura}_border.png`)} />
+                                                            </div>
+                                                        )
+                                                    }
                                                 }
-                                            </div>
+                                            })
+                                            }
+                                        </div>
+                                        <div className='divMapEquipesDivGame'>
+                                            {props.jogos.map((j) => {
+                                                if (time.jogoPrincipal === j.id) {
+                                                    return <img className='divMapEquipesDivGameLogo' src={j.logo} alt={j.nome} />
+                                                }
+                                            })
+
+                                            }
                                         </div>
                                     </div>
-                                ))
+                                </div>
+                            ))
                             }
 
 
                         </div>
-                    </div>
-                }
-                {page === 'torneios' &&
-                    <div>
-
                     </div>
                 }
                 {page === 'amigos' &&

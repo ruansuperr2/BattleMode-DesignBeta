@@ -122,7 +122,6 @@ function LandingPageDev(props) {
         const response = await fetch('http://localhost:6090/api')
         const data = response.json()
         data.then(val => {
-          console.log(val.success, val)
           setConnection(true)
           setdbConnection(true)
           if (JSON.parse(localStorage.getItem('dasiBoard')) != null && val.success === 'true') {
@@ -144,32 +143,47 @@ function LandingPageDev(props) {
         const response = await fetch('http://localhost:6090/api')
         const data = response.json()
         console.log(data)
-        if(data !== null){
+        if (data !== null) {
 
           data.then(val => {
             console.log(val.success, val)
             setConnection(true)
             setdbConnection(true)
+            const loadDataU = async () => {
+              try {
+                const [response] = await Promise.all([
+                  fetch('http://localhost:6090/api/user'),
+                ]);
+                const [user] = await Promise.all([
+                  response.json(),
+                ])
+                setUsers(user.data)
+    
+              } catch (e) {
+              }
+            };
+    
+            loadDataU()
           })
-        }else{
+        } else {
           setConnection(false)
           setdbConnection(false)
         }
 
       } catch (e) {
-        setConnection(false)
-        setdbConnection(false)
       }
       console.log(connection, dbConnection)
     }
-    console.log(users)
-    if (dbConnection === null) {
+    if (dbConnection === null || dbConnection === false) {
 
       detectServerConnection()
       fetchData()
-      console.log(users)
+      console.log(connection, dbConnection)
+
     }
-  })
+    console.log(connection, dbConnection)
+
+  },[users, dbConnection])
 
 
 
@@ -250,7 +264,7 @@ function LandingPageDev(props) {
     if (window.location.href === "https://battlemode.netlify.app/" || window.location.href === "https://battlemode.netlify.app") {
       setConnectionMessage("DEV MODE: FINDING OFFLINE USER")
       setTimeout(() => {
-        
+
         const userExists = userTest.find(account => account.username === username)
         setLoggedUser(userExists)
         localStorage.setItem('offline', JSON.stringify(userExists.id))
@@ -263,10 +277,11 @@ function LandingPageDev(props) {
 
       // fetch aqui
       if (connection === true) {
+
         setConnectionMessage("Procurando por usuário")
         try {
           setTimeout(() => {
-  
+
             const userExists = users.find(account => account.username === username)
             if (userExists) {
               // Verificar se a senha está correta
@@ -278,12 +293,12 @@ function LandingPageDev(props) {
                   navigate("/home");
                 }, 600)
               } else {
-  
+
                 setConnectionMessage("Usuário ou senha incorreto")
                 setLogging(false)
-  
+
               }
-  
+
             } else {
               setConnectionMessage("Usuário ou senha incorreto")
               setTimeout(() => {
@@ -291,17 +306,16 @@ function LandingPageDev(props) {
                 document.querySelector('.inputBlock2').removeAttribute('disabled')
                 document.querySelector('.inputBlock3').removeAttribute('disabled')
                 document.querySelector('#buttonSignIn').removeAttribute('disabled')
-  
+
                 setLogging(false)
               }, 1600)
             }
           }, 600)
-  
+
         } catch (error) {
-          console.log(error)
         }
       } else {
-  
+
         setConnectionMessage("Unable to reach servers")
         setTimeout(() => {
           document.querySelector('.inputBlock1').removeAttribute('disabled')
@@ -309,20 +323,11 @@ function LandingPageDev(props) {
           document.querySelector('.inputBlock3').removeAttribute('disabled')
           document.querySelector('#buttonSignIn').removeAttribute('disabled')
           document.querySelector('#buttonSignUp').removeAttribute('disabled')
-  
+
           setLogging(false)
         }, 1600)
       }
     }
-  }
-
-  hideNavbar(props.funcNav);
-
-  const buttonRef = useRef(null);
-  const handleRegister = () => {
-    callRegister()
-    let audio = new Audio(require('./assets/audios/buttonclick.mp3'))
-    audio.play()
   }
 
   return (
@@ -346,7 +351,7 @@ function LandingPageDev(props) {
           /* Parte do Login */
           <div className="divUserBodyLoginScreen">
 
-            <img className="responsiveBmLogo"style={{ width: "14vw" }} src={require("./assets/images/BMlogo.png")} />
+            <img className="responsiveBmLogo" style={{ width: "14vw" }} src={require("./assets/images/BMlogo.png")} />
             <h2>Entrar</h2>
             <input className="inputBlock1" value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="USERNAME"></input>
             <input className="inputBlock2" value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="PASSWORD"></input>
@@ -368,7 +373,6 @@ function LandingPageDev(props) {
                   setUsers(val.data)
                 })
               } catch (error) {
-                console.log(error)
               }
             }}>
               <label className="labelSignUp">Fazer o cadastro</label>

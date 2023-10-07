@@ -1,0 +1,83 @@
+.divMainBodySearchPage{
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+
+}
+.divMainBodySearchPageUsersMap{
+    width: 33%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6.5rem;
+}
+
+.divMainBodyUserSearch{
+    padding: 0.5rem;
+    font-size: 16px;
+    border-radius: 10px;
+    position: absolute;
+    top: 1.5rem;
+    left: 8rem
+}
+
+.divSearchFilteredContentUser{
+    width: 33%;
+    height: 180px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    background-color: #313131;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+
+
+.divSearchFilteredContentUser img:nth-child(1){
+    width: 120px;
+    height: 120px;
+    position: absolute;  
+    z-index: 2;  
+    top: 0;
+}
+
+.divSearchFilteredContentUser img:nth-child(2){
+    width: 70px;
+    height: 70px;
+    border-radius: 120px;
+    position: absolute;
+    top: 2.6rem;
+    z-index: 1;
+    left: 2.8rem;
+}
+
+.divSearchFilteredContentUser .divSearchFilteredNameUser{
+    position: absolute;
+    top: 10rem;
+    font-size: 18px;
+}
+
+.divSearchFilteredTitulo{
+    position: absolute;
+    top: 12rem;
+    font-size: 11px;
+    color: #cacaca
+}
+
+.divSearchFilteredBackground{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+    z-index: 10;
+    opacity: 0;
+    cursor: pointer;
+}

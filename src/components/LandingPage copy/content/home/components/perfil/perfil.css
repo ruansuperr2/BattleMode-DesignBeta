@@ -9,7 +9,7 @@
     z-index: 2;
 }
 
-.videoPosterPerfil{
+.videoPosterPerfil {
     width: 75%;
     height: 100%;
     position: absolute;
@@ -18,7 +18,7 @@
     object-fit: cover;
 }
 
-.imgPosterPerfil{
+.imgPosterPerfil {
     width: 75%;
     height: 100%;
     position: absolute;
@@ -27,7 +27,7 @@
     object-fit: cover;
 }
 
-.divModalFundoBody{
+.divModalFundoBody {
     width: 100%;
     height: 100%;
 
@@ -41,20 +41,37 @@
 
 .perfilNavbar {
     display: flex;
-    gap: 20px;
+    padding-top: 1%;
+    gap: 0px;
     font-size: 16px;
     color: #b4905b;
     margin-top: 2px;
-    padding: 1%;
+    margin-left: 1px;
     position: absolute;
-    left: 28%;
+    right: 0%;
+    height: 66px;
+    width: 75%;
     z-index: 30;
-    background-color: #151515;
+    background: #151515;
+    background: -moz-linear-gradient(top, #151515 0%, #000000af 50%,#ffffff00 100%);
+    background: -webkit-linear-gradient(top, #151515 0%, #000000af 50%,#ffffff00 100%);
+    background: linear-gradient(to bottom, #151515 0%, #000000af 50%, #ffffff00 100%);
     border-radius: 0px 0px 5px 5px;
 }
 
-.perfilNavbar label{
+.perfilNavbar label {
     cursor: pointer;
+    margin-left: 4%;
+    font-weight: 200;
+    transition: 0.2s;
+
+}
+
+.perfilNavbar label:hover {
+    cursor: pointer;
+    margin-left: 4%;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 .perfilDivSection {
@@ -116,7 +133,7 @@
     margin-top: -1%;
 }
 
-.userProfileFundo{
+.userProfileFundo {
     width: 100%;
     height: 100%;
     top: 0%;
@@ -154,7 +171,7 @@
     justify-content: center;
     border-radius: 5px;
     position: absolute;
-    right: -30vw;
+    right: 3rem;
     transition: 0.2s
 }
 
@@ -342,7 +359,7 @@
     opacity: 0;
 }
 
-.userProfileIModalBackground{
+.userProfileIModalBackground {
     position: absolute;
     top: 0%;
     width: 75% !important;
@@ -355,13 +372,13 @@
     opacity: 0;
 }
 
-.userProfileIModalBackground:hover{
+.userProfileIModalBackground:hover {
     transition: 0.2s;
     opacity: 1;
     cursor: pointer;
 }
 
-.userBackgroundIPI{
+.userBackgroundIPI {
     transition: 0.2s;
     position: absolute;
     top: 38%;
@@ -372,7 +389,7 @@
     color: white !important;
 }
 
-.userBackgroundh2{
+.userBackgroundh2 {
     transition: 0.2s;
     position: absolute;
     top: 46%;
@@ -387,9 +404,9 @@
 
 input[type='file'] {
     display: none
-  }
+}
 
-.userProfileIModal2{
+.userProfileIModal2 {
     position: absolute;
     top: 22.5%;
     display: flex;
@@ -404,13 +421,13 @@ input[type='file'] {
     opacity: 0;
 }
 
-.userProfileIModal3{
+.userProfileIModal3 {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100% !important;
-    height: 100% ;
+    height: 100%;
     border-radius: 0px;
     z-index: 16;
     transition: 0.2s;
@@ -419,13 +436,13 @@ input[type='file'] {
     right: 0%;
 }
 
-.userProfileIModal3:hover{
+.userProfileIModal3:hover {
     transition: 0.2s;
     opacity: 1;
     cursor: pointer;
 }
 
-.userProfileIModal2:hover{
+.userProfileIModal2:hover {
     transition: 0.2s;
     opacity: 1;
     cursor: pointer;
@@ -486,13 +503,13 @@ input[type='file'] {
     overflow: hidden;
 }
 
-.divModalFundoModify{
+.divModalFundoModify {
     height: 100%;
     width: 100%;
     position: relative;
 }
 
-.divModalFundoModify video{
+.divModalFundoModify video {
     z-index: 0;
     height: 100%;
     width: 75%;
@@ -576,7 +593,7 @@ input[type='file'] {
 }
 
 .trimProfileEditInvalid {
-    font-size: 14px !important; 
+    font-size: 14px !important;
     color: rgb(255, 114, 114) !important;
     margin-top: -3% !important;
 }
@@ -592,7 +609,7 @@ input[type='file'] {
     color: white;
 }
 
-.buttonDenyChangesFundo{
+.buttonDenyChangesFundo {
     cursor: pointer;
     padding: 3%;
     margin-top: 6%;
@@ -614,7 +631,7 @@ input[type='file'] {
     color: white;
 }
 
-.buttonConfirmChangesFundo{
+.buttonConfirmChangesFundo {
     margin-top: 70.5%;
     cursor: pointer;
     padding: 3%;
@@ -625,7 +642,7 @@ input[type='file'] {
     color: white;
 }
 
-.userProfileInputEnviar{
+.userProfileInputEnviar {
     opacity: 1;
     background: red;
     width: 120px !important;
@@ -639,30 +656,30 @@ input[type='file'] {
     opacity: 1;
 }
 
-.divMoldurasSelectIcon{
+.divMoldurasSelectIcon {
     position: absolute;
     z-index: 0;
 }
 
-.molduraChangeIcon{
+.molduraChangeIcon {
     position: absolute;
     z-index: 10;
 }
 
-.propsStatus{
-    color:white;
+.propsStatus {
+    color: white;
     font-size: 16px;
     height: 0px;
     margin-top: -84px;
     text-align: center;
 }
 
-.trimProfileEditFundo{
+.trimProfileEditFundo {
     position: relative;
     z-index: 30;
 }
 
-.perfilModalFundo{
+.perfilModalFundo {
     width: 100%;
     height: 100%;
     margin-top: 2px;
@@ -676,7 +693,7 @@ input[type='file'] {
     z-index: 35;
 }
 
-.imgPosterPerfilEquipes{
+.imgPosterPerfilEquipes {
     width: 75%;
     height: 100%;
     position: absolute;
@@ -686,7 +703,7 @@ input[type='file'] {
     box-shadow: inset 200px 0px 150px 100px #0000008f;
 }
 
-.divMainBodyPerfil{
+.divMainBodyPerfil {
     height: 100%;
     width: 100%;
     position: relative;
@@ -694,40 +711,50 @@ input[type='file'] {
     background-position: 100%;
     background-repeat: no-repeat;
 }
+
 /* EQUIPES */
 
-.divMapEquipes{
+.divMapEquipes::-webkit-scrollbar-thumb {
+    background-color: #ff6a00;
+}
+
+.divMapEquipes {
     width: 74.9%;
     position: absolute;
-    top: 10%;
+    height: 100%;
+    top: 0%;
     right: 0%;
     z-index: 9;
+    padding-top: 7%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
+    overflow-y: scroll;
 }
 
-.divMapEquipesMainBody{
+.divMapEquipesMainBody {
     position: relative;
     z-index: 10;
     background-color: rgb(34, 34, 34);
     width: 90%;
     height: 80px;
     border-radius: 0px 40px 40px 0px;
-
+    border: 1px solid #857762;
 }
 
-.divMapEquipesMainContent{
+.divMapEquipesMainContent {
     width: 100%;
 }
 
-.divMapEquipesImgLogo{
+.divMapEquipesImgLogo {
     width: 80px;
     height: 80px;
+    background-color: #3b3b3b;
+    border-right: 1px solid #857762;
 }
 
-.divMapEquipesH3Name{
+.divMapEquipesH3Name {
     position: absolute;
     color: white;
     font-size: 21px;
@@ -735,10 +762,98 @@ input[type='file'] {
     left: 11%;
 }
 
-.divMapEquipesLabel3Tag{
+.divMapEquipesLabel3Tag {
     position: absolute;
     color: white;
     font-size: 14px;
     top: 45%;
     left: 11%;
+}
+
+.divMapEquipesDivMembros {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: -1px;
+    right: 40px;
+    background-color: #151515;
+    height: 100%;
+    width: 25vw;
+    box-shadow: rgb(34, 34, 34) inset -20px 0px 4px -1px, inset rgb(34, 34, 34) 20px 0px 4px -1px;
+    border-top: 1px solid #857762;
+    border-bottom: 1px solid #857762;
+
+}
+
+.divMapEquipesMembrosIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 35%;
+}
+
+.divMapEquipesMembrosMoldura {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    margin-left: -4.55rem;
+    top: 10%;
+}
+
+.divMapEquipesLabel3Membros {
+    position: absolute;
+    top: 2%;
+    color: white;
+    right: 17rem;
+    z-index: 1;
+}
+
+.divMapEquipesDivGame {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+
+}
+
+.divMapEquipesDivGameLogo {
+    width: 80px;
+    height: 80px;
+    background-color: #3b3b3b;
+    border-radius: 0px 40px 40px 0px;
+}
+
+.divMapEquipesDivUserIndicator {
+    position: absolute !important;
+    color: white !important;
+    font-size: 20px !important;
+    top: 1%;
+    margin-left: 0.8rem;
+    transform: rotate(180deg) !important;
+}
+
+.divMapEquipesHover {
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    z-index: 10;
+    color: white;
+    font-size: 24px;
+    font-weight: bolder;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 40px 40px 0px;
+    background-color: #080808e0;
+    cursor: pointer;
+}
+
+.divMapEquipesHoverArrow {
+    color: white !important;
+    font-size: 34px !important;
+    font-weight: bolder !important;
 }
