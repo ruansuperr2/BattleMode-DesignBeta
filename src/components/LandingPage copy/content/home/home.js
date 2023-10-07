@@ -480,7 +480,7 @@ export default function Home() {
 
                     }
                     {Number.isFinite(currentPage) &&
-                        <Perfil users={users} salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={users.find((u) => {return u.id === currentPage})}></Perfil>
+                        <Perfil users={users} salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={users.find((u) => { return u.id === currentPage })}></Perfil>
 
                     }
                     {/* {currentPage === 'equipes' &&
@@ -491,7 +491,27 @@ export default function Home() {
                     } */}
                 </div>
                 <div className='listBody'>
+                    <div className='friendListActions'></div>
+                    {loggedUser && users && users.map((u) => {
+                        if (JSON.parse(loggedUser.favoritados).find((ac) => { return ac === u.id })) {
 
+                            return (
+                                <div className='friendListAccounts' key={u.id}>
+                                    <div>
+
+                                        <img className='divMapEquipesMembrosIcon' alt={u.username} src={u.icon} />
+                                        <img className='divMapEquipesMembrosMoldura' alt={u.moldura} src={require(`../../assets/images/borders/${u.moldura}_border.png`)} />
+                                    </div>
+                                    <div>
+                                        <label>{u.username}</label>
+                                        <label>{u.titulo}</label>
+                                    </div>
+                                </div>
+                            )
+
+                        }
+                    })
+                    }
                 </div>
             </div>
         </div>
