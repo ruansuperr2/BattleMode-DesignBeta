@@ -30,7 +30,7 @@ export default function Home() {
         const loadDataT = async () => {
             try {
                 const response = await fetch(
-                    'http://localhost:6090/api/torneio',
+                    'http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/torneio',
                 );
                 const data = response.json();
                 data.then((val) => {
@@ -51,7 +51,7 @@ export default function Home() {
         const loadDataJ = async () => {
             try {
                 const response = await fetch(
-                    'http://localhost:6090/api/time',
+                    'http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/time',
                 );
                 const data = response.json();
                 data.then((val) => {
@@ -69,18 +69,6 @@ export default function Home() {
     }, [])
 
     useEffect(() => {
-        // const loadDataJ = async () => {
-        //     try {
-        //         const response = await fetch(
-        //             'http://localhost:6090/api/jogo',
-        //         );
-        //         const data = response.json();
-        //         data.then((val) => {
-        //             setJogos(val.data.sort(() => (Math.random() > .5) ? 1 : -1))
-        //         })
-        //     } catch (error) { }
-        // };
-
         const loadDataJ = async () => {
             try {
 
@@ -106,7 +94,7 @@ export default function Home() {
                 } else {
 
                     const [response] = await Promise.all([
-                        fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+                        fetch('http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
                     ]);
                     const [user] = await Promise.all([
                         response.json(),
@@ -130,7 +118,7 @@ export default function Home() {
         const loadDataU = async () => {
             try {
                 const [response] = await Promise.all([
-                    fetch('http://localhost:6090/api/user'),
+                    fetch('http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user'),
                 ]);
                 const [user] = await Promise.all([
                     response.json(),
@@ -261,9 +249,9 @@ export default function Home() {
 
                     })
                 }
-                await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
+                await fetch('http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user/' + loggedUser.id, requestOptions)
                 const [response] = await Promise.all([
-                    fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+                    fetch('http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
                 ]);
                 const [user] = await Promise.all([
                     response.json(),
@@ -307,9 +295,9 @@ export default function Home() {
 
                     })
                 }
-                await fetch('http://localhost:6090/api/user/' + loggedUser.id, requestOptions)
+                await fetch('http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user/' + loggedUser.id, requestOptions)
                 const [response] = await Promise.all([
-                    fetch('http://localhost:6090/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
+                    fetch('http://' + process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user/' + JSON.parse(localStorage.getItem('dasiBoard'))),
                 ]);
                 const [user] = await Promise.all([
                     response.json(),
@@ -493,10 +481,14 @@ export default function Home() {
                         <div></div>
                     }
                     {currentPage === 'procurar' &&
-                        <Search users={users} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Search>
+                        <Search setToUser={setCurrentPage} users={users} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Search>
                     }
                     {currentPage === 'perfil' &&
                         <Perfil users={users} salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={loggedUser}></Perfil>
+
+                    }
+                    {Number.isFinite(currentPage) &&
+                        <Perfil users={users} salvarPerfilFundo={salvarPerfilFundo} setstatusFetch={setstatusFetch} statusFetch={statusFetch} salvarPerfilMoldura={salvarPerfilMoldura} torneio={torneios} jogos={jogos} times={equipes} loggedUser={users.find((u) => {return u.id === currentPage})}></Perfil>
 
                     }
                     {/* {currentPage === 'equipes' &&

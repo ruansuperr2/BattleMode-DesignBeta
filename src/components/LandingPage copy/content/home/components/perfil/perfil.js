@@ -474,10 +474,12 @@ export default function Perfil(props) {
                 <label onClick={() => setPage('equipes')}>Equipes</label>
                 <label onClick={() => setPage('amigos')}>Amigos</label>
                 <label onClick={() => setPage('conquistas')}>Conquistas</label>
+                {props.loggedUser.id === JSON.parse(localStorage.getItem('dasiBoard')) && 
 
-                <div className="perfilNavbarSettings" onClick={() => setModal(true)}>
-                    <SettingsIcon></SettingsIcon>
-                </div>
+                    <div className="perfilNavbarSettings" onClick={() => setModal(true)}>
+                        <SettingsIcon></SettingsIcon>
+                    </div>
+                }
             </div>
             <div className='divProfileBody'>
                 <div className='userProfileBanner' style={{

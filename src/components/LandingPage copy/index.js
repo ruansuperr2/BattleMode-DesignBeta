@@ -4,13 +4,9 @@ import data from '../../version.json'
 import { useNavigate } from "react-router-dom";
 
 import userTest from './assets/json/users.json'
-function hideNavbar(funcNav) {
-  funcNav(false);
-}
-
 
 function LandingPageDev(props) {
-
+  console.log(process.env.REACT_APP_SERVER + ":" + process.env.REACT_APP_PORT)
   const navigate = useNavigate();
 
   const [loggedUser, setLoggedUser] = useState({});
@@ -119,7 +115,7 @@ function LandingPageDev(props) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:6090/api')
+        const response = await fetch('http://' +  process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api')
         const data = response.json()
         data.then(val => {
           setConnection(true)
@@ -140,7 +136,7 @@ function LandingPageDev(props) {
 
     const detectServerConnection = async () => {
       try {
-        const response = await fetch('http://localhost:6090/api')
+        const response = await fetch('http://' +  process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api')
         const data = response.json()
         console.log(data)
         if (data !== null) {
@@ -152,7 +148,7 @@ function LandingPageDev(props) {
             const loadDataU = async () => {
               try {
                 const [response] = await Promise.all([
-                  fetch('http://localhost:6090/api/user'),
+                  fetch('http://' +  process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user'),
                 ]);
                 const [user] = await Promise.all([
                   response.json(),
@@ -226,7 +222,7 @@ function LandingPageDev(props) {
           })
 
         }
-        await fetch('http://localhost:6090/api/user', requestOptions)
+        await fetch('http://' +  process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user', requestOptions)
         setCADMessage("Usuário registrado, redirecionando")
         setTimeout(() => {
           setpageState(true)
@@ -277,6 +273,13 @@ function LandingPageDev(props) {
 
       // fetch aqui
       if (connection === true) {
+        const [response] = await Promise.all([
+          fetch('http://' +  process.env.REACT_APP_SERVER + ':' + process.env.REACT_APP_PORT + '/api/user'),
+        ]);
+        const [user] = await Promise.all([
+          response.json(),
+        ])
+        setUsers(user.data)
 
         setConnectionMessage("Procurando por usuário")
         try {

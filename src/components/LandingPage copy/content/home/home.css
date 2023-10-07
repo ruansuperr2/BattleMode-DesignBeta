@@ -55,7 +55,7 @@
     border-left: 2px solid #85776283;
 }
 
-.navbarLeftDiv .navbarTextLeft label:last-child{
+.navbarLeftDiv .navbarTextLeft label:last-child {
     border-right: 2px solid #85776283;
 }
 
@@ -73,7 +73,7 @@
     border-left: 2px solid #85776283;
 }
 
-.navbarLeftDiv .navbarTextRight div:last-child{
+.navbarLeftDiv .navbarTextRight div:last-child {
     border-right: 2px solid #85776283;
 }
 
@@ -110,14 +110,14 @@
     border-radius: 64px;
 }
 
-.userNavBorder{
+.userNavBorder {
     position: absolute;
     width: 86px;
     left: -3.8%;
     top: -14%;
 }
 
-.userNameOnNavbar{
+.userNameOnNavbar {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -159,11 +159,11 @@
 
 }
 
-.moneyDiv{
+.moneyDiv {
     width: 10%;
 }
 
-.moneyDiv label{
+.moneyDiv label {
     color: white;
     font-size: 20px;
     text-align: center;
@@ -174,86 +174,101 @@
 }
 
 
-@media screen and (orientation:landscape) and (max-width: 720px){
+@media screen and (orientation:landscape) and (max-width: 720px) {
 
-.navbarHome {
-    background-color: blue;
-    height: 4rem;
-    width: 100%;
-    display: flex;
-    position: relative;
-    z-index: 18;
-    border-top: 3px solid #fc6b03;
+    .navbarHome {
+        background-color: blue;
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        position: relative;
+        z-index: 18;
+        border-top: 3px solid #fc6b03;
     }
 
     .navbarLeftDiv .navbarTextRight div {
-    text-align: center;
-    height: 100%;
-    width: 5rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-    transition: 0.5s;
-    border-left: 2px solid #85776283;
+        text-align: center;
+        height: 100%;
+        width: 5rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        transition: 0.5s;
+        border-left: 2px solid #85776283;
     }
 
+
+    .navbarLeftDiv .navbarTextLeft label {
+        text-align: center;
+        height: 100%;
+        width: 5rem;
+        font-size: 14px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+        cursor: pointer;
+        border-left: 2px solid #85776283;
+    }
+
+    .navbarRightDiv {
+        width: 20%;
+        height: 100%;
+        background-color: #131313;
+        border-left: #857762 2px solid;
+        border-bottom: #857762 2px solid;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .userBodyIcon {
+        margin-left: 2%;
+        border-radius: 64px;
+    }
+
+    .userNavBorder {
+        position: absolute;
+        width: 4.5rem;
+        left: -0.57rem;
+        top: -0.4rem
+    }
+
+    .userNameOnNavbar {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .userBodyName {
+        font-size: 1.2rem;
+        font-weight: bolder;
+        color: #e9e9e9;
+        margin-left: 4%;
+    }
+
+    .userBodyTitle {
+        font-size: 0.8rem;
+        font-weight: bolder;
+        color: #818181;
+        margin-left: 4%;
+    }
+
+    .moneyDiv {
+        width: 5.3rem;
+    }
     
-.navbarLeftDiv .navbarTextLeft label {
-    text-align: center;
-    height: 100%;
-    width: 6rem;
-    font-size: 15px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    cursor: pointer;
-    border-left: 2px solid #85776283;
+    .moneyDiv label {
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
 }
-.navbarRightDiv {
-    width: 20%;
-    height: 100%;
-    background-color: #131313;
-    border-left: #857762 2px solid;
-    border-bottom: #857762 2px solid;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.userBodyIcon {
-    margin-left: 2%;
-    border-radius: 64px;
-}
-
-.userNavBorder{
-    position: absolute;
-    width: 86px;
-    left: -1.8rem;
-    top: -2rem
-}
-
-.userNameOnNavbar{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.userBodyName {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    color: #e9e9e9;
-    margin-left: 4%;
-}
-
-.userBodyTitle {
-    font-size: 0.8rem;
-    font-weight: bolder;
-    color: #818181;
-    margin-left: 4%;
-        }
-        }
