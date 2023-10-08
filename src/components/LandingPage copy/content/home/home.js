@@ -499,10 +499,10 @@ export default function Home() {
                                 <div className='friendListAccounts' key={u.id}>
                                     <div>
 
-                                        <img className='divMapEquipesMembrosIcon' alt={u.username} src={u.icon} />
-                                        <img className='divMapEquipesMembrosMoldura' alt={u.moldura} src={require(`../../assets/images/borders/${u.moldura}_border.png`)} />
+                                        <img className='divMapListaMembrosIcon' alt={u.username} src={u.icon} />
+                                        <img className='divMapListaMembrosMoldura' alt={u.moldura} src={require(`../../assets/images/borders/${u.moldura}_border.png`)} />
                                     </div>
-                                    <div>
+                                    <div className='friendListAccountsName'>
                                         <label>{u.username}</label>
                                         <label>{u.titulo}</label>
                                     </div>
